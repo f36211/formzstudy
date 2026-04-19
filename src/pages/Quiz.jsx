@@ -1,8 +1,19 @@
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CheckCircle2, XCircle, ArrowRight, ArrowLeft, RotateCcw, Trophy, BrainCircuit } from 'lucide-react';
+import { 
+  CheckCircle2, 
+  XCircle, 
+  ArrowRight, 
+  ArrowLeft, 
+  RotateCcw, 
+  Trophy, 
+  BrainCircuit, 
+  BookOpen,
+  ChevronRight
+} from 'lucide-react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { quizDatabase } from '../data/quizData';
+import { quizDatabase } from '../quiz/quizIndex';
+import { subjectsData } from '../data/mockData';
 import useAppStore from '../store/useAppStore';
 
 export default function Quiz() {
@@ -15,20 +26,68 @@ export default function Quiz() {
   const [isAnswerSubmitted, setIsAnswerSubmitted] = useState(false);
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
-  const [isGlobalQuiz, setIsGlobalQuiz] = useState(!subjectId);
 
-  // Generate Global Quiz questions (mix from all subjects)
-  const allQuestions = useMemo(() => {
-    if (subjectId) return quizDatabase[subjectId] || [];
-    
-    // Flatten all questions and shuffle them
-    const flattened = Object.values(quizDatabase).flat();
-    return [...flattened].sort(() => Math.random() - 0.5).slice(0, 15); // 15 random questions for global quiz
+  // Filter questions for the specific subject
+  const quizQuestions = useMemo(() => {
+    if (!subjectId) return [];
+    return quizDatabase[subjectId] || [];
   }, [subjectId]);
 
-  const quizQuestions = allQuestions;
   const question = quizQuestions[currentQuestionIndex];
   const progressPercent = quizQuestions.length > 0 ? ((currentQuestionIndex + 1) / quizQuestions.length) * 100 : 0;
+
+  // If no subject is selected, show the selection screen
+  if (!subjectId) {
+    return (
+      <div className="w-full animation-fade-in pb-20">
+        <header className="mb-12">
+          <h1 className="text-3xl lg:text-4xl font-black tracking-tighter text-[var(--text-main)] m-0 uppercase mb-3">
+            Pilih Mata Pelajaran
+          </h1>
+          <p className="text-sm font-medium text-[var(--text-muted)] m-0 uppercase tracking-widest leading-relaxed">
+            Uji pemahamanmu dengan kuis spesifik subjek
+          </p>
+        </header>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {subjectsData.map((subject) => {
+            const hasQuiz = !!quizDatabase[subject.slug];
+            return (
+              <Link 
+                key={subject.slug} 
+                to={hasQuiz ? `/quiz/${subject.slug}` : '#'} 
+                className={`group no-underline block h-full ${!hasQuiz ? 'opacity-60 cursor-not-allowed' : ''}`}
+              >
+                <div className={`h-full bg-[var(--bg-card)] border border-[var(--border-card)] rounded-3xl p-8 shadow-[var(--shadow-soft)] transition-all duration-300 ${hasQuiz ? 'hover:shadow-[var(--shadow-md)] hover:border-[var(--accent-blue)] hover:-translate-y-1' : ''}`}>
+                  <div className="flex items-center justify-between mb-6">
+                    <div 
+                      className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-inner"
+                      style={{ background: `${subject.color}15`, color: subject.color }}
+                    >
+                      <BookOpen size={28} strokeWidth={2.5} />
+                    </div>
+                    {hasQuiz ? (
+                      <div className="w-10 h-10 rounded-full bg-[var(--bg-alternate)] flex items-center justify-center text-[var(--text-muted)] group-hover:bg-[var(--accent-blue)] group-hover:text-white transition-all">
+                        <ChevronRight size={20} />
+                      </div>
+                    ) : (
+                      <span className="text-[10px] font-black uppercase tracking-widest text-[var(--text-muted)] bg-[var(--bg-alternate)] px-3 py-1 rounded-full">Coming Soon</span>
+                    )}
+                  </div>
+                  <h3 className="text-xl font-black text-[var(--text-main)] m-0 uppercase tracking-tight mb-2">
+                    {subject.title}
+                  </h3>
+                  <p className="text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider m-0">
+                    {quizDatabase[subject.slug]?.length || 0} Soal Latihan
+                  </p>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
 
   const handleOptionSelect = (index) => {
     if (isAnswerSubmitted) return;
@@ -52,11 +111,7 @@ export default function Quiz() {
     } else {
       // Save score to store
       const finalScore = Math.round((score / quizQuestions.length) * 100);
-      if (subjectId) {
-        setQuizScore(subjectId, finalScore);
-      } else {
-        setQuizScore('global', finalScore);
-      }
+      setQuizScore(subjectId, finalScore);
       setShowResult(true);
     }
   };
@@ -95,10 +150,10 @@ export default function Quiz() {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 md:mb-12">
         <div className="text-left">
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter text-[var(--text-main)] m-0 uppercase">
-            {isGlobalQuiz ? 'Kuis Global' : 'Kuis Materi'}
+            Kuis Materi
           </h1>
           <p className="text-xs md:text-sm font-medium text-[var(--text-muted)] m-0 mt-1 uppercase tracking-widest leading-relaxed">
-            {isGlobalQuiz ? 'Campuran semua mata pelajaran' : subjectId?.replace('-', ' ')}
+            {subjectId?.replace('-', ' ')}
           </p>
         </div>
         <button

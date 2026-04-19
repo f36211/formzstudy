@@ -11,7 +11,7 @@ export default function SidebarLayout() {
     { name: 'Bahasa Indonesia', path: '/subject/bahasa-indonesia', icon: BookOpen },
     { name: 'Matematika', path: '/subject/matematika', icon: BookOpen },
     { name: 'PAI', path: '/subject/pai', icon: BookOpen },
-    { name: 'Global Quiz', path: '/quiz', icon: BrainCircuit },
+    { name: 'Quiz Latihan', path: '/quiz', icon: BrainCircuit },
     { name: 'Settings', path: '/settings', icon: Settings },
   ];
 
