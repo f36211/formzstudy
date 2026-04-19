@@ -50,7 +50,7 @@ export default function FloatingActionMenu() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <div className="fixed bottom-8 right-8 z-50 flex flex-col items-end">
+    <div className="fixed bottom-24 md:bottom-8 right-6 md:right-8 z-50 flex flex-col items-end">
       <AnimatePresence>
         {isOpen && (
           <motion.div

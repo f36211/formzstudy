@@ -42,47 +42,47 @@ export default function SubjectDetail() {
       {/* Back Navigation */}
       <Link
         to="/"
-        className="inline-flex items-center gap-2 mb-8 text-sm font-semibold text-[var(--text-secondary)] hover:text-[var(--text-main)] transition-colors"
+        className="inline-flex items-center gap-2 mb-6 md:mb-8 text-sm font-semibold text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors no-underline"
       >
         <ArrowLeft size={16} />
-        Kembali ke Dashboard
+        <span className="uppercase tracking-widest text-[10px]">Dashboard</span>
       </Link>
 
       {/* Subject Hero Section */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="relative overflow-hidden rounded-3xl bg-[var(--bg-card)] border border-[var(--border-card)] p-8 lg:p-12 mb-10 shadow-sm"
+        className="relative overflow-hidden rounded-3xl bg-[var(--bg-card)] border border-[var(--border-card)] p-5 sm:p-8 lg:p-12 mb-8 md:mb-12 shadow-sm"
       >
         {/* Background Accent */}
         <div 
-          className="absolute top-0 right-0 w-80 h-80 blur-3xl opacity-20 rounded-full -mr-20 -mt-20"
+          className="absolute top-0 right-0 w-64 md:w-80 h-64 md:h-80 blur-3xl opacity-20 rounded-full -mr-20 -mt-20 pointer-events-none"
           style={{ backgroundColor: subject.color }}
         />
         
-        <div className="relative z-10 flex flex-col lg:flex-row lg:items-end justify-between gap-8">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--bg-alternate)] text-[var(--text-muted)] text-xs font-bold uppercase tracking-wider mb-4">
+        <div className="relative z-10 flex flex-col lg:flex-row lg:items-end justify-between gap-8 md:gap-10">
+          <div className="max-w-2xl text-left">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--bg-alternate)] text-[var(--text-muted)] text-[10px] md:text-xs font-bold uppercase tracking-wider mb-4 md:mb-6">
               Modul Pembelajaran
             </div>
-            <h1 className="text-4xl lg:text-5xl font-black tracking-tighter text-[var(--text-main)] mb-4 leading-tight m-0">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter text-[var(--text-main)] mb-4 md:mb-5 leading-tight m-0 uppercase">
               {subject.title}
             </h1>
-            <p className="text-lg text-[var(--text-secondary)] mb-0 leading-relaxed font-medium">
+            <p className="text-sm md:text-lg text-[var(--text-secondary)] mb-0 leading-relaxed font-medium">
               {subject.description || `Pelajari konsep-konsep penting dalam ${subject.title} dengan materi yang terstruktur dan mudah dipahami.`}
             </p>
           </div>
 
-          <div className="shrink-0 w-full lg:w-72">
+          <div className="shrink-0 w-full lg:w-72 mt-2 lg:mt-0">
             <div className="flex justify-between items-center mb-3">
-              <span className="text-sm font-bold text-[var(--text-muted)] uppercase tracking-wider">
+              <span className="text-[10px] md:text-xs font-bold text-[var(--text-muted)] uppercase tracking-widest">
                 Progres Belajar
               </span>
-              <span className="text-sm font-black text-[var(--accent-blue)] bg-[var(--accent-blue-soft)] px-2 py-0.5 rounded">
+              <span className="text-xs md:text-sm font-black text-[var(--accent-blue)] bg-[var(--accent-blue-soft)] px-2.5 py-1 rounded-lg">
                 {Math.round(progressPercent)}%
               </span>
             </div>
-            <div className="w-full h-3 bg-[var(--bg-alternate)] rounded-full overflow-hidden shadow-inner">
+            <div className="w-full h-2 bg-[var(--bg-alternate)] rounded-full overflow-hidden shadow-inner">
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: `${progressPercent}%` }}
@@ -90,21 +90,21 @@ export default function SubjectDetail() {
                 className="h-full bg-[var(--accent-blue)] rounded-full shadow-[0_0_12px_rgba(59,130,246,0.3)]"
               />
             </div>
-            <p className="text-xs text-[var(--text-secondary)] mt-3 font-medium text-right">
-              {completedTopicIds.length} dari {topics.length} materi selesai
+            <p className="text-[10px] md:text-xs text-[var(--text-muted)] mt-3 font-bold text-right uppercase tracking-wider">
+              {completedTopicIds.length} / {topics.length} materi SELESAI
             </p>
           </div>
         </div>
       </motion.div>
 
       {/* Main Layout: Cards & Sidebar */}
-      <div className="flex flex-col lg:flex-row gap-10">
+      <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
         {/* Topic Card List */}
-        <div className="flex-1">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-[var(--text-main)] m-0">Kurikulum Materi</h2>
-            <div className="text-sm text-[var(--text-secondary)] font-medium">
-              {topics.length} Topik Tersedia
+        <div className="flex-1 order-2 lg:order-1">
+          <div className="flex items-center justify-between mb-6 md:mb-8">
+            <h2 className="text-xl md:text-2xl font-black text-[var(--text-main)] m-0 uppercase tracking-tight">Kurikulum Materi</h2>
+            <div className="text-[10px] font-bold text-[var(--text-muted)] uppercase tracking-widest bg-[var(--bg-alternate)] px-3 py-1 rounded-full">
+              {topics.length} Topik
             </div>
           </div>
 
@@ -298,17 +298,17 @@ function TopicEnhancedCard({
             exit={{ height: 0, opacity: 0 }}
             className="overflow-hidden"
           >
-            <div className="px-5 pb-5 pt-2 ml-[68px] border-t border-slate-50 dark:border-slate-800/50 mt-1">
+            <div className="px-5 pb-5 pt-2 md:ml-[68px] border-t border-slate-50 dark:border-slate-800/50 mt-1">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-4">
                 <div>
-                  <h4 className="text-xs font-bold text-[var(--text-secondary)] uppercase tracking-widest mb-3">Ringkasan Materi</h4>
+                  <h4 className="text-[10px] font-bold text-[var(--text-muted)] uppercase tracking-widest mb-3">Ringkasan Materi</h4>
                   <p className="text-sm text-[var(--text-main)] m-0 leading-relaxed opacity-80">
                     Pelajari konsep fundamental dan aplikasinya dalam kehidupan sehari-hari. 
                     Dilengkapi dengan contoh soal dan penjelasan mendalam.
                   </p>
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-[var(--text-secondary)] uppercase tracking-widest mb-3">Daftar Sub-materi</h4>
+                  <h4 className="text-[10px] font-bold text-[var(--text-muted)] uppercase tracking-widest mb-3">Daftar Sub-materi</h4>
                   <ul className="space-y-2 m-0 p-0 list-none">
                     {topic.sections?.slice(0, 3).map((sec, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-sm text-[var(--text-main)]">
@@ -317,8 +317,8 @@ function TopicEnhancedCard({
                       </li>
                     ))}
                     {(topic.sections?.length > 3) && (
-                      <li className="text-xs text-[var(--text-secondary)] italic pl-3">
-                        + {topic.sections.length - 3} sub-materi lainnya
+                      <li className="text-xs text-[var(--text-muted)] font-bold italic pl-3 uppercase tracking-wider">
+                        + {topic.sections.length - 3} LAINNYA
                       </li>
                     )}
                   </ul>
@@ -326,8 +326,8 @@ function TopicEnhancedCard({
               </div>
 
               <div className="mt-4 flex">
-                <Link to={`/subject/${subjectSlug}/topic/${topic.id}`} className="no-underline">
-                  <button className="flex items-center gap-2 bg-slate-900 dark:bg-slate-100 text-white dark:text-black font-bold px-6 py-3 rounded-xl transition-all hover:scale-[1.02] active:scale-95 cursor-pointer border-0 shadow-sm">
+                <Link to={`/subject/${subjectSlug}/topic/${topic.id}`} className="no-underline w-full md:w-auto">
+                  <button className="w-full md:w-auto flex items-center justify-center gap-2 bg-slate-900 dark:bg-slate-100 text-white dark:text-black font-bold px-6 py-3 rounded-xl transition-all hover:scale-[1.02] active:scale-95 cursor-pointer border-0 shadow-sm">
                     <BookOpen size={18} />
                     Buka Materi Lengkap
                   </button>

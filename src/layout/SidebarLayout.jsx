@@ -17,6 +17,30 @@ export default function SidebarLayout() {
 
   return (
     <div className="flex min-h-screen bg-[var(--bg-main)] text-[var(--text-main)] w-full antialiased font-sans">
+      {/* Mobile Bottom Navigation */}
+      <nav className="fixed bottom-0 left-0 right-0 bg-[var(--bg-card)] border-t border-[var(--border-card)] z-50 px-6 py-3 flex justify-between items-center md:hidden shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+        {[
+          { path: '/', icon: LayoutDashboard, name: 'Home' },
+          { path: '/quiz', icon: BrainCircuit, name: 'Quiz' },
+          { path: '/settings', icon: Settings, name: 'Settings' }
+        ].map((item) => {
+          const isActive = location.pathname === item.path;
+          const Icon = item.icon;
+          return (
+            <Link 
+              key={item.path} 
+              to={item.path}
+              className={`flex flex-col items-center gap-1 no-underline transition-colors ${isActive ? 'text-[var(--accent-blue)]' : 'text-[var(--text-muted)]'}`}
+            >
+              <div className={`p-2 rounded-xl ${isActive ? 'bg-[var(--accent-blue-soft)]' : ''}`}>
+                <Icon size={20} strokeWidth={isActive ? 2.5 : 2} />
+              </div>
+              <span className="text-[10px] font-black uppercase tracking-widest">{item.name}</span>
+            </Link>
+          );
+        })}
+      </nav>
+
       {/* Sidebar Navigation */}
       <aside className="w-[280px] flex-shrink-0 bg-[var(--bg-card)] border-r border-[var(--border-card)] h-screen sticky top-0 flex flex-col pt-10 pb-8 px-5 hidden md:flex shadow-[var(--shadow-soft)]">
         <div className="flex items-center gap-3 px-2 mb-12">
@@ -67,8 +91,8 @@ export default function SidebarLayout() {
       </aside>
 
       {/* Main Content Area */}
-      <main className="flex-1 flex flex-col overflow-x-hidden pt-8 pb-32">
-        <div className="w-full max-w-[1100px] mx-auto px-6 lg:px-12">
+      <main className="flex-1 flex flex-col overflow-x-hidden pt-6 md:pt-10 pb-24 md:pb-12">
+        <div className="w-full max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-12">
           <Outlet />
         </div>
       </main>

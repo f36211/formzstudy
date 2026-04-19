@@ -92,20 +92,21 @@ export default function Quiz() {
   return (
     <div className="w-full animation-fade-in pb-20">
       {/* Header with Title & Back Button */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
-        <div>
-          <h1 className="text-3xl lg:text-4xl font-bold tracking-tighter text-[var(--text-main)] m-0 uppercase">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 md:mb-12">
+        <div className="text-left">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter text-[var(--text-main)] m-0 uppercase">
             {isGlobalQuiz ? 'Kuis Global' : 'Kuis Materi'}
           </h1>
-          <p className="text-sm font-medium text-[var(--text-muted)] m-0 mt-1 uppercase tracking-widest">
+          <p className="text-xs md:text-sm font-medium text-[var(--text-muted)] m-0 mt-1 uppercase tracking-widest leading-relaxed">
             {isGlobalQuiz ? 'Campuran semua mata pelajaran' : subjectId?.replace('-', ' ')}
           </p>
         </div>
         <button
           onClick={() => navigate(-1)}
-          className="w-fit inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-alternate)] transition-all cursor-pointer border border-[var(--border-card)] bg-[var(--bg-card)] shadow-sm"
+          className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl text-sm font-medium text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-alternate)] transition-all cursor-pointer border border-[var(--border-card)] bg-[var(--bg-card)] shadow-sm active:scale-95"
         >
-          <ArrowLeft size={16} /> Keluar Kuis
+          <ArrowLeft size={16} /> 
+          <span>Keluar Kuis</span>
         </button>
       </div>
 
@@ -282,16 +283,16 @@ export default function Quiz() {
                   Hasil Evaluasi Belajar Anda
                 </p>
 
-                 <div className="flex flex-wrap justify-center gap-4 mb-12">
-                  <div className="bg-[var(--bg-alternate)] border border-[var(--border-card)] rounded-2xl p-6 w-32 shadow-inner">
+                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+                  <div className="bg-[var(--bg-alternate)] border border-[var(--border-card)] rounded-2xl p-6 shadow-inner">
                     <p className="text-[10px] font-medium text-[var(--text-muted)] uppercase tracking-widest mb-2">Benar</p>
                     <p className="text-3xl font-bold text-[var(--accent-emerald)] m-0">{score}</p>
                   </div>
-                  <div className="bg-[var(--bg-alternate)] border border-[var(--border-card)] rounded-2xl p-6 w-32 shadow-inner">
+                  <div className="bg-[var(--bg-alternate)] border border-[var(--border-card)] rounded-2xl p-6 shadow-inner">
                     <p className="text-[10px] font-medium text-[var(--text-muted)] uppercase tracking-widest mb-2">Salah</p>
                     <p className="text-3xl font-bold text-[var(--accent-rose)] m-0">{quizQuestions.length - score}</p>
                   </div>
-                  <div className="bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-indigo)] rounded-2xl p-6 w-32 shadow-lg shadow-blue-500/20">
+                  <div className="bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-indigo)] rounded-2xl p-6 shadow-lg shadow-blue-500/20">
                     <p className="text-[10px] font-medium text-white/70 uppercase tracking-widest mb-2">Nilai</p>
                     <p className="text-3xl font-bold text-white m-0">{scorePercent}</p>
                   </div>

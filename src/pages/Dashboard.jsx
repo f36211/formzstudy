@@ -59,18 +59,18 @@ export default function Dashboard() {
       <motion.section
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
-        className="mb-10"
+        className="mb-8 md:mb-12"
       >
-        <h1 className="text-[48px] font-bold tracking-[-1.5px] text-[var(--text-main)] leading-tight mb-2 m-0">
+        <h1 className="text-3xl md:text-4xl lg:text-[48px] font-bold tracking-tight md:tracking-[-1.5px] text-[var(--text-main)] leading-tight mb-3 m-0">
           Formz Study Dashboard
         </h1>
-        <p className="text-[20px] font-medium text-[var(--text-secondary)] m-0">
+        <p className="text-base md:text-lg lg:text-[20px] font-medium text-[var(--text-secondary)] m-0 leading-relaxed max-w-2xl">
           Prepare smarter. Review faster. Track everything.
         </p>
       </motion.section>
 
       {/* Quick Progress Strip */}
-      <section className="grid grid-cols-2 xl:grid-cols-4 gap-4 mb-10">
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10 md:mb-12">
         {[
           { label: 'Subjek Selesai', value: fullyCompletedSubjects.toString(), unit: `/ ${totalSubjects}`, accent: 'var(--accent-emerald)' },
           { label: 'Total Topik Selesai', value: totalTopicsCompleted.toString(), unit: 'topik', accent: 'var(--accent-blue)' },
@@ -121,19 +121,19 @@ export default function Dashboard() {
                 <div className="w-1.5 h-1.5 rounded-full bg-[var(--accent-blue)] animate-pulse" />
               </div>
               <div className="flex flex-col gap-3">
-                <div className="group flex justify-between items-center p-4 rounded-2xl border border-[var(--border-card)] bg-[var(--bg-alternate)] hover:border-[var(--accent-blue)]/30 transition-all cursor-pointer">
+                <div className="group flex flex-col sm:flex-row sm:justify-between sm:items-center p-4 rounded-2xl border border-[var(--border-card)] bg-[var(--bg-alternate)] hover:border-[var(--accent-blue)]/30 transition-all cursor-pointer gap-3 sm:gap-0">
                   <div className="flex flex-col gap-1">
                     <span className="text-sm font-bold text-[var(--text-main)] uppercase tracking-tight">Bahasa Indonesia</span>
                     <span className="text-[10px] font-medium text-[var(--text-muted)]">Ruang ? • Sesi 1</span>
                   </div>
-                  <span className="text-[10px] font-bold text-[var(--accent-blue)] bg-white dark:bg-white/5 px-2.5 py-1.5 rounded-lg shadow-sm border border-[var(--border-card)]">07.30 - 09.30</span>
+                  <span className="w-fit text-[10px] font-bold text-[var(--accent-blue)] bg-white dark:bg-white/5 px-2.5 py-1.5 rounded-lg shadow-sm border border-[var(--border-card)]">07.30 - 09.30</span>
                 </div>
-                <div className="group flex justify-between items-center p-4 rounded-2xl border border-[var(--border-card)] bg-[var(--bg-alternate)] hover:border-[var(--accent-blue)]/30 transition-all cursor-pointer">
+                <div className="group flex flex-col sm:flex-row sm:justify-between sm:items-center p-4 rounded-2xl border border-[var(--border-card)] bg-[var(--bg-alternate)] hover:border-[var(--accent-blue)]/30 transition-all cursor-pointer gap-3 sm:gap-0">
                   <div className="flex flex-col gap-1">
                     <span className="text-sm font-bold text-[var(--text-main)] uppercase tracking-tight">PAI</span>
                     <span className="text-[10px] font-medium text-[var(--text-muted)]">Ruang ? • Sesi 2</span>
                   </div>
-                  <span className="text-[10px] font-bold text-[var(--accent-blue)] bg-white dark:bg-white/5 px-2.5 py-1.5 rounded-lg shadow-sm border border-[var(--border-card)]">10.00 - 12.00</span>
+                  <span className="w-fit text-[10px] font-bold text-[var(--accent-blue)] bg-white dark:bg-white/5 px-2.5 py-1.5 rounded-lg shadow-sm border border-[var(--border-card)]">10.00 - 12.00</span>
                 </div>
               </div>
             </div>

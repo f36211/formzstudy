@@ -249,7 +249,7 @@ export default function TopicDetail() {
               initial={isTopicSidebarOpen ? { x: -300 } : false}
               animate={{ x: 0 }}
               exit={{ x: -300 }}
-              className={`fixed inset-y-0 left-0 w-80 bg-[var(--bg-card)] border-r border-[var(--border-card)] z-50 lg:z-0 lg:sticky lg:top-24 lg:h-[calc(100vh-120px)] overflow-y-auto p-6 transition-transform lg:translate-x-0 ${isTopicSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
+              className={`fixed inset-y-0 left-0 w-[280px] sm:w-80 bg-[var(--bg-card)] border-r border-[var(--border-card)] z-50 lg:z-0 lg:sticky lg:top-24 lg:h-[calc(100vh-120px)] overflow-y-auto p-6 transition-transform lg:translate-x-0 ${isTopicSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
             >
               <div className="flex items-center justify-between mb-8 lg:hidden">
                 <h3 className="font-black text-lg text-[var(--text-main)] uppercase tracking-tighter">Daftar Isi</h3>
