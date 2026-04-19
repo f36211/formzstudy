@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@theme {
+  /* Extended Colors - Premium Deep Aesthetic */
+  --color-uq-green: #0D5C2E;
+  --color-uq-green-light: #1A7D42;
+  --color-uq-green-dark: #073B1C;
+  --color-uq-navy: #1E293B;
+  --color-uq-gold: #F9D616;
+
+  /* Typography */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: "Amiri", "Noto Naskh Arabic", serif;
+}
+
+@layer base {
+  :root {
+    --bg-main: #fcfcfc;
+    --bg-alternate: #f8fafc;
+    --text-main: #0f172a;
+    --text-secondary: #334155;
+    --text-muted: #64748b;
+    --bg-card: #ffffff;
+    --border-card: #f1f5f9;
+    --accent-blue: #2563eb;
+    --accent-blue-soft: #eff6ff;
+    --accent-emerald: #059669;
+    --accent-emerald-soft: #ecfdf5;
+    --accent-indigo: #4f46e5;
+    --accent-indigo-soft: #eef2ff;
+    --accent-amber: #d97706;
+    --accent-amber-soft: #fffbeb;
+    --accent-rose: #e11d48;
+    --accent-rose-soft: #fff1f2;
+    --shadow-soft: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  .dark {
+    --bg-main: #0b0f1a;
+    --bg-alternate: #111827;
+    --text-main: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --bg-card: #1e293b;
+    --border-card: #334155;
+    --accent-blue: #60a5fa;
+    --accent-blue-soft: rgba(37, 99, 235, 0.15);
+    --accent-emerald: #34d399;
+    --accent-emerald-soft: rgba(5, 150, 105, 0.15);
+    --accent-indigo: #818cf8;
+    --accent-indigo-soft: rgba(79, 70, 229, 0.15);
+    --accent-amber: #fbbf24;
+    --accent-amber-soft: rgba(217, 119, 6, 0.15);
+    --accent-rose: #fb7185;
+    --accent-rose-soft: rgba(225, 29, 72, 0.15);
+    --shadow-soft: 0 2px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Font Size Preferences driven by data-set attribute that we will apply to html body */
+  .font-size-small { font-size: 14px; }
+  .font-size-base { font-size: 16px; }
+  .font-size-large { font-size: 18px; }
+
+  body {
+    @apply bg-[var(--bg-main)] text-[var(--text-main)] transition-colors duration-300 antialiased;
+  }
+
+  /* Custom Typography for Learning Content */
+  .prose-custom {
+    @apply leading-relaxed;
+  }
+
+  .prose-custom h1, .prose-custom h2, .prose-custom h3 {
+    @apply font-bold text-[var(--text-main)] mb-4 mt-6 first:mt-0;
+  }
+
+  .prose-custom p {
+    @apply mb-4 text-[var(--text-main)] text-[15px] lg:text-[16px] leading-[1.7];
+  }
+
+  .prose-custom ul, .prose-custom ol {
+    @apply mb-4 pl-6 space-y-2;
+  }
+
+  .prose-custom li {
+    @apply text-[var(--text-secondary)] text-[15px];
+  }
+
+  .prose-custom strong {
+    @apply font-bold text-[var(--text-main)];
+  }
+
+  .prose-custom blockquote {
+    @apply border-l-4 border-[var(--accent-blue)] pl-4 italic my-4 text-[var(--text-secondary)];
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-[var(--bg-card)] backdrop-blur-xl border border-[var(--border-card)] shadow-sm;
+  }
+
+  /* Custom Scrollbar for a premium feel */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 dark:bg-slate-600 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400 dark:bg-slate-500;
+  }
+}

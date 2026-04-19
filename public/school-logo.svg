@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Outer green circle -->
+  <circle cx="100" cy="100" r="98" fill="#1A7D42" stroke="#146835" stroke-width="2"/>
+  <!-- White inner circle -->
+  <circle cx="100" cy="100" r="78" fill="#FFFFFF"/>
+  <!-- Black square background -->
+  <rect x="45" y="45" width="110" height="110" fill="#1A1A1A" transform="rotate(0 100 100)"/>
+  <!-- Green diamond (rotated square) -->
+  <rect x="38" y="38" width="124" height="124" rx="4" fill="none" stroke="#0D5C2E" stroke-width="5" transform="rotate(45 100 100)"/>
+  <!-- Inner green diamond -->
+  <rect x="50" y="50" width="100" height="100" rx="2" fill="none" stroke="#0D5C2E" stroke-width="3" transform="rotate(45 100 100)"/>
+  <!-- Yellow stripes -->
+  <rect x="46" y="93" width="46" height="6" fill="#F9D616"/>
+  <rect x="108" y="93" width="46" height="6" fill="#F9D616"/>
+  <!-- UQ Monogram - U -->
+  <path d="M62 65 L62 120 Q62 135 77 135 L88 135 L88 65" fill="none" stroke="#0D5C2E" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- UQ Monogram - Q overlap -->
+  <path d="M88 65 L88 120 Q88 135 103 135 L118 135 Q138 135 138 115 L138 65" fill="none" stroke="#0D5C2E" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Q tail / flag -->
+  <path d="M125 120 L140 130 L135 118" fill="#F9D616" stroke="#F9D616" stroke-width="1"/>
+  <!-- Bottom navy banner -->
+  <path d="M20 145 Q100 170 180 145 L180 175 Q100 200 20 175 Z" fill="#2B3990"/>
+  <!-- Top text arc (simplified) -->
+  <text font-family="Arial Black, sans-serif" font-size="13" fill="#FFFFFF" font-weight="bold">
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">SMPIT UMMUL QURO - BOGOR</textPath>
+  </text>
+  <defs>
+    <path id="topArc" d="M25 100 A75 75 0 0 1 175 100"/>
+    <path id="bottomArc" d="M30 160 Q100 185 170 160"/>
+  </defs>
+  <!-- Bottom text -->
+  <text font-family="Arial, sans-serif" font-size="8.5" fill="#FFFFFF" font-weight="bold" letter-spacing="1.5">
+    <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">MELEJITKAN GENERASI BERPRESTASI</textPath>
+  </text>
+</svg>
