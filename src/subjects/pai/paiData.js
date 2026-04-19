@@ -78,7 +78,6 @@ const paiData = [
         ],
       },
       {
-        // FIXED: Doa iftitah yang benar (versi yang umum dipakai / riwayat Bukhari-Muslim)
         subtitle: "d. Doa Iftitah dan Artinya",
         content: [
           {
@@ -225,13 +224,20 @@ const paiData = [
           {
             type: "text",
             content:
-              "Pengertian: Sujud sahwi adalah sujud yang dilakukan untuk menebus kesalahan atau kekhilafan dalam sholat.",
+              "Pengertian: Sujud sahwi adalah sujud yang dilakukan untuk menebus kesalahan atau kekhilafan yang terjadi secara tidak sengaja dalam sholat, seperti lupa rakaat atau meninggalkan tasyahud awal.",
           },
           {
             type: "highlight",
-            // FIXED: Bacaan sujud sahwi yang benar
+            content: "Bacaan Sujud Sahwi:",
+          },
+          {
+            type: "arabic",
+            content: "سُبْحَانَ مَنْ لَا يَنَامُ وَلَا يَسْهُو",
+          },
+          {
+            type: "text",
             content:
-              "Bacaan: سُبْحَانَ مَنْ لَا يَنَامُ وَلَا يَسْهُو (Subhana man laa yanaamu wa laa yashu) - 'Maha Suci Dzat yang tidak tidur dan tidak lupa'",
+              "Latin: Subhana man laa yanaamu wa laa yashu. Artinya: 'Maha Suci Dzat yang tidak tidur dan tidak lupa.' (Dibaca 3 kali)",
           },
           {
             type: "text",
@@ -246,18 +252,26 @@ const paiData = [
           {
             type: "text",
             content:
-              "Pengertian: Sujud tilawah adalah sujud yang dilakukan ketika membaca atau mendengar ayat sajdah dalam Al-Qur'an.",
+              "Pengertian: Sujud tilawah adalah sujud yang dilakukan ketika membaca atau mendengar ayat sajdah dalam Al-Qur'an. Hukumnya sunnah muakkad (sangat dianjurkan).",
           },
           {
             type: "highlight",
-            // FIXED: Bacaan sujud tilawah yang benar
+            content: "Bacaan Sujud Tilawah:",
+          },
+          {
+            type: "arabic",
             content:
-              "Bacaan: سَجَدَ وَجْهِيَ لِلَّذِي خَلَقَهُ وَشَقَّ سَمْعَهُ وَبَصَرَهُ بِحَوْلِهِ وَقُوَّتِهِ فَتَبَارَكَ اللَّهُ أَحْسَنُ الْخَالِقِينَ",
+              "سَجَدَ وَجْهِيَ لِلَّذِي خَلَقَهُ وَشَقَّ سَمْعَهُ وَبَصَرَهُ بِحَوْلِهِ وَقُوَّتِهِ فَتَبَارَكَ اللَّهُ أَحْسَنُ الْخَالِقِينَ",
           },
           {
             type: "text",
             content:
-              "Artinya: 'Aku sujudkan wajahku kepada Tuhan yang menciptakannya, yang membelah pendengaran dan penglihatannya dengan daya dan kekuatan-Nya, maka Maha Berkah Allah sebaik-baik Pencipta.' (HR. Abu Dawud & Tirmidzi)",
+              "Latin: Sajada wajhiya lilladzii khalaqahu wa syaqqa sam'ahu wa basharahu bihawlihi wa quwwatihi fatabaarakallahu ahsanul khaaliqi. Artinya: 'Aku sujudkan wajahku kepada Tuhan yang menciptakannya, yang membelah pendengaran dan penglihatannya dengan daya dan kekuatan-Nya, maka Maha Berkah Allah sebaik-baik Pencipta.' (HR. Abu Dawud & Tirmidzi)",
+          },
+          {
+            type: "highlight",
+            content:
+              "Ada 15 ayat sajdah dalam Al-Qur'an, antara lain: QS. Al-A'raf: 206, QS. Ar-Ra'd: 15, QS. An-Nahl: 50, QS. Al-Isra': 109, QS. Maryam: 58, QS. Al-Hajj: 18, QS. Al-Hajj: 77, QS. Al-Furqan: 60, QS. An-Naml: 26, QS. As-Sajdah: 15, QS. Shad: 24, QS. Fussilat: 38, QS. An-Najm: 62, QS. Al-Insyiqaq: 21, QS. Al-'Alaq: 19.",
           },
         ],
       },
@@ -267,17 +281,26 @@ const paiData = [
           {
             type: "text",
             content:
-              "Pengertian: Sujud syukur adalah sujud yang dilakukan sebagai ungkapan rasa syukur kepada Allah SWT ketika mendapatkan nikmat atau kebaikan.",
+              "Pengertian: Sujud syukur adalah sujud yang dilakukan sebagai ungkapan rasa syukur kepada Allah SWT ketika mendapatkan nikmat besar atau terhindar dari musibah.",
           },
           {
             type: "highlight",
+            content: "Bacaan Sujud Syukur:",
+          },
+          {
+            type: "arabic",
             content:
-              "Bacaan: سُبْحَانَ رَبِّيَ الأَعْلَى (Subhana rabbiyal a'la) - 'Maha Suci Tuhanku yang Maha Tinggi'",
+              "سَجَدْتُ لَكَ يَا رَبِّ شُكْرًا وَعُبُودِيَّةً، سُبْحَانَ اللَّهِ وَالْحَمْدُ لِلَّهِ وَلَا إِلَهَ إِلَّا اللَّهُ وَاللَّهُ أَكْبَرُ",
           },
           {
             type: "text",
             content:
-              "Dilakukan ketika: Mendapatkan nikmat besar, selamat dari musibah. Boleh dilakukan kapan saja kecuali waktu terlarang.",
+              "Latin: Sajadtu laka yaa rabbi syukran wa 'ubudiyyatan, subhanallahi walhamdulillahi wa laa ilaaha illallahu wallahu akbar. Artinya: 'Aku bersujud kepada-Mu ya Rabb-ku sebagai bentuk syukur dan penghambaan. Maha Suci Allah, segala puji bagi Allah, tidak ada ilah selain Allah, Allah Maha Besar.' (HR. Ibnu Majah)",
+          },
+          {
+            type: "text",
+            content:
+              "Dilakukan ketika: Mendapatkan nikmat besar, selamat dari musibah, mendapatkan kabar gembira. Boleh dilakukan kapan saja kecuali waktu terlarang (setelah Ashar hingga Maghrib, setelah Subuh hingga matahari terbit, saat matahari tepat di tengah).",
           },
         ],
       },
@@ -287,12 +310,20 @@ const paiData = [
           {
             type: "text",
             content:
-              "Pengertian: Sujud shalat adalah sujud yang dilakukan sebagai rukun dalam sholat, yaitu meletakkan dahi di tempat sujud.",
+              "Pengertian: Sujud shalat adalah sujud yang dilakukan sebagai rukun dalam sholat, yaitu meletakkan dahi (dan ujung hidung) di tempat sujud. Anggota sujud ada 7: dahi+hidung, dua telapak tangan, dua lutut, ujung dua kaki.",
           },
           {
             type: "highlight",
+            content: "Bacaan dalam sujud shalat:",
+          },
+          {
+            type: "arabic",
+            content: "سُبْحَانَ رَبِّيَ الأَعْلَى",
+          },
+          {
+            type: "text",
             content:
-              "Bacaan dalam sujud: سُبْحَانَ رَبِّيَ الأَعْلَى (Subhana rabbiyal a'la) - dibaca 3 kali atau lebih.",
+              "Latin: Subhana rabbiyal a'la. Artinya: 'Maha Suci Tuhanku Yang Maha Tinggi.' Dibaca minimal 3 kali, lebih banyak lebih utama (5, 7, atau 9 kali pada sholat sunnah).",
           },
         ],
       },
@@ -309,7 +340,6 @@ const paiData = [
           {
             type: "list",
             ordered: true,
-            // FIXED: Munkar dan Nakir dipisah menjadi 2 item agar genap 10 malaikat
             items: [
               "Jibril (AS) - Menyampaikan wahyu dari Allah kepada para nabi",
               "Mikail (AS) - Mengatur rezeki dan hujan",
@@ -481,22 +511,66 @@ const paiData = [
     icon: "🌊",
     sections: [
       {
-        subtitle: "a. Jenis Air",
+        subtitle: "a. Pengertian Thoharoh",
+        content: [
+          {
+            type: "text",
+            content:
+              "Thoharoh secara bahasa artinya bersih atau suci. Secara istilah, thoharoh adalah membersihkan diri dari hadas dan najis, baik secara fisik (lahir) maupun secara hukum syariat. Thoharoh merupakan syarat sah ibadah seperti sholat, thawaf, dan lainnya.",
+          },
+          {
+            type: "highlight",
+            content:
+              "Dalil: 'Sesungguhnya Allah menyukai orang-orang yang bertobat dan menyukai orang-orang yang menyucikan diri.' (QS. Al-Baqarah: 222)",
+          },
+        ],
+      },
+      {
+        subtitle: "b. Pembagian Air Menurut Hukum Syariat",
+        content: [
+          {
+            type: "text",
+            content:
+              "Air dibagi menjadi empat jenis berdasarkan hukum penggunaannya untuk bersuci:",
+          },
+          {
+            type: "list",
+            ordered: true,
+            items: [
+              "Air Mutlak (Thahir Muthahir) — Air murni yang suci dan dapat menyucikan. Contoh: air hujan, air sumur, air sungai, air laut, air salju/es, air mata air. Air ini boleh digunakan untuk wudhu, mandi wajib, dan membersihkan najis.",
+              "Air Musta'mal (Thahir Ghairu Muthahir) — Air yang telah digunakan untuk bersuci (wudhu/mandi wajib) dan tidak berubah sifatnya. Air ini tetap suci tetapi tidak bisa digunakan kembali untuk bersuci. Contoh: air yang sudah dipakai wudhu dan terkumpul dalam baskom.",
+              "Air Mutaghayyir (Thahir Ghairu Muthahir atau Najis) — Air yang berubah salah satu sifatnya (warna, bau, atau rasa) karena tercampur sesuatu yang suci. Contoh: air kopi (berubah warna dan rasa karena kopi), air teh, air bercampur sabun, air bercampur lumpur. Air ini suci tapi tidak bisa untuk bersuci.",
+              "Air Mutanajjis (Najis) — Air yang terkena najis dan berubah salah satu sifatnya (warna, bau, atau rasa), atau air yang terkena najis dan jumlahnya kurang dari dua qullah. Contoh: air sumur yang kemasukan bangkai, air comberan yang bercampur tinja, air yang tercampur darah hingga berubah warna. Air ini najis dan tidak boleh digunakan sama sekali.",
+            ],
+          },
+          {
+            type: "highlight",
+            content:
+              "Catatan Penting: Air laut hukumnya suci dan menyucikan meskipun rasanya asin. Nabi bersabda: 'Air laut itu suci airnya dan halal bangkainya.' (HR. Abu Dawud, Tirmidzi)",
+          },
+        ],
+      },
+      {
+        subtitle: "c. Contoh Kasus Air dalam Kehidupan Sehari-hari",
         content: [
           {
             type: "list",
             ordered: false,
             items: [
-              "Air mutlak (air murni) - Air yang tidak berubah sifatnya dan suci serta menyucikan",
-              "Air musta'mal (air bekas) - Air yang telah digunakan untuk bersuci dan tidak berubah sifatnya",
-              "Air yang berubah sifatnya karena tercampur najis - Air ini menjadi najis dan tidak dapat digunakan untuk bersuci",
-              "Air yang terkena najis - Air yang tercampur dengan najis sehingga berubah sifatnya",
+              "Air kopi/teh → Suci tapi tidak bisa untuk wudhu (termasuk air mutaghayyir karena berubah warna dan rasa)",
+              "Air kolam renang yang sudah dicampur klorin → Selama tidak berubah sifatnya secara signifikan dan tidak ada najis, masih bisa untuk bersuci",
+              "Air sumur yang kemasukan tikus mati → Najis (air mutanajjis), harus dikuras dan dibersihkan",
+              "Air hujan yang sudah mengalir di got → Jika belum berubah warna/bau/rasa, masih suci dan bisa untuk bersuci",
+              "Air dalam bak mandi yang sudah digunakan mandi → Jika jumlahnya ≥ 2 qullah dan tidak berubah sifatnya, masih bisa untuk bersuci",
+              "Air mineral dalam kemasan → Termasuk air mutlak, suci dan bisa untuk bersuci",
+              "Air yang bercampur tanah/lumpur → Jika sekedar keruh tapi belum berubah drastis dan tidak ada najis, masih bisa bersuci",
+              "Air bekas mencuci beras → Termasuk air mutaghayyir, suci tapi tidak bisa untuk wudhu",
             ],
           },
         ],
       },
       {
-        subtitle: "b. Macam-macam Air yang Bisa Dipakai Bersuci",
+        subtitle: "d. Macam-macam Air yang Bisa Dipakai Bersuci",
         content: [
           {
             type: "list",
@@ -507,15 +581,47 @@ const paiData = [
               "Air sungai",
               "Air laut",
               "Air salju",
-              "Air es",
+              "Air es (yang mencair)",
               "Air mata air",
-              "Air dari awan",
+              "Air embun",
             ],
           },
           {
             type: "highlight",
             content:
-              "Ketentuan: Air harus dalam jumlah minimal 2 qullah (sekitar 216 liter) jika ada kemungkinan terkena najis. Air laut suci dan menyucikan meskipun asin.",
+              "Ketentuan Dua Qullah: Air yang jumlahnya mencapai dua qullah (± 216 liter atau wadah berukuran 60×60×60 cm) tidak akan menjadi najis meskipun terkena najis, selama tidak berubah warna, bau, atau rasanya. Jika kurang dari dua qullah dan terkena najis, langsung dihukumi najis.",
+          },
+        ],
+      },
+      {
+        subtitle: "e. Macam-macam Najis dan Cara Menyucikannya",
+        content: [
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "Najis Mughallazhah (berat) — Contoh: jilatan anjing dan babi. Cara menyucikan: dicuci 7 kali, salah satunya dengan tanah/debu.",
+              "Najis Mukhaffafah (ringan) — Contoh: air kencing bayi laki-laki yang belum makan selain ASI. Cara menyucikan: cukup dipercikkan air pada bagian yang terkena najis.",
+              "Najis Mutawassithah (sedang) — Semua najis selain dua di atas. Contoh: darah, tinja manusia, air kencing, bangkai, khamr (minuman keras). Cara menyucikan: dibasuh dengan air hingga hilang warna, bau, dan rasanya.",
+            ],
+          },
+          {
+            type: "highlight",
+            content:
+              "Najis Hukmiyyah vs Ainiyyah: Najis Ainiyyah = najis yang tampak wujudnya (bisa dilihat/dicium). Najis Hukmiyyah = najis yang tidak tampak wujudnya tapi hukumnya ada (seperti air kencing yang sudah mengering dan tidak berbekas).",
+          },
+        ],
+      },
+      {
+        subtitle: "f. Hadas Besar dan Hadas Kecil",
+        content: [
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "Hadas Kecil — Terjadi akibat: buang air kecil, buang air besar, kentut, tidur nyenyak, menyentuh kemaluan dengan telapak tangan tanpa alas. Cara bersuci: wudhu.",
+              "Hadas Besar — Terjadi akibat: keluarnya mani (mimpi basah/junub), berhubungan suami istri, haid, nifas, wiladah (melahirkan). Cara bersuci: mandi wajib (ghusl).",
+            ],
           },
         ],
       },
