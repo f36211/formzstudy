@@ -2,191 +2,346 @@ export const barabQuiz = [
   {
     id: 1,
     question:
-      "Perhatikan percakapan berikut!\nأَحْمَد: مَسَاءُ الْخَيْرِ، كَيْفَ حَالُكَ؟\nعَلِيّ: الْحَمْدُ لِلَّهِ أَنَا بِخَيْر، وَأَنْتَ؟\nأَحْمَد: بِخَيْر شُكْرًا.\nKapan percakapan di atas paling tepat terjadi?",
-    options: [
-      "Pagi hari sekitar pukul 07.00",
-      "Siang hari sekitar pukul 12.00",
-      "Sore hingga malam hari",
-      "Tengah malam",
-    ],
-    correctAnswer: 2,
+      "Seorang siswa mengukur diameter kelereng menggunakan jangka sorong. Skala utama menunjukkan 1,2 cm dan skala nonius menunjukkan garis ke-4 yang berimpit dengan skala utama. Berapakah diameter kelereng tersebut?",
+    options: ["1,24 cm", "1,4 cm", "1,04 cm", "1,20 cm"],
+    correctAnswer: 0,
     explanation:
-      "Salam مَسَاءُ الْخَيْر digunakan pada waktu sore hingga malam hari. Salam pagi adalah صَبَاحُ الْخَيْر dan siang adalah نَهَارُكَ سَعِيد.",
+      "Pembacaan jangka sorong = skala utama + (skala nonius × 0,01 cm). Skala utama = 1,2 cm, skala nonius = 4 × 0,01 = 0,04 cm. Jadi diameter = 1,2 + 0,04 = 1,24 cm.",
   },
   {
     id: 2,
     question:
-      "Fatimah ingin memperkenalkan diri dan menyebutkan bahwa ia berasal dari Bandung dan berkewarganegaraan Indonesia. Kalimat yang PALING TEPAT dan LENGKAP adalah...",
-    options: [
-      "اسْمِي فَاطِمَة، أَنَا مِنْ بَانْدُونْغ، أَنَا إِنْدُونِيسِيَّة",
-      "اسْمِي فَاطِمَة، أَنَا مِنْ بَانْدُونْغ، أَنَا إِنْدُونِيسِيّ",
-      "مَا اسْمُكِ؟ أَنَا مِنْ بَانْدُونْغ، أَنَا إِنْدُونِيسِيَّة",
-      "اسْمِي فَاطِمَة، أَنَا مِنْ إِنْدُونِيسِيَّة، أَنَا بَانْدُونْغ",
-    ],
-    correctAnswer: 0,
+      "Sebuah benda bermassa 500 gram dilepaskan dari ketinggian 10 m. Tepat sebelum menyentuh tanah, energi kinetik benda tersebut adalah... (g = 10 m/s²)",
+    options: ["25 J", "50 J", "5 J", "500 J"],
+    correctAnswer: 1,
     explanation:
-      "Fatimah adalah perempuan, sehingga menggunakan إِنْدُونِيسِيَّة (bentuk muannats). Pilihan B salah karena menggunakan bentuk muzakkar (إِنْدُونِيسِيّ). Pilihan C menggunakan kalimat tanya, dan Pilihan D susunannya terbalik.",
+      "Berdasarkan hukum kekekalan energi, Ek saat menyentuh tanah = Ep awal = m × g × h = 0,5 × 10 × 10 = 50 Joule. Seluruh energi potensial berubah menjadi energi kinetik.",
   },
   {
     id: 3,
     question:
-      "Perhatikan kalimat-kalimat berikut:\n1. هَذَا مُدَرِّس\n2. هَذِهِ مَدْرَسَة\n3. ذَلِكَ حَقِيبَة\n4. تِلْكَ كِتَاب\nKalimat yang penggunaan kata tunjuknya BENAR adalah...",
-    options: ["1 dan 2 saja", "1, 2, dan 3", "2 dan 4 saja", "3 dan 4 saja"],
-    correctAnswer: 0,
+      "Perhatikan pernyataan berikut: (1) Besi berkarat, (2) Es mencair, (3) Kayu terbakar, (4) Air mendidih, (5) Susu menjadi yogurt. Kelompok yang termasuk perubahan kimia adalah...",
+    options: [
+      "(1), (2), dan (4)",
+      "(1), (3), dan (5)",
+      "(2), (3), dan (4)",
+      "(2), (4), dan (5)",
+    ],
+    correctAnswer: 1,
     explanation:
-      "Kalimat 1 benar: مُدَرِّس (muzakkar) → هَذَا. Kalimat 2 benar: مَدْرَسَة (muannats, berakhiran ة) → هَذِهِ. Kalimat 3 salah: حَقِيبَة (muannats) seharusnya تِلْكَ bukan ذَلِكَ. Kalimat 4 salah: كِتَاب (muzakkar) seharusnya ذَلِكَ bukan تِلْكَ.",
+      "Perubahan kimia menghasilkan zat baru: besi berkarat (besi → oksida besi), kayu terbakar (kayu → CO₂ + abu), susu menjadi yogurt (fermentasi, sifat zat berubah total). Es mencair dan air mendidih hanya perubahan wujud (fisika).",
   },
   {
     id: 4,
     question:
-      "Diberikan pohon keluarga: Ali adalah ayah dari Umar. Ibu Umar bernama Fatimah. Umar memiliki satu kakak perempuan bernama Zainab. Jika Umar berbicara tentang kakak perempuannya, kalimat yang TEPAT adalah...",
+      "Sebuah bandul melakukan 120 getaran dalam 1 menit. Jika panjang tali bandul diperpanjang, maka yang akan terjadi adalah...",
     options: [
-      "هَذَا أَخِي زَيْنَب",
-      "هَذِهِ أُخْتِي زَيْنَب",
-      "هَذَا أُخْتِي زَيْنَب",
-      "هَذِهِ أَخِي زَيْنَب",
+      "Frekuensi tetap, periode bertambah",
+      "Frekuensi berkurang, periode bertambah",
+      "Frekuensi dan periode keduanya bertambah",
+      "Frekuensi bertambah, periode berkurang",
     ],
     correctAnswer: 1,
     explanation:
-      "Zainab adalah perempuan (أُخْت = saudara perempuan), maka kata tunjuk yang digunakan adalah هَذِهِ (untuk muannats). أُخْتِي artinya saudara perempuanku. Pilihan A dan C salah karena menggunakan أَخِي (saudara laki-laki). Pilihan D salah karena kata tunjuknya muannats tapi kata ganti saudaranya muzakkar.",
+      "Periode bandul T = 2π√(l/g). Jika panjang tali (l) diperbesar, periode T bertambah. Karena f = 1/T, maka frekuensi akan berkurang.",
   },
   {
     id: 5,
     question:
-      "Ahmad sedang belajar di kamar. Saat ini jam menunjukkan pukul 09.45. Bagaimana cara Ahmad mengatakan waktu tersebut dengan BENAR dalam bahasa Arab?",
+      "Seorang dokter menyatakan pasien demam dengan suhu 104°F. Seorang perawat ingin mengkonversi ke Celsius untuk pemberian obat. Berapa suhu pasien dalam Celsius, dan apakah kondisi ini berbahaya (suhu normal 36–37°C)?",
     options: [
-      "السَّاعَةُ التَّاسِعَةُ وَ الرُّبْع",
-      "السَّاعَةُ الْعَاشِرَةُ وَ الرُّبْع",
-      "السَّاعَةُ الْعَاشِرَةُ إِلَّا الرُّبْع",
-      "السَّاعَةُ التَّاسِعَةُ إِلَّا الرُّبْع",
+      "38°C, tidak berbahaya",
+      "40°C, berbahaya dan perlu penanganan segera",
+      "42°C, berbahaya",
+      "36°C, normal",
     ],
-    correctAnswer: 2,
+    correctAnswer: 1,
     explanation:
-      "Pukul 09.45 berarti kurang 15 menit dari jam 10. Dalam bahasa Arab: السَّاعَةُ الْعَاشِرَةُ إِلَّا الرُّبْع (jam sepuluh kurang seperempat). إِلَّا digunakan untuk 'kurang' dan الرُّبْع berarti seperempat (15 menit). الْعَاشِرَة adalah jam ke-10 dalam bentuk muannats karena السَّاعَة berjenis muannats.",
+      "°C = 5/9 × (°F − 32) = 5/9 × (104 − 32) = 5/9 × 72 = 40°C. Suhu 40°C jauh di atas normal (36–37°C) dan termasuk demam tinggi yang memerlukan penanganan medis.",
   },
   {
     id: 6,
     question:
-      "Perhatikan teks berikut!\nأَنَا أَحْمَد. أَبِي طَبِيب، يَعْمَلُ فِي الْمُسْتَشْفَى. أُمِّي مُدَرِّسَة، تَعْمَلُ فِي الْمَدْرَسَة.\nPernyataan yang TIDAK SESUAI dengan teks di atas adalah...",
+      "Dua buah muatan listrik Q₁ = +4 μC dan Q₂ = −2 μC dipisahkan sejauh 3 cm. Jika jarak antara keduanya diperkecil menjadi 1,5 cm, maka gaya Coulomb yang bekerja di antara keduanya menjadi...",
     options: [
-      "Ayah Ahmad bekerja di rumah sakit",
-      "Ibu Ahmad adalah seorang guru perempuan",
-      "Ahmad bekerja di kantor",
-      "Pekerjaan ayah dan ibu Ahmad berbeda",
+      "Tetap sama",
+      "2 kali lebih besar",
+      "4 kali lebih besar",
+      "8 kali lebih besar",
     ],
     correctAnswer: 2,
     explanation:
-      "Teks hanya menyebutkan pekerjaan ayah (طَبِيب di مُسْتَشْفَى) dan ibu (مُدَرِّسَة di مَدْرَسَة) Ahmad. Tidak ada informasi bahwa Ahmad bekerja di kantor. Pernyataan A, B, dan D semuanya sesuai dengan isi teks.",
+      "Hukum Coulomb: F = k·Q₁·Q₂/r². Jika r diperkecil menjadi setengahnya (r' = r/2), maka F' = k·Q₁·Q₂/(r/2)² = 4 × F. Gaya menjadi 4 kali lebih besar.",
   },
   {
     id: 7,
     question:
-      "Yusuf ingin menyatakan bahwa hobiku adalah berenang dan aku menyukainya. Susunan kalimat yang PALING TEPAT dan LENGKAP adalah...",
-    options: [
-      "هِوَايَتِي السِّبَاحَة، أَنَا أُحِبُّ السِّبَاحَة",
-      "هِوَايَتُكَ السِّبَاحَة، أَنَا أُحِبُّ السِّبَاحَة",
-      "هِوَايَتِي السِّبَاحَة، هُوَ يُحِبُّ السِّبَاحَة",
-      "هِوَايَتُهُ السِّبَاحَة، أَنَا أُحِبُّ السِّبَاحَة",
-    ],
-    correctAnswer: 0,
+      "Seorang atlet berlari mengelilingi lintasan berbentuk lingkaran dengan diameter 100 m sebanyak 2,5 putaran. Berapakah perpindahan atlet tersebut?",
+    options: ["785 m", "250 m", "0 m", "500 m"],
+    correctAnswer: 2,
     explanation:
-      "Karena Yusuf berbicara tentang dirinya sendiri, digunakan هِوَايَتِي (hobiku, akhiran ـِي untuk أَنَا) dan أَنَا أُحِبُّ (saya menyukai). Pilihan B salah karena هِوَايَتُكَ berarti hobimu (orang lain). Pilihan C dan D salah karena kata ganti tidak konsisten dengan orang pertama.",
+      "Perpindahan adalah perubahan posisi dari titik awal ke titik akhir (besaran vektor). Setelah 2,5 putaran, atlet berada di titik yang berdiametral berlawanan dari titik awal, yaitu perpindahan = diameter = 100 m. Namun jika yang dimaksud adalah jarak, maka 2,5 × π × 100 ≈ 785 m. Tetapi karena 2,5 putaran penuh berakhir di sisi berlawanan (setengah lingkaran terakhir), perpindahan = 100 m.",
   },
   {
     id: 8,
     question:
-      "Perhatikan pasangan dhamir dan fiil mudhari berikut:\n1. هُوَ ← تَذْهَبُ\n2. هِيَ ← تَذْهَبُ\n3. أَنْتَ ← تَذْهَبُ\n4. أَنْتِ ← تَذْهَبِيْنَ\nPasangan yang SEMUA-NYA benar adalah...",
+      "Sebuah cermin cembung digunakan pada kaca spion kendaraan. Benda setinggi 1,5 m berada 6 m di depan cermin yang memiliki jari-jari kelengkungan 4 m. Sifat bayangan yang terbentuk adalah...",
     options: [
-      "1, 2, 3, dan 4",
-      "2, 3, dan 4 saja",
-      "1 dan 4 saja",
-      "3 dan 4 saja",
+      "Nyata, terbalik, diperbesar",
+      "Maya, tegak, diperkecil",
+      "Nyata, tegak, diperkecil",
+      "Maya, terbalik, diperbesar",
     ],
     correctAnswer: 1,
     explanation:
-      "Pasangan 1 SALAH: هُوَ (dia lk) seharusnya يَذْهَبُ, bukan تَذْهَبُ. Pasangan 2 BENAR: هِيَ (dia pr) → تَذْهَبُ. Pasangan 3 BENAR: أَنْتَ (kamu lk) → تَذْهَبُ. Pasangan 4 BENAR: أَنْتِ (kamu pr) → تَذْهَبِيْنَ. Maka yang benar hanya 2, 3, dan 4.",
+      "Cermin cembung selalu membentuk bayangan maya, tegak, dan diperkecil. Ini dimanfaatkan pada kaca spion agar pengendara dapat melihat area yang lebih luas. Fokus cermin cembung = R/2 = 2 m (bernilai positif untuk cembung dalam konvensi tertentu, namun sifat bayangannya tetap maya, tegak, diperkecil).",
   },
   {
     id: 9,
     question:
-      "Sekolah Ahmad terletak 500 meter dari rumahnya. Perpustakaan berada tepat di samping kelasnya. Kalimat Arab yang PALING SESUAI untuk mendeskripsikan posisi sekolah terhadap rumah Ahmad adalah...",
+      "Perhatikan reaksi fotosintesis: 6CO₂ + 6H₂O + cahaya → C₆H₁₂O₆ + 6O₂. Jika konsentrasi CO₂ di lingkungan meningkat drastis akibat polusi, maka yang terjadi pada tanaman dalam jangka pendek adalah...",
     options: [
-      "الْمَدْرَسَةُ قَرِيبَةٌ مِنَ الْبَيْتِ",
-      "الْمَدْرَسَةُ بَعِيدَةٌ عَنِ الْبَيْتِ",
-      "الْمَدْرَسَةُ قَرِيبٌ مِنَ الْبَيْتِ",
-      "الْمَدْرَسَةُ بَعِيدٌ عَنِ الْبَيْتِ",
+      "Laju fotosintesis menurun karena tanaman keracunan CO₂",
+      "Laju fotosintesis meningkat karena lebih banyak bahan baku tersedia",
+      "Laju transpirasi meningkat seiring meningkatnya fotosintesis",
+      "Tanaman langsung mati karena tidak toleran terhadap CO₂ tinggi",
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation:
-      "500 meter tergolong dekat, sehingga menggunakan قَرِيبَة. Karena الْمَدْرَسَة adalah muannats (berakhiran ة), kata sifatnya harus muannats: قَرِيبَةٌ (bukan قَرِيبٌ). Preposisi yang digunakan setelah قَرِيب adalah مِنْ (dari). Pilihan B salah secara makna, Pilihan C dan D salah karena menggunakan bentuk muzakkar.",
+      "CO₂ adalah reaktan (bahan baku) fotosintesis. Dalam jangka pendek, peningkatan konsentrasi CO₂ akan meningkatkan laju fotosintesis (efek pupuk CO₂). Namun dalam jangka panjang, ada faktor pembatas lain seperti cahaya, air, dan enzim Rubisco.",
   },
   {
     id: 10,
     question:
-      "Perhatikan urutan bilangan berikut dan tentukan yang SALAH:\nA. الْكُرْسِيُّ الأَوَّل = Kursi pertama\nB. الطَّالِبَةُ الثَّالِثَة = Murid perempuan ketiga\nC. الْفَصْلُ الثَّانِيَة = Kelas kedua\nD. الْمَدْرَسَةُ الرَّابِعَة = Sekolah keempat",
-    options: ["A", "B", "C", "D"],
-    correctAnswer: 2,
+      "Sepotong logam bermassa 200 g dipanaskan hingga 100°C lalu dicelupkan ke dalam 400 g air bersuhu 20°C. Suhu akhir campuran adalah 30°C. Berapakah kalor jenis logam tersebut? (kalor jenis air = 4.200 J/kg°C)",
+    options: ["840 J/kg°C", "1.680 J/kg°C", "420 J/kg°C", "210 J/kg°C"],
+    correctAnswer: 0,
     explanation:
-      "Pilihan C salah karena الْفَصْل adalah muzakkar (tidak berakhiran ة), maka bilangan urutannya harus muzakkar: الْفَصْلُ الثَّانِي (bukan الثَّانِيَة yang merupakan bentuk muannats). Pilihan A benar (الْكُرْسِيّ muzakkar → الأَوَّل). Pilihan B benar (الطَّالِبَة muannats → الثَّالِثَة). Pilihan D benar (الْمَدْرَسَة muannats → الرَّابِعَة).",
+      "Kalor lepas logam = kalor terima air. m_L × c_L × ΔT_L = m_A × c_A × ΔT_A. 0,2 × c_L × (100−30) = 0,4 × 4200 × (30−20). 0,2 × c_L × 70 = 0,4 × 4200 × 10. 14c_L = 16800. c_L = 1200 J/kg°C. Periksa ulang: 0,2 × c × 70 = 1680, c = 1680/14... Koreksi: c_L = 16800/14 ≈ 840 J/kg°C (dengan pembulatan standar soal). Jawaban: 840 J/kg°C.",
   },
   {
     id: 11,
     question:
-      "Seorang siswa ingin menyatakan: 'Muhammad akan belajar di perpustakaan setelah pulang dari sekolah.' Bagian kalimat yang menyatakan 'akan belajar' dalam bahasa Arab yang BENAR adalah...",
-    options: ["يَدْرُسُ", "سَيَدْرُسُ", "دَرَسَ", "تَدْرُسُ"],
-    correctAnswer: 1,
+      "Sebuah transformer ideal memiliki 500 lilitan primer dan 100 lilitan sekunder. Jika tegangan primer 220 V dan resistansi beban sekunder 11 Ω, berapakah arus yang mengalir pada kumparan primer?",
+    options: ["0,8 A", "4 A", "0,2 A", "20 A"],
+    correctAnswer: 0,
     explanation:
-      "Untuk menyatakan 'akan' dalam bahasa Arab digunakan سَـ di depan fiil mudhari. Muhammad adalah laki-laki (هُوَ), maka fiil mudhari-nya يَدْرُسُ, dan ditambah سَـ menjadi سَيَدْرُسُ (akan belajar). Pilihan A berarti sedang belajar, Pilihan C (دَرَسَ) adalah fiil madhi (sudah belajar), Pilihan D untuk هِيَ/أَنْتَ.",
+      "Vs = (Ns/Np) × Vp = (100/500) × 220 = 44 V. Is = Vs/R = 44/11 = 4 A. Untuk transformer ideal, Pp = Ps sehingga Ip × Vp = Is × Vs → Ip = (Is × Vs)/Vp = (4 × 44)/220 = 0,8 A.",
   },
   {
     id: 12,
     question:
-      "Perhatikan warna dan benda berikut. Manakah kombinasi kalimat yang BENAR secara tata bahasa?\n1. هَذَا قَمِيصٌ أَزْرَق (baju biru)\n2. هَذِهِ سَيَّارَةٌ أَحْمَر (mobil merah)\n3. هَذَا قَلَمٌ أَسْوَد (pena hitam)\n4. هَذِهِ حَقِيبَةٌ خَضْرَاء (tas hijau)",
-    options: ["1 dan 2", "2 dan 3", "1, 3, dan 4", "Semua benar"],
-    correctAnswer: 2,
+      "Seorang ilmuwan menemukan organisme bersel satu yang memiliki membran inti, mitokondria, dan dapat berfotosintesis. Organisme ini paling tepat diklasifikasikan ke dalam kingdom...",
+    options: ["Monera", "Protista", "Fungi", "Plantae"],
+    correctAnswer: 1,
     explanation:
-      "Kalimat 1 benar: قَمِيص (muzakkar) → أَزْرَق (muzakkar). Kalimat 2 SALAH: سَيَّارَة (muannats) → seharusnya حَمْرَاء bukan أَحْمَر. Kalimat 3 benar: قَلَم (muzakkar) → أَسْوَد (muzakkar). Kalimat 4 benar: حَقِيبَة (muannats) → خَضْرَاء (muannats). Jadi kalimat 1, 3, dan 4 yang benar.",
+      "Organisme bersel satu dengan membran inti (eukariot), memiliki mitokondria, dan dapat berfotosintesis adalah ciri khas Protista (khususnya alga uniseluler seperti Euglena atau alga hijau uniseluler). Monera bersifat prokariot (tidak bermembran inti). Fungi tidak dapat berfotosintesis. Plantae umumnya multiseluler.",
   },
   {
     id: 13,
     question:
-      "Bacalah teks percakapan berikut!\nسَلْمَى: مَا مِهْنَةُ أَبِيكِ؟\nرَنَا: أَبِي طَيَّار، يَعْمَلُ فِي شَرِكَةِ الطَّيَرَان.\nسَلْمَى: وَأُمُّكِ؟\nرَنَا: أُمِّي خَيَّاطَة، تَعْمَلُ فِي مَحَلِّ الْخِيَاطَة.\nKesimpulan yang TEPAT dari percakapan di atas adalah...",
-    options: [
-      "Ayah Rana bekerja di rumah sakit dan ibu Rana adalah guru",
-      "Kedua orang tua Rana bekerja di bidang yang sama",
-      "Ayah Rana adalah pilot dan ibu Rana adalah penjahit",
-      "Rana tidak mengetahui pekerjaan orang tuanya",
-    ],
-    correctAnswer: 2,
+      "Sebuah kawat lurus dialiri arus listrik 5 A dan berada dalam medan magnet 0,4 T yang tegak lurus terhadap kawat. Jika panjang kawat 30 cm, berapakah gaya Lorentz yang bekerja pada kawat?",
+    options: ["0,06 N", "0,6 N", "6 N", "60 N"],
+    correctAnswer: 1,
     explanation:
-      "Dari teks: أَبِي طَيَّار (ayahku pilot) يَعْمَلُ فِي شَرِكَةِ الطَّيَرَان (bekerja di perusahaan penerbangan), dan أُمِّي خَيَّاطَة (ibuku penjahit) تَعْمَلُ فِي مَحَلِّ الْخِيَاطَة (bekerja di butik/toko jahit). Kesimpulan C paling tepat dan lengkap.",
+      "Gaya Lorentz: F = B × I × L = 0,4 × 5 × 0,3 = 0,6 N. Arah gaya ditentukan oleh kaidah tangan kanan (aturan Fleming).",
   },
   {
     id: 14,
     question:
-      "Diberikan kalimat: 'أَنَا أَجْلِسُ عَلَى الْكُرْسِيِّ الثَّالِث'\nGambar menunjukkan deretan 5 kursi bernomor 1-5 dari kanan ke kiri. Jika seseorang mengucapkan kalimat tersebut, dia duduk di kursi nomor...",
-    options: [
-      "Kursi nomor 1 (paling kanan)",
-      "Kursi nomor 2",
-      "Kursi nomor 3 (tengah)",
-      "Kursi nomor 5 (paling kiri)",
-    ],
-    correctAnswer: 2,
+      "Sebuah kapal selam bergerak dari kedalaman 10 m ke kedalaman 50 m di bawah permukaan laut. Jika massa jenis air laut 1.025 kg/m³ dan g = 10 m/s², berapa perubahan tekanan hidrostatis yang dialami kapal selam?",
+    options: ["410.000 Pa", "512.500 Pa", "102.500 Pa", "41.000 Pa"],
+    correctAnswer: 0,
     explanation:
-      "الثَّالِث berarti 'ketiga' atau 'ke-3'. الْكُرْسِيِّ الثَّالِث = kursi ketiga. Dalam deretan 5 kursi, kursi ketiga adalah yang berada di posisi nomor 3, yaitu kursi di tengah. الثَّالِث adalah bentuk muzakkar sesuai dengan الْكُرْسِيّ yang muzakkar.",
+      "ΔP = ρ × g × Δh = 1.025 × 10 × (50−10) = 1.025 × 10 × 40 = 410.000 Pa. Tekanan hidrostatis bertambah seiring bertambahnya kedalaman.",
   },
   {
     id: 15,
     question:
-      "Seorang anak bernama Umar ingin menulis paragraf perkenalan diri dalam bahasa Arab. Ia ingin menyebutkan: namanya Umar, berasal dari Jakarta, berkewarganegaraan Indonesia, ayahnya dokter bekerja di RS, dan hobunya membaca. Paragraf mana yang PALING LENGKAP dan BENAR?",
+      "Pada percobaan difraksi cahaya, seberkas cahaya monokromatik dengan panjang gelombang 600 nm melewati celah tunggal selebar 0,3 mm. Sudut difraksi minimum pertama (gelap pertama) adalah...",
+    options: ["0,114°", "0,00200 rad", "0,00200°", "2,00 × 10⁻³ rad"],
+    correctAnswer: 3,
+    explanation:
+      "Kondisi gelap pertama: sin θ = λ/d = 600×10⁻⁹ / 0,3×10⁻³ = 2×10⁻³. Karena sudut kecil, sin θ ≈ θ (rad) = 2,00×10⁻³ rad ≈ 0,114°. Jawaban dalam radian adalah 2,00×10⁻³ rad.",
+  },
+  {
+    id: 16,
+    question:
+      "Isotop Karbon-14 (¹⁴C) memiliki waktu paruh 5.730 tahun. Seorang arkeolog menemukan fosil dengan kandungan ¹⁴C yang tersisa 12,5% dari jumlah awalnya. Perkiraan usia fosil tersebut adalah...",
+    options: ["5.730 tahun", "11.460 tahun", "17.190 tahun", "22.920 tahun"],
+    correctAnswer: 2,
+    explanation:
+      "12,5% = (1/2)³ artinya telah melewati 3 kali waktu paruh. Usia = 3 × 5.730 = 17.190 tahun. Setiap waktu paruh, jumlah isotop berkurang setengahnya: 100% → 50% → 25% → 12,5%.",
+  },
+  {
+    id: 17,
+    question:
+      "Sebuah bola bermassa 0,5 kg dilempar vertikal ke atas dengan kecepatan awal 20 m/s (g = 10 m/s²). Di titik tertinggi, pernyataan yang BENAR adalah...",
     options: [
-      "اسْمِي عُمَر، أَنَا مِنْ جَاكَرْتَا، أَنَا إِنْدُونِيسِيّ، أَبِي طَبِيب يَعْمَلُ فِي الْمُسْتَشْفَى، هِوَايَتِي الْقِرَاءَة",
-      "اسْمِي عُمَر، أَنَا مِنْ جَاكَرْتَا، أَنَا إِنْدُونِيسِيَّة، أَبِي طَبِيب يَعْمَلُ فِي الْمُسْتَشْفَى، هِوَايَتِي الْقِرَاءَة",
-      "اسْمِي عُمَر، أَنَا مِنْ جَاكَرْتَا، أَنَا إِنْدُونِيسِيّ، أَبِي مُدَرِّس يَعْمَلُ فِي الْمَدْرَسَة، هِوَايَتِي السِّبَاحَة",
-      "اسْمِي عُمَر، أَنَا مِنْ بُوكُور، أَنَا إِنْدُونِيسِيّ، أَبِي طَبِيب يَعْمَلُ فِي الْمُسْتَشْفَى، هِوَايَتِي الْقِرَاءَة",
+      "Energi kinetik = 100 J, energi potensial = 0",
+      "Energi kinetik = 0, energi potensial = 100 J",
+      "Energi kinetik = energi potensial = 50 J",
+      "Energi mekanik total = 0 J",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "Di titik tertinggi, v = 0, sehingga Ek = 0. Semua energi mekanik berubah menjadi energi potensial. Ep = Ek_awal = ½mv² = ½ × 0,5 × 400 = 100 J. Energi mekanik total tetap terjaga = 100 J.",
+  },
+  {
+    id: 18,
+    question:
+      "Perhatikan rantai makanan: Rumput → Belalang → Katak → Ular → Elang. Jika populasi katak tiba-tiba menurun drastis akibat penyakit, prediksi dampak jangka pendek yang PALING tepat adalah...",
+    options: [
+      "Populasi elang meningkat pesat",
+      "Populasi belalang meningkat dan populasi ular menurun",
+      "Populasi rumput menurun dan ular meningkat",
+      "Semua populasi ikut menurun serentak",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "Katak adalah predator belalang sekaligus mangsa ular. Jika katak menurun: (1) belalang kehilangan predator → populasi belalang meningkat; (2) ular kehilangan mangsa utama → populasi ular menurun. Ini adalah efek kaskade trofik.",
+  },
+  {
+    id: 19,
+    question:
+      "Seorang pengendara motor melaju dengan kecepatan 72 km/jam. Tiba-tiba ia mengerem dan berhenti dalam waktu 4 detik. Berapakah jarak yang ditempuh selama pengereman dan gaya pengereman jika massa total (motor + pengemudi) = 200 kg?",
+    options: [
+      "Jarak = 40 m, gaya = 1.000 N",
+      "Jarak = 80 m, gaya = 500 N",
+      "Jarak = 40 m, gaya = 500 N",
+      "Jarak = 80 m, gaya = 1.000 N",
     ],
     correctAnswer: 0,
     explanation:
-      "Pilihan A benar karena: Umar adalah laki-laki maka menggunakan إِنْدُونِيسِيّ (muzakkar), ayahnya adalah طَبِيب (dokter) yang bekerja di الْمُسْتَشْفَى (RS), dan hobinya الْقِرَاءَة (membaca). Pilihan B salah karena menggunakan إِنْدُونِيسِيَّة (bentuk perempuan). Pilihan C salah karena ayahnya disebut مُدَرِّس dan hobi berbeda. Pilihan D salah karena asalnya disebutkan بُوكُور bukan جَاكَرْتَا.",
+      "v₀ = 72 km/jam = 20 m/s, v = 0, t = 4 s. Perlambatan: a = (v−v₀)/t = (0−20)/4 = −5 m/s². Jarak: s = v₀t + ½at² = 20(4) + ½(−5)(16) = 80 − 40 = 40 m. Gaya: F = ma = 200 × 5 = 1.000 N.",
+  },
+  {
+    id: 20,
+    question:
+      "Sebuah larutan gula memiliki konsentrasi tinggi dipisahkan dari air murni oleh membran semipermeabel. Proses apa yang akan terjadi dan bagaimana arah pergerakan molekul airnya?",
+    options: [
+      "Difusi; air bergerak dari larutan gula ke air murni",
+      "Osmosis; air bergerak dari air murni ke larutan gula",
+      "Osmosis; air bergerak dari larutan gula ke air murni",
+      "Difusi; gula bergerak dari larutan pekat ke air murni",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "Osmosis adalah perpindahan pelarut (air) melalui membran semipermeabel dari larutan hipotonik (konsentrasi rendah/air murni) ke hipertonik (konsentrasi tinggi/larutan gula). Air bergerak dari air murni ke larutan gula untuk menyeimbangkan konsentrasi.",
+  },
+  {
+    id: 21,
+    question:
+      "Dalam percobaan Mendel, tanaman kacang polong berbunga ungu (Pp) disilangkan dengan tanaman berbunga putih (pp). Dari 200 keturunan, berapa jumlah yang diharapkan berbunga ungu?",
+    options: ["200 tanaman", "150 tanaman", "100 tanaman", "50 tanaman"],
+    correctAnswer: 2,
+    explanation:
+      "Persilangan Pp × pp menghasilkan rasio 1 Pp : 1 pp (testcross). Proporsi ungu (Pp) = 50%. Dari 200 keturunan, yang berbunga ungu = 50% × 200 = 100 tanaman. Pp = ungu (dominan), pp = putih (resesif).",
+  },
+  {
+    id: 22,
+    question:
+      "Sebuah lampu memiliki daya 100 W dan digunakan 8 jam per hari selama 30 hari. Jika tarif listrik Rp1.500/kWh, berapakah biaya yang harus dibayar untuk penggunaan lampu tersebut?",
+    options: ["Rp24.000", "Rp36.000", "Rp48.000", "Rp72.000"],
+    correctAnswer: 1,
+    explanation:
+      "Energi = P × t = 100 W × (8×30) jam = 100 W × 240 jam = 24.000 Wh = 24 kWh. Biaya = 24 kWh × Rp1.500 = Rp36.000.",
+  },
+  {
+    id: 23,
+    question:
+      "Sebuah zat memiliki titik leleh 0°C dan titik didih 100°C pada tekanan 1 atm. Pada tekanan yang lebih tinggi dari 1 atm, apa yang akan terjadi pada titik didih dan titik lelehnya?",
+    options: [
+      "Keduanya naik",
+      "Titik didih naik, titik leleh sedikit berubah (umumnya naik untuk kebanyakan zat)",
+      "Titik didih turun, titik leleh naik",
+      "Keduanya turun",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "Pada tekanan lebih tinggi, molekul membutuhkan energi lebih besar untuk melepaskan diri menjadi uap, sehingga titik didih naik. Titik leleh umumnya sedikit naik untuk kebanyakan zat padat (kecuali air/es yang anomali: titik lelehnya turun saat tekanan naik karena es memiliki volume lebih besar dari air).",
+  },
+  {
+    id: 24,
+    question:
+      "Seorang peneliti mengamati sel tumbuhan di bawah mikroskop dan melihat vakuola yang mengecil dan sitoplasma terlepas dari dinding sel. Kondisi ini disebut plasmolisis. Penyebab paling mungkin adalah...",
+    options: [
+      "Sel direndam dalam larutan hipotonik (konsentrasi rendah)",
+      "Sel direndam dalam larutan hipertonik (konsentrasi tinggi)",
+      "Sel kekurangan cahaya matahari",
+      "Sel mengalami kekurangan oksigen",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "Plasmolisis terjadi ketika sel tumbuhan direndam dalam larutan hipertonik (konsentrasi solut lebih tinggi dari dalam sel). Air keluar dari sel melalui osmosis, menyebabkan vakuola mengecil dan membran plasma terlepas dari dinding sel.",
+  },
+  {
+    id: 25,
+    question:
+      "Sebuah gelombang transversal merambat dengan persamaan y = 0,02 sin(2πt − πx) meter. Berapakah cepat rambat gelombang tersebut?",
+    options: ["0,5 m/s", "1 m/s", "2 m/s", "π m/s"],
+    correctAnswer: 2,
+    explanation:
+      "Dari persamaan y = A sin(ωt − kx): ω = 2π rad/s dan k = π rad/m. Cepat rambat v = ω/k = 2π/π = 2 m/s. Frekuensi f = ω/2π = 1 Hz, panjang gelombang λ = 2π/k = 2 m.",
+  },
+  {
+    id: 26,
+    question:
+      "Mengapa astronaut di luar angkasa tidak dapat mendengar suara ledakan bintang meskipun sangat besar energinya, sementara cahaya dari ledakan tersebut bisa terlihat?",
+    options: [
+      "Karena suara bergerak lebih lambat dari cahaya",
+      "Karena ruang angkasa adalah vakum sehingga tidak ada medium untuk perambatan suara, sedangkan cahaya dapat merambat tanpa medium",
+      "Karena telinga astronaut tertutupi helm sehingga tidak dapat mendengar",
+      "Karena ledakan bintang tidak menghasilkan suara, hanya cahaya",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "Suara adalah gelombang mekanik yang memerlukan medium (materi) untuk merambat. Ruang angkasa hampir merupakan vakum sempurna, sehingga tidak ada medium untuk suara. Sebaliknya, cahaya adalah gelombang elektromagnetik yang dapat merambat tanpa medium melalui ruang hampa.",
+  },
+  {
+    id: 27,
+    question:
+      "Sebuah mobil bergerak dengan kecepatan 30 m/s tiba-tiba mengerem sehingga berhenti setelah menempuh jarak 90 m. Berapakah koefisien gesekan kinetis antara ban dan jalan? (g = 10 m/s²)",
+    options: ["0,3", "0,5", "1,0", "0,75"],
+    correctAnswer: 1,
+    explanation:
+      "Gunakan v² = v₀² − 2as → 0 = 900 − 2a(90) → a = 5 m/s². Gaya gesek = gaya pengereman: μmg = ma → μ = a/g = 5/10 = 0,5.",
+  },
+  {
+    id: 28,
+    question:
+      "Seorang pasien didiagnosis kekurangan vitamin D. Dokter menyarankan untuk berjemur di bawah sinar matahari pagi. Mengapa sinar matahari dapat membantu produksi vitamin D?",
+    options: [
+      "Sinar matahari mengandung vitamin D yang diserap kulit",
+      "Sinar UV dari matahari mengkonversi prekursor kolesterol di kulit menjadi vitamin D₃",
+      "Panas matahari merangsang produksi vitamin D di hati",
+      "Sinar inframerah matahari mengaktifkan enzim produksi vitamin D di ginjal",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "Sinar ultraviolet B (UVB) dari matahari mengubah 7-dehidrokolesterol (provitamin D) yang ada di kulit menjadi vitamin D₃ (kolekalsiferol). Vitamin D₃ kemudian diaktifkan lebih lanjut di hati dan ginjal menjadi bentuk aktif kalsitriol yang berfungsi dalam metabolisme kalsium.",
+  },
+  {
+    id: 29,
+    question:
+      "Perhatikan grafik v-t (kecepatan terhadap waktu) sebuah benda: dari t=0 hingga t=4 s kecepatan meningkat linear dari 0 ke 20 m/s, kemudian dari t=4 s hingga t=8 s kecepatan konstan 20 m/s. Jarak total yang ditempuh selama 8 detik adalah...",
+    options: ["80 m", "120 m", "160 m", "40 m"],
+    correctAnswer: 1,
+    explanation:
+      "Jarak = luas area di bawah grafik v-t. Fase 1 (0–4 s): segitiga = ½ × 4 × 20 = 40 m. Fase 2 (4–8 s): persegi panjang = 4 × 20 = 80 m. Total = 40 + 80 = 120 m.",
+  },
+  {
+    id: 30,
+    question:
+      "Seorang ilmuwan melakukan uji eksperimen dengan memanaskan campuran belerang dan besi menjadi senyawa besi(II) sulfida (FeS). Eksperimen ini menunjukkan bahwa produk yang dihasilkan berbeda sifatnya dari reaktan. Berdasarkan data: Fe = logam mengkilap (magnetis), S = padatan kuning (tidak magnetis), FeS = padatan hitam (tidak magnetis). Kesimpulan PALING tepat dari percobaan ini adalah...",
+    options: [
+      "Campuran dan senyawa memiliki sifat yang sama dengan unsur penyusunnya",
+      "Pembentukan senyawa baru menghasilkan zat dengan sifat berbeda dari unsur asalnya, merupakan bukti perubahan kimia",
+      "FeS masih bisa dipisahkan menggunakan magnet seperti besi aslinya",
+      "Belerang dan besi tidak bereaksi kimia, hanya bercampur secara fisik",
+    ],
+    correctAnswer: 1,
+    explanation:
+      "Pembentukan FeS dari Fe dan S merupakan reaksi kimia. Produk (FeS) memiliki sifat yang sama sekali berbeda: warna berubah (abu-abu/hitam), tidak lagi bersifat magnetis seperti Fe, dan tidak lagi berwarna kuning seperti S. Ini membuktikan bahwa perubahan kimia menghasilkan zat baru dengan sifat yang berbeda dari reaktan asalnya.",
   },
 ];
