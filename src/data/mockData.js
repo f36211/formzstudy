@@ -1,6 +1,7 @@
 import paiData from '../subjects/pai/paiData';
 import bindoData from '../subjects/pai/bindo';
 import ipaData from '../subjects/ipa/ipaData';
+import barabData from '../subjects/barabdata';
 
 export const subjectsData = [
   {
@@ -33,7 +34,7 @@ export const subjectsData = [
     description: 'Ringkasan materi + latihan soal Bahasa Arab',
     icon: 'BookMarked',
     color: '#F59E0B',
-    topics: []
+    topics: barabData
   },
   {
     title: 'Matematika',
