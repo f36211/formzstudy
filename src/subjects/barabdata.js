@@ -475,3 +475,5 @@ export const barabdata =[
     ]
   }
 ]
+
+export default barabdata;
