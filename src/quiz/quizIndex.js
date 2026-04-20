@@ -1,7 +1,7 @@
 import { bindoQuiz } from "./bindoQuiz";
 import { paiQuiz } from "./paiQuiz";
 import { matematikaQuiz } from "./matematikaQuiz";
-import ipaQuiz from "./ipaQuiz.json";
+import { ipaQuiz } from "./ipaquiz";
 import { barabQuiz } from "./barabquiz";
 export const quizDatabase = {
   "bahasa-indonesia": bindoQuiz,
