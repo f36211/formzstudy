@@ -74,6 +74,16 @@
     @apply leading-relaxed;
   }
 
+  /* Guardrails: prevent tables from forcing layout overflow */
+  .prose-custom table {
+    max-width: 100%;
+  }
+  .prose-custom th,
+  .prose-custom td {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+
   .prose-custom h1, .prose-custom h2, .prose-custom h3 {
     @apply font-bold text-[var(--text-main)] mb-4 mt-6 first:mt-0;
   }

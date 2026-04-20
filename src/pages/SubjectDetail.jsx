@@ -38,7 +38,7 @@ export default function SubjectDetail() {
     topics.length > 0 ? (completedTopicIds.length / topics.length) * 100 : 0;
 
   return (
-    <div className="w-full animation-fade-in pb-20">
+    <div className="w-full animation-fade-in pb-16 sm:pb-20">
       {/* Back Navigation */}
       <Link
         to="/"
@@ -98,12 +98,14 @@ export default function SubjectDetail() {
       </motion.div>
 
       {/* Main Layout: Cards & Sidebar */}
-      <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+      <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-12">
         {/* Topic Card List */}
         <div className="flex-1 order-2 lg:order-1">
-          <div className="flex items-center justify-between mb-6 md:mb-8">
-            <h2 className="text-xl md:text-2xl font-black text-[var(--text-main)] m-0 uppercase tracking-tight">Kurikulum Materi</h2>
-            <div className="text-[10px] font-bold text-[var(--text-muted)] uppercase tracking-widest bg-[var(--bg-alternate)] px-3 py-1 rounded-full">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6 md:mb-8">
+            <h2 className="text-xl md:text-2xl font-black text-[var(--text-main)] m-0 uppercase tracking-tight">
+              Kurikulum Materi
+            </h2>
+            <div className="w-fit text-[10px] font-bold text-[var(--text-muted)] uppercase tracking-widest bg-[var(--bg-alternate)] px-3 py-1 rounded-full">
               {topics.length} Topik
             </div>
           </div>

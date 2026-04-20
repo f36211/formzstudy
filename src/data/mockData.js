@@ -1,5 +1,6 @@
 import paiData from '../subjects/pai/paiData';
 import bindoData from '../subjects/pai/bindo';
+import ipaData from '../subjects/ipa/ipaData';
 
 export const subjectsData = [
   {
@@ -24,7 +25,7 @@ export const subjectsData = [
     description: 'Ringkasan materi + latihan soal Ilmu Pengetahuan Alam',
     icon: 'FlaskConical',
     color: '#22C55E',
-    topics: []
+    topics: ipaData
   },
   {
     title: 'Bahasa Arab',

@@ -91,8 +91,8 @@ export default function SidebarLayout() {
       </aside>
 
       {/* Main Content Area */}
-      <main className="flex-1 flex flex-col overflow-x-hidden pt-6 md:pt-10 pb-24 md:pb-12">
-        <div className="w-full max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-12">
+      <main className="flex-1 min-w-0 flex flex-col pt-6 md:pt-10 pb-24 md:pb-12">
+        <div className="w-full min-w-0 max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-12">
           <Outlet />
         </div>
       </main>

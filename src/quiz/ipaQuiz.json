@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "question": "Seorang siswa mengukur diameter kelereng menggunakan jangka sorong. Skala utama menunjukkan 1,2 cm dan skala nonius menunjukkan garis ke-4 yang berimpit dengan skala utama. Berapakah diameter kelereng tersebut?",
+    "options": ["1,24 cm", "1,4 cm", "1,04 cm", "1,20 cm"],
+    "correctAnswer": 0,
+    "explanation": "Pembacaan jangka sorong = skala utama + (skala nonius × 0,01 cm). Skala utama = 1,2 cm, skala nonius = 4 × 0,01 = 0,04 cm. Jadi diameter = 1,2 + 0,04 = 1,24 cm."
+  },
+  {
+    "id": 2,
+    "question": "Sebuah benda bermassa 500 gram dilepaskan dari ketinggian 10 m. Tepat sebelum menyentuh tanah, energi kinetik benda tersebut adalah... (g = 10 m/s²)",
+    "options": ["25 J", "50 J", "5 J", "500 J"],
+    "correctAnswer": 1,
+    "explanation": "Berdasarkan hukum kekekalan energi, Ek saat menyentuh tanah = Ep awal = m × g × h = 0,5 × 10 × 10 = 50 Joule. Seluruh energi potensial berubah menjadi energi kinetik."
+  },
+  {
+    "id": 3,
+    "question": "Perhatikan pernyataan berikut: (1) Besi berkarat, (2) Es mencair, (3) Kayu terbakar, (4) Air mendidih, (5) Susu menjadi yogurt. Kelompok yang termasuk perubahan kimia adalah...",
+    "options": ["(1), (2), dan (4)", "(1), (3), dan (5)", "(2), (3), dan (4)", "(2), (4), dan (5)"],
+    "correctAnswer": 1,
+    "explanation": "Perubahan kimia menghasilkan zat baru: besi berkarat (besi → oksida besi), kayu terbakar (kayu → CO₂ + abu), susu menjadi yogurt (fermentasi, sifat zat berubah total). Es mencair dan air mendidih hanya perubahan wujud (fisika)."
+  },
+  {
+    "id": 4,
+    "question": "Sebuah bandul melakukan 120 getaran dalam 1 menit. Jika panjang tali bandul diperpanjang, maka yang akan terjadi adalah...",
+    "options": ["Frekuensi tetap, periode bertambah", "Frekuensi berkurang, periode bertambah", "Frekuensi dan periode keduanya bertambah", "Frekuensi bertambah, periode berkurang"],
+    "correctAnswer": 1,
+    "explanation": "Periode bandul T = 2π√(l/g). Jika panjang tali (l) diperbesar, periode T bertambah. Karena f = 1/T, maka frekuensi akan berkurang."
+  },
+  {
+    "id": 5,
+    "question": "Seorang dokter menyatakan pasien demam dengan suhu 104°F. Seorang perawat ingin mengkonversi ke Celsius untuk pemberian obat. Berapa suhu pasien dalam Celsius, dan apakah kondisi ini berbahaya (suhu normal 36–37°C)?",
+    "options": ["38°C, tidak berbahaya", "40°C, berbahaya dan perlu penanganan segera", "42°C, berbahaya", "36°C, normal"],
+    "correctAnswer": 1,
+    "explanation": "°C = 5/9 × (°F − 32) = 5/9 × (104 − 32) = 5/9 × 72 = 40°C. Suhu 40°C jauh di atas normal (36–37°C) dan termasuk demam tinggi yang memerlukan penanganan medis."
+  }
+]
+

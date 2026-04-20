@@ -16,14 +16,14 @@ export default function SubjectCard({ title, description, icon: Icon, color, slu
       <Link to={`/subject/${slug}`} className="block h-full no-underline">
         <div className="h-full bg-[var(--bg-card)] border border-[var(--border-card)] rounded-2xl shadow-[var(--shadow-soft)] p-6 flex flex-col transition-all duration-300 hover:shadow-[var(--shadow-md)] hover:border-[var(--accent-blue)] group">
           {/* Icon Header */}
-          <div className="flex items-center gap-4 mb-5">
+          <div className="flex items-center gap-4 mb-5 min-w-0">
             <div
               className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-transform group-hover:scale-110 duration-300"
               style={{ background: `${color}25`, color: color }}
             >
               <Icon size={24} strokeWidth={2.5} />
             </div>
-            <h3 className="text-xl font-extrabold text-[var(--text-main)] m-0 leading-tight">
+            <h3 className="text-xl font-extrabold text-[var(--text-main)] m-0 leading-tight min-w-0 truncate">
               {title}
             </h3>
           </div>

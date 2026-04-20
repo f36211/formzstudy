@@ -5,50 +5,60 @@ import Kubus3D from '../math/Kubus3D';
 
 export default function SubjectPage() {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-      <header>
+    <div className="w-full animation-fade-in pb-20">
+      <header className="mb-8 sm:mb-10">
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-          <span style={{ color: 'var(--accent)', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', fontSize: '0.85rem' }}>
+          <span className="inline-block text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] text-[var(--text-muted)]">
             Mathematics
           </span>
-          <h1 style={{ fontSize: '2.5rem', margin: '0.5rem 0' }}>Geometry & Algebra</h1>
-          <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', maxWidth: '600px' }}>
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tighter text-[var(--text-main)] m-0 mt-3">
+            Geometry & Algebra
+          </h1>
+          <p className="text-sm sm:text-base text-[var(--text-secondary)] m-0 mt-3 max-w-2xl leading-relaxed font-medium">
             Interactive visualizations for SMP level mathematics. Explore 3D structures and formulas dynamically.
           </p>
         </motion.div>
       </header>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
         {/* Pythagoras Section */}
-        <div className="glass-panel" style={{ padding: '2rem', display: 'flex', flexDirection: 'column' }}>
-          <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Pythagoras Theorem</h2>
-          <div style={{ padding: '1rem', background: 'rgba(0,0,0,0.2)', borderRadius: '12px', textAlign: 'center', marginBottom: '2rem' }}>
-            <MathJax style={{ fontSize: '1.5rem' }}>
+        <div className="glass-panel p-5 sm:p-8 flex flex-col">
+          <h2 className="text-lg sm:text-xl font-black tracking-tight text-[var(--text-main)] m-0 mb-4">
+            Pythagoras Theorem
+          </h2>
+          <div className="p-4 rounded-2xl text-center mb-6 bg-black/5 dark:bg-white/5 border border-[var(--border-card)]">
+            <MathJax className="text-xl sm:text-2xl">
               {"\\[ a^2 + b^2 = c^2 \\]"}
             </MathJax>
           </div>
-          <div style={{ flex: 1, minHeight: '300px', position: 'relative' }}>
+          <div className="flex-1 min-h-[260px] sm:min-h-[320px] relative">
             <PythagorasVisualizer />
           </div>
         </div>
 
         {/* 3D Geometry Section */}
-        <div className="glass-panel" style={{ padding: '2rem', display: 'flex', flexDirection: 'column' }}>
-          <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Bangun Ruang (3D)</h2>
-          <p style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>
+        <div className="glass-panel p-5 sm:p-8 flex flex-col">
+          <h2 className="text-lg sm:text-xl font-black tracking-tight text-[var(--text-main)] m-0 mb-3">
+            Bangun Ruang (3D)
+          </h2>
+          <p className="text-sm text-[var(--text-secondary)] m-0 mb-6 font-medium leading-relaxed">
             Interact with the Kubus below. Drag to rotate, scroll to zoom.
           </p>
-          <div style={{ flex: 1, minHeight: '300px', borderRadius: '12px', overflow: 'hidden', background: '#0f172a' }}>
+          <div className="flex-1 min-h-[260px] sm:min-h-[320px] rounded-2xl overflow-hidden bg-slate-900 border border-[var(--border-card)] shadow-inner">
             <Kubus3D />
           </div>
-          <div style={{ marginTop: '2rem', display: 'grid', gap: '1rem', gridTemplateColumns: '1fr 1fr' }}>
-            <div style={{ padding: '1rem', background: 'rgba(255,255,255,0.05)', borderRadius: '8px' }}>
-              <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Volume</span>
-              <MathJax>{"\\[ V = s^3 \\]"}</MathJax>
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="p-4 rounded-2xl border border-[var(--border-card)] bg-white/5 dark:bg-black/10">
+              <span className="text-[10px] font-black uppercase tracking-widest text-[var(--text-muted)]">Volume</span>
+              <div className="mt-2">
+                <MathJax>{"\\[ V = s^3 \\]"}</MathJax>
+              </div>
             </div>
-            <div style={{ padding: '1rem', background: 'rgba(255,255,255,0.05)', borderRadius: '8px' }}>
-              <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Surface Area</span>
-              <MathJax>{"\\[ L = 6s^2 \\]"}</MathJax>
+            <div className="p-4 rounded-2xl border border-[var(--border-card)] bg-white/5 dark:bg-black/10">
+              <span className="text-[10px] font-black uppercase tracking-widest text-[var(--text-muted)]">Surface Area</span>
+              <div className="mt-2">
+                <MathJax>{"\\[ L = 6s^2 \\]"}</MathJax>
+              </div>
             </div>
           </div>
         </div>

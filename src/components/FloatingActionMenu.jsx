@@ -50,7 +50,13 @@ export default function FloatingActionMenu() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <div className="fixed bottom-24 md:bottom-8 right-6 md:right-8 z-50 flex flex-col items-end">
+    <div
+      className={[
+        "fixed bottom-24 md:bottom-8 z-50 flex flex-col items-end",
+        // On topic pages, put the FAB on the left on mobile so it doesn't cover table right columns.
+        isTopicPage ? "left-6 right-auto md:left-auto md:right-8" : "right-6 md:right-8",
+      ].join(" ")}
+    >
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -58,7 +64,7 @@ export default function FloatingActionMenu() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.9 }}
             transition={{ duration: 0.2 }}
-            className="flex flex-col gap-3 mb-5 items-end"
+            className={`flex flex-col gap-3 mb-5 ${isTopicPage ? 'items-start md:items-end' : 'items-end'}`}
           >
             {actions.map((action, i) => (
               <motion.button
