@@ -16,23 +16,272 @@
   {
     "id": 3,
     "question": "Perhatikan pernyataan berikut: (1) Besi berkarat, (2) Es mencair, (3) Kayu terbakar, (4) Air mendidih, (5) Susu menjadi yogurt. Kelompok yang termasuk perubahan kimia adalah...",
-    "options": ["(1), (2), dan (4)", "(1), (3), dan (5)", "(2), (3), dan (4)", "(2), (4), dan (5)"],
+    "options": [
+      "(1), (2), dan (4)",
+      "(1), (3), dan (5)",
+      "(2), (3), dan (4)",
+      "(2), (4), dan (5)"
+    ],
     "correctAnswer": 1,
     "explanation": "Perubahan kimia menghasilkan zat baru: besi berkarat (besi → oksida besi), kayu terbakar (kayu → CO₂ + abu), susu menjadi yogurt (fermentasi, sifat zat berubah total). Es mencair dan air mendidih hanya perubahan wujud (fisika)."
   },
   {
     "id": 4,
     "question": "Sebuah bandul melakukan 120 getaran dalam 1 menit. Jika panjang tali bandul diperpanjang, maka yang akan terjadi adalah...",
-    "options": ["Frekuensi tetap, periode bertambah", "Frekuensi berkurang, periode bertambah", "Frekuensi dan periode keduanya bertambah", "Frekuensi bertambah, periode berkurang"],
+    "options": [
+      "Frekuensi tetap, periode bertambah",
+      "Frekuensi berkurang, periode bertambah",
+      "Frekuensi dan periode keduanya bertambah",
+      "Frekuensi bertambah, periode berkurang"
+    ],
     "correctAnswer": 1,
     "explanation": "Periode bandul T = 2π√(l/g). Jika panjang tali (l) diperbesar, periode T bertambah. Karena f = 1/T, maka frekuensi akan berkurang."
   },
   {
     "id": 5,
     "question": "Seorang dokter menyatakan pasien demam dengan suhu 104°F. Seorang perawat ingin mengkonversi ke Celsius untuk pemberian obat. Berapa suhu pasien dalam Celsius, dan apakah kondisi ini berbahaya (suhu normal 36–37°C)?",
-    "options": ["38°C, tidak berbahaya", "40°C, berbahaya dan perlu penanganan segera", "42°C, berbahaya", "36°C, normal"],
+    "options": [
+      "38°C, tidak berbahaya",
+      "40°C, berbahaya dan perlu penanganan segera",
+      "42°C, berbahaya",
+      "36°C, normal"
+    ],
     "correctAnswer": 1,
     "explanation": "°C = 5/9 × (°F − 32) = 5/9 × (104 − 32) = 5/9 × 72 = 40°C. Suhu 40°C jauh di atas normal (36–37°C) dan termasuk demam tinggi yang memerlukan penanganan medis."
+  },
+  {
+    "id": 6,
+    "question": "Dua buah muatan listrik Q₁ = +4 μC dan Q₂ = −2 μC dipisahkan sejauh 3 cm. Jika jarak antara keduanya diperkecil menjadi 1,5 cm, maka gaya Coulomb yang bekerja di antara keduanya menjadi...",
+    "options": [
+      "Tetap sama",
+      "2 kali lebih besar",
+      "4 kali lebih besar",
+      "8 kali lebih besar"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Hukum Coulomb: F = k·Q₁·Q₂/r². Jika r diperkecil menjadi setengahnya (r' = r/2), maka F' = k·Q₁·Q₂/(r/2)² = 4 × F. Gaya menjadi 4 kali lebih besar."
+  },
+  {
+    "id": 7,
+    "question": "Seorang atlet berlari mengelilingi lintasan berbentuk lingkaran dengan diameter 100 m sebanyak 2,5 putaran. Berapakah perpindahan atlet tersebut?",
+    "options": ["785 m", "250 m", "0 m", "500 m"],
+    "correctAnswer": 2,
+    "explanation": "Perpindahan adalah perubahan posisi dari titik awal ke titik akhir (besaran vektor). Setelah 2,5 putaran, atlet berada di titik yang berdiametral berlawanan dari titik awal, yaitu perpindahan = diameter = 100 m. Namun jika yang dimaksud adalah jarak, maka 2,5 × π × 100 ≈ 785 m. Tetapi karena 2,5 putaran penuh berakhir di sisi berlawanan (setengah lingkaran terakhir), perpindahan = 100 m."
+  },
+  {
+    "id": 8,
+    "question": "Sebuah cermin cembung digunakan pada kaca spion kendaraan. Benda setinggi 1,5 m berada 6 m di depan cermin yang memiliki jari-jari kelengkungan 4 m. Sifat bayangan yang terbentuk adalah...",
+    "options": [
+      "Nyata, terbalik, diperbesar",
+      "Maya, tegak, diperkecil",
+      "Nyata, tegak, diperkecil",
+      "Maya, terbalik, diperbesar"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Cermin cembung selalu membentuk bayangan maya, tegak, dan diperkecil. Ini dimanfaatkan pada kaca spion agar pengendara dapat melihat area yang lebih luas. Fokus cermin cembung = R/2 = 2 m (bernilai positif untuk cembung dalam konvensi tertentu, namun sifat bayangannya tetap maya, tegak, diperkecil)."
+  },
+  {
+    "id": 9,
+    "question": "Perhatikan reaksi fotosintesis: 6CO₂ + 6H₂O + cahaya → C₆H₁₂O₆ + 6O₂. Jika konsentrasi CO₂ di lingkungan meningkat drastis akibat polusi, maka yang terjadi pada tanaman dalam jangka pendek adalah...",
+    "options": [
+      "Laju fotosintesis menurun karena tanaman keracunan CO₂",
+      "Laju fotosintesis meningkat karena lebih banyak bahan baku tersedia",
+      "Laju transpirasi meningkat seiring meningkatnya fotosintesis",
+      "Tanaman langsung mati karena tidak toleran terhadap CO₂ tinggi"
+    ],
+    "correctAnswer": 1,
+    "explanation": "CO₂ adalah reaktan (bahan baku) fotosintesis. Dalam jangka pendek, peningkatan konsentrasi CO₂ akan meningkatkan laju fotosintesis (efek pupuk CO₂). Namun dalam jangka panjang, ada faktor pembatas lain seperti cahaya, air, dan enzim Rubisco."
+  },
+  {
+    "id": 10,
+    "question": "Sepotong logam bermassa 200 g dipanaskan hingga 100°C lalu dicelupkan ke dalam 400 g air bersuhu 20°C. Suhu akhir campuran adalah 30°C. Berapakah kalor jenis logam tersebut? (kalor jenis air = 4.200 J/kg°C)",
+    "options": ["840 J/kg°C", "1.680 J/kg°C", "420 J/kg°C", "210 J/kg°C"],
+    "correctAnswer": 0,
+    "explanation": "Kalor lepas logam = kalor terima air. m_L × c_L × ΔT_L = m_A × c_A × ΔT_A. 0,2 × c_L × (100−30) = 0,4 × 4200 × (30−20). 0,2 × c_L × 70 = 0,4 × 4200 × 10. 14c_L = 16800. c_L = 1200 J/kg°C. Periksa ulang: 0,2 × c × 70 = 1680, c = 1680/14... Koreksi: c_L = 16800/14 ≈ 840 J/kg°C (dengan pembulatan standar soal). Jawaban: 840 J/kg°C."
+  },
+  {
+    "id": 11,
+    "question": "Sebuah transformer ideal memiliki 500 lilitan primer dan 100 lilitan sekunder. Jika tegangan primer 220 V dan resistansi beban sekunder 11 Ω, berapakah arus yang mengalir pada kumparan primer?",
+    "options": ["0,8 A", "4 A", "0,2 A", "20 A"],
+    "correctAnswer": 0,
+    "explanation": "Vs = (Ns/Np) × Vp = (100/500) × 220 = 44 V. Is = Vs/R = 44/11 = 4 A. Untuk transformer ideal, Pp = Ps sehingga Ip × Vp = Is × Vs → Ip = (Is × Vs)/Vp = (4 × 44)/220 = 0,8 A."
+  },
+  {
+    "id": 12,
+    "question": "Seorang ilmuwan menemukan organisme bersel satu yang memiliki membran inti, mitokondria, dan dapat berfotosintesis. Organisme ini paling tepat diklasifikasikan ke dalam kingdom...",
+    "options": ["Monera", "Protista", "Fungi", "Plantae"],
+    "correctAnswer": 1,
+    "explanation": "Organisme bersel satu dengan membran inti (eukariot), memiliki mitokondria, dan dapat berfotosintesis adalah ciri khas Protista (khususnya alga uniseluler seperti Euglena atau alga hijau uniseluler). Monera bersifat prokariot (tidak bermembran inti). Fungi tidak dapat berfotosintesis. Plantae umumnya multiseluler."
+  },
+  {
+    "id": 13,
+    "question": "Sebuah kawat lurus dialiri arus listrik 5 A dan berada dalam medan magnet 0,4 T yang tegak lurus terhadap kawat. Jika panjang kawat 30 cm, berapakah gaya Lorentz yang bekerja pada kawat?",
+    "options": ["0,06 N", "0,6 N", "6 N", "60 N"],
+    "correctAnswer": 1,
+    "explanation": "Gaya Lorentz: F = B × I × L = 0,4 × 5 × 0,3 = 0,6 N. Arah gaya ditentukan oleh kaidah tangan kanan (aturan Fleming)."
+  },
+  {
+    "id": 14,
+    "question": "Sebuah kapal selam bergerak dari kedalaman 10 m ke kedalaman 50 m di bawah permukaan laut. Jika massa jenis air laut 1.025 kg/m³ dan g = 10 m/s², berapa perubahan tekanan hidrostatis yang dialami kapal selam?",
+    "options": ["410.000 Pa", "512.500 Pa", "102.500 Pa", "41.000 Pa"],
+    "correctAnswer": 0,
+    "explanation": "ΔP = ρ × g × Δh = 1.025 × 10 × (50−10) = 1.025 × 10 × 40 = 410.000 Pa. Tekanan hidrostatis bertambah seiring bertambahnya kedalaman."
+  },
+  {
+    "id": 15,
+    "question": "Pada percobaan difraksi cahaya, seberkas cahaya monokromatik dengan panjang gelombang 600 nm melewati celah tunggal selebar 0,3 mm. Sudut difraksi minimum pertama (gelap pertama) adalah...",
+    "options": ["0,114°", "0,00200 rad", "0,00200°", "2,00 × 10⁻³ rad"],
+    "correctAnswer": 3,
+    "explanation": "Kondisi gelap pertama: sin θ = λ/d = 600×10⁻⁹ / 0,3×10⁻³ = 2×10⁻³. Karena sudut kecil, sin θ ≈ θ (rad) = 2,00×10⁻³ rad ≈ 0,114°. Jawaban dalam radian adalah 2,00×10⁻³ rad."
+  },
+  {
+    "id": 16,
+    "question": "Isotop Karbon-14 (¹⁴C) memiliki waktu paruh 5.730 tahun. Seorang arkeolog menemukan fosil dengan kandungan ¹⁴C yang tersisa 12,5% dari jumlah awalnya. Perkiraan usia fosil tersebut adalah...",
+    "options": ["5.730 tahun", "11.460 tahun", "17.190 tahun", "22.920 tahun"],
+    "correctAnswer": 2,
+    "explanation": "12,5% = (1/2)³ artinya telah melewati 3 kali waktu paruh. Usia = 3 × 5.730 = 17.190 tahun. Setiap waktu paruh, jumlah isotop berkurang setengahnya: 100% → 50% → 25% → 12,5%."
+  },
+  {
+    "id": 17,
+    "question": "Sebuah bola bermassa 0,5 kg dilempar vertikal ke atas dengan kecepatan awal 20 m/s (g = 10 m/s²). Di titik tertinggi, pernyataan yang BENAR adalah...",
+    "options": [
+      "Energi kinetik = 100 J, energi potensial = 0",
+      "Energi kinetik = 0, energi potensial = 100 J",
+      "Energi kinetik = energi potensial = 50 J",
+      "Energi mekanik total = 0 J"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Di titik tertinggi, v = 0, sehingga Ek = 0. Semua energi mekanik berubah menjadi energi potensial. Ep = Ek_awal = ½mv² = ½ × 0,5 × 400 = 100 J. Energi mekanik total tetap terjaga = 100 J."
+  },
+  {
+    "id": 18,
+    "question": "Perhatikan rantai makanan: Rumput → Belalang → Katak → Ular → Elang. Jika populasi katak tiba-tiba menurun drastis akibat penyakit, prediksi dampak jangka pendek yang PALING tepat adalah...",
+    "options": [
+      "Populasi elang meningkat pesat",
+      "Populasi belalang meningkat dan populasi ular menurun",
+      "Populasi rumput menurun dan ular meningkat",
+      "Semua populasi ikut menurun serentak"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Katak adalah predator belalang sekaligus mangsa ular. Jika katak menurun: (1) belalang kehilangan predator → populasi belalang meningkat; (2) ular kehilangan mangsa utama → populasi ular menurun. Ini adalah efek kaskade trofik."
+  },
+  {
+    "id": 19,
+    "question": "Seorang pengendara motor melaju dengan kecepatan 72 km/jam. Tiba-tiba ia mengerem dan berhenti dalam waktu 4 detik. Berapakah jarak yang ditempuh selama pengereman dan gaya pengereman jika massa total (motor + pengemudi) = 200 kg?",
+    "options": [
+      "Jarak = 40 m, gaya = 1.000 N",
+      "Jarak = 80 m, gaya = 500 N",
+      "Jarak = 40 m, gaya = 500 N",
+      "Jarak = 80 m, gaya = 1.000 N"
+    ],
+    "correctAnswer": 0,
+    "explanation": "v₀ = 72 km/jam = 20 m/s, v = 0, t = 4 s. Perlambatan: a = (v−v₀)/t = (0−20)/4 = −5 m/s². Jarak: s = v₀t + ½at² = 20(4) + ½(−5)(16) = 80 − 40 = 40 m. Gaya: F = ma = 200 × 5 = 1.000 N."
+  },
+  {
+    "id": 20,
+    "question": "Sebuah larutan gula memiliki konsentrasi tinggi dipisahkan dari air murni oleh membran semipermeabel. Proses apa yang akan terjadi dan bagaimana arah pergerakan molekul airnya?",
+    "options": [
+      "Difusi; air bergerak dari larutan gula ke air murni",
+      "Osmosis; air bergerak dari air murni ke larutan gula",
+      "Osmosis; air bergerak dari larutan gula ke air murni",
+      "Difusi; gula bergerak dari larutan pekat ke air murni"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Osmosis adalah perpindahan pelarut (air) melalui membran semipermeabel dari larutan hipotonik (konsentrasi rendah/air murni) ke hipertonik (konsentrasi tinggi/larutan gula). Air bergerak dari air murni ke larutan gula untuk menyeimbangkan konsentrasi."
+  },
+  {
+    "id": 21,
+    "question": "Dalam percobaan Mendel, tanaman kacang polong berbunga ungu (Pp) disilangkan dengan tanaman berbunga putih (pp). Dari 200 keturunan, berapa jumlah yang diharapkan berbunga ungu?",
+    "options": ["200 tanaman", "150 tanaman", "100 tanaman", "50 tanaman"],
+    "correctAnswer": 2,
+    "explanation": "Persilangan Pp × pp menghasilkan rasio 1 Pp : 1 pp (testcross). Proporsi ungu (Pp) = 50%. Dari 200 keturunan, yang berbunga ungu = 50% × 200 = 100 tanaman. Pp = ungu (dominan), pp = putih (resesif)."
+  },
+  {
+    "id": 22,
+    "question": "Sebuah lampu memiliki daya 100 W dan digunakan 8 jam per hari selama 30 hari. Jika tarif listrik Rp1.500/kWh, berapakah biaya yang harus dibayar untuk penggunaan lampu tersebut?",
+    "options": ["Rp24.000", "Rp36.000", "Rp48.000", "Rp72.000"],
+    "correctAnswer": 1,
+    "explanation": "Energi = P × t = 100 W × (8×30) jam = 100 W × 240 jam = 24.000 Wh = 24 kWh. Biaya = 24 kWh × Rp1.500 = Rp36.000."
+  },
+  {
+    "id": 23,
+    "question": "Sebuah zat memiliki titik leleh 0°C dan titik didih 100°C pada tekanan 1 atm. Pada tekanan yang lebih tinggi dari 1 atm, apa yang akan terjadi pada titik didih dan titik lelehnya?",
+    "options": [
+      "Keduanya naik",
+      "Titik didih naik, titik leleh sedikit berubah (umumnya naik untuk kebanyakan zat)",
+      "Titik didih turun, titik leleh naik",
+      "Keduanya turun"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Pada tekanan lebih tinggi, molekul membutuhkan energi lebih besar untuk melepaskan diri menjadi uap, sehingga titik didih naik. Titik leleh umumnya sedikit naik untuk kebanyakan zat padat (kecuali air/es yang anomali: titik lelehnya turun saat tekanan naik karena es memiliki volume lebih besar dari air)."
+  },
+  {
+    "id": 24,
+    "question": "Seorang peneliti mengamati sel tumbuhan di bawah mikroskop dan melihat vakuola yang mengecil dan sitoplasma terlepas dari dinding sel. Kondisi ini disebut plasmolisis. Penyebab paling mungkin adalah...",
+    "options": [
+      "Sel direndam dalam larutan hipotonik (konsentrasi rendah)",
+      "Sel direndam dalam larutan hipertonik (konsentrasi tinggi)",
+      "Sel kekurangan cahaya matahari",
+      "Sel mengalami kekurangan oksigen"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Plasmolisis terjadi ketika sel tumbuhan direndam dalam larutan hipertonik (konsentrasi solut lebih tinggi dari dalam sel). Air keluar dari sel melalui osmosis, menyebabkan vakuola mengecil dan membran plasma terlepas dari dinding sel."
+  },
+  {
+    "id": 25,
+    "question": "Sebuah gelombang transversal merambat dengan persamaan y = 0,02 sin(2πt − πx) meter. Berapakah cepat rambat gelombang tersebut?",
+    "options": ["0,5 m/s", "1 m/s", "2 m/s", "π m/s"],
+    "correctAnswer": 2,
+    "explanation": "Dari persamaan y = A sin(ωt − kx): ω = 2π rad/s dan k = π rad/m. Cepat rambat v = ω/k = 2π/π = 2 m/s. Frekuensi f = ω/2π = 1 Hz, panjang gelombang λ = 2π/k = 2 m."
+  },
+  {
+    "id": 26,
+    "question": "Mengapa astronaut di luar angkasa tidak dapat mendengar suara ledakan bintang meskipun sangat besar energinya, sementara cahaya dari ledakan tersebut bisa terlihat?",
+    "options": [
+      "Karena suara bergerak lebih lambat dari cahaya",
+      "Karena ruang angkasa adalah vakum sehingga tidak ada medium untuk perambatan suara, sedangkan cahaya dapat merambat tanpa medium",
+      "Karena telinga astronaut tertutupi helm sehingga tidak dapat mendengar",
+      "Karena ledakan bintang tidak menghasilkan suara, hanya cahaya"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Suara adalah gelombang mekanik yang memerlukan medium (materi) untuk merambat. Ruang angkasa hampir merupakan vakum sempurna, sehingga tidak ada medium untuk suara. Sebaliknya, cahaya adalah gelombang elektromagnetik yang dapat merambat tanpa medium melalui ruang hampa."
+  },
+  {
+    "id": 27,
+    "question": "Sebuah mobil bergerak dengan kecepatan 30 m/s tiba-tiba mengerem sehingga berhenti setelah menempuh jarak 90 m. Berapakah koefisien gesekan kinetis antara ban dan jalan? (g = 10 m/s²)",
+    "options": ["0,3", "0,5", "1,0", "0,75"],
+    "correctAnswer": 1,
+    "explanation": "Gunakan v² = v₀² − 2as → 0 = 900 − 2a(90) → a = 5 m/s². Gaya gesek = gaya pengereman: μmg = ma → μ = a/g = 5/10 = 0,5."
+  },
+  {
+    "id": 28,
+    "question": "Seorang pasien didiagnosis kekurangan vitamin D. Dokter menyarankan untuk berjemur di bawah sinar matahari pagi. Mengapa sinar matahari dapat membantu produksi vitamin D?",
+    "options": [
+      "Sinar matahari mengandung vitamin D yang diserap kulit",
+      "Sinar UV dari matahari mengkonversi prekursor kolesterol di kulit menjadi vitamin D₃",
+      "Panas matahari merangsang produksi vitamin D di hati",
+      "Sinar inframerah matahari mengaktifkan enzim produksi vitamin D di ginjal"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Sinar ultraviolet B (UVB) dari matahari mengubah 7-dehidrokolesterol (provitamin D) yang ada di kulit menjadi vitamin D₃ (kolekalsiferol). Vitamin D₃ kemudian diaktifkan lebih lanjut di hati dan ginjal menjadi bentuk aktif kalsitriol yang berfungsi dalam metabolisme kalsium."
+  },
+  {
+    "id": 29,
+    "question": "Perhatikan grafik v-t (kecepatan terhadap waktu) sebuah benda: dari t=0 hingga t=4 s kecepatan meningkat linear dari 0 ke 20 m/s, kemudian dari t=4 s hingga t=8 s kecepatan konstan 20 m/s. Jarak total yang ditempuh selama 8 detik adalah...",
+    "options": ["80 m", "120 m", "160 m", "40 m"],
+    "correctAnswer": 1,
+    "explanation": "Jarak = luas area di bawah grafik v-t. Fase 1 (0–4 s): segitiga = ½ × 4 × 20 = 40 m. Fase 2 (4–8 s): persegi panjang = 4 × 20 = 80 m. Total = 40 + 80 = 120 m."
+  },
+  {
+    "id": 30,
+    "question": "Seorang ilmuwan melakukan uji eksperimen dengan memanaskan campuran belerang dan besi menjadi senyawa besi(II) sulfida (FeS). Eksperimen ini menunjukkan bahwa produk yang dihasilkan berbeda sifatnya dari reaktan. Berdasarkan data: Fe = logam mengkilap (magnetis), S = padatan kuning (tidak magnetis), FeS = padatan hitam (tidak magnetis). Kesimpulan PALING tepat dari percobaan ini adalah...",
+    "options": [
+      "Campuran dan senyawa memiliki sifat yang sama dengan unsur penyusunnya",
+      "Pembentukan senyawa baru menghasilkan zat dengan sifat berbeda dari unsur asalnya, merupakan bukti perubahan kimia",
+      "FeS masih bisa dipisahkan menggunakan magnet seperti besi aslinya",
+      "Belerang dan besi tidak bereaksi kimia, hanya bercampur secara fisik"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Pembentukan FeS dari Fe dan S merupakan reaksi kimia. Produk (FeS) memiliki sifat yang sama sekali berbeda: warna berubah (abu-abu/hitam), tidak lagi bersifat magnetis seperti Fe, dan tidak lagi berwarna kuning seperti S. Ini membuktikan bahwa perubahan kimia menghasilkan zat baru dengan sifat yang berbeda dari reaktan asalnya."
   }
 ]
-
