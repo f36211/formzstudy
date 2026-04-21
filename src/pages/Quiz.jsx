@@ -15,11 +15,28 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { quizDatabase } from '../quiz/quizIndex';
 import { subjectsData } from '../data/mockData';
 import useAppStore from '../store/useAppStore';
+import { MathJax } from 'better-react-mathjax';
 
 export default function Quiz() {
   const { subjectId } = useParams();
   const navigate = useNavigate();
   const { setQuizScore } = useAppStore();
+
+  const wrapMath = (str) => {
+    if (typeof str !== "string") return str;
+    if (
+      str.includes("\\(") ||
+      str.includes("\\[") ||
+      str.includes("$") ||
+      str.includes("$$")
+    ) {
+      return str;
+    }
+    if (str.includes("\\")) {
+      return `\\(${str}\\)`;
+    }
+    return str;
+  };
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
@@ -210,7 +227,7 @@ export default function Quiz() {
                 <div className="relative mb-8">
                   <div className="absolute -left-4 top-0 w-1 h-full bg-[var(--accent-blue)] rounded-full opacity-20" />
                   <h2 className="text-lg sm:text-xl font-medium text-[var(--text-main)] leading-relaxed m-0">
-                    {question.question}
+                    <MathJax inline>{wrapMath(question.question)}</MathJax>
                   </h2>
                 </div>
 
@@ -255,7 +272,9 @@ export default function Quiz() {
                         `}>
                           {String.fromCharCode(65 + index)}
                         </div>
-                        <span className={`text-[15px] font-normal leading-snug ${isAnswerSubmitted && !isCorrect && !isWrong ? 'text-[var(--text-muted)]' : 'text-[var(--text-main)]'}`}>{option}</span>
+                        <span className={`text-[15px] font-normal leading-snug ${isAnswerSubmitted && !isCorrect && !isWrong ? 'text-[var(--text-muted)]' : 'text-[var(--text-main)]'}`}>
+                          <MathJax inline>{wrapMath(option)}</MathJax>
+                        </span>
 
                         {/* Feedback icons */}
                         {isAnswerSubmitted && isCorrect && (
@@ -286,9 +305,9 @@ export default function Quiz() {
                         <p className={`font-bold mb-1 ${selectedOption === question.correctAnswer ? 'text-emerald-500' : 'text-rose-500'}`}>
                           {selectedOption === question.correctAnswer ? 'Benar! 🎉' : 'Kurang tepat 😅'}
                         </p>
-                        <p className="text-[var(--text-secondary)] m-0 leading-relaxed">
-                          {question.explanation}
-                        </p>
+                        <div className="text-[var(--text-secondary)] m-0 leading-relaxed">
+                          <MathJax inline>{wrapMath(question.explanation)}</MathJax>
+                        </div>
                       </div>
                     </motion.div>
                   )}

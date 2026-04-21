@@ -1,6 +1,6 @@
-import { useState, useEffect, useMemo } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect, useMemo } from "react";
+import { useParams, Link, useNavigate } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowLeft,
   Edit3,
@@ -13,15 +13,16 @@ import {
   Menu,
   X,
   CheckCircle,
-  Lightbulb
-} from 'lucide-react';
-import ReactMarkdown from 'react-markdown';
-import { subjectsData } from '../data/mockData';
-import useAppStore from '../store/useAppStore';
+  Lightbulb,
+} from "lucide-react";
+import ReactMarkdown from "react-markdown";
+import { subjectsData } from "../data/mockData";
+import useAppStore from "../store/useAppStore";
+import { MathJax } from "better-react-mathjax";
 
-import PythagorasVisualizer from '../math/PythagorasVisualizer';
-import Kubus3D from '../math/Kubus3D';
-import VernierCaliper from '../subjects/ipa/visuals/VernierCaliper';
+import PythagorasVisualizer from "../math/PythagorasVisualizer";
+import Kubus3D from "../math/Kubus3D";
+import VernierCaliper from "../subjects/ipa/visuals/VernierCaliper";
 
 const SectionWrapper = ({ title, icon: Icon, children }) => (
   <motion.div
@@ -34,11 +35,11 @@ const SectionWrapper = ({ title, icon: Icon, children }) => (
       <div className="p-2 rounded-lg bg-slate-50 dark:bg-slate-800/50 shrink-0">
         <Icon size={18} className="text-[var(--accent-blue)]" />
       </div>
-      <h3 className="text-base sm:text-lg font-bold text-[var(--text-main)] m-0 leading-snug">{title}</h3>
+      <h3 className="text-base sm:text-lg font-bold text-[var(--text-main)] m-0 leading-snug">
+        {title}
+      </h3>
     </div>
-    <div className="prose-custom">
-      {children}
-    </div>
+    <div className="prose-custom">{children}</div>
   </motion.div>
 );
 
@@ -54,7 +55,9 @@ function HighlightBlock({ children }) {
           <Lightbulb size={18} className="text-[var(--accent-blue)]" />
         </div>
         <div>
-          <h4 className="text-xs sm:text-sm font-bold text-[var(--accent-blue)] uppercase tracking-wider mb-1 m-0">Poin Penting</h4>
+          <h4 className="text-xs sm:text-sm font-bold text-[var(--accent-blue)] uppercase tracking-wider mb-1 m-0">
+            Poin Penting
+          </h4>
           <p className="text-[var(--text-main)] text-sm sm:text-[15px] font-medium leading-relaxed m-0">
             {children}
           </p>
@@ -67,10 +70,23 @@ function HighlightBlock({ children }) {
 function ArabicBlock({ arabic, transliteration, translation }) {
   return (
     <div className="my-4 sm:my-5 p-4 sm:p-6 bg-[#f6f5f4] dark:bg-black/20 rounded-xl border border-[var(--border-card)]">
-      <p className="text-right text-xl sm:text-2xl md:text-3xl font-arabic text-[var(--text-main)] leading-[2.3] sm:leading-[2.5] mb-3 sm:mb-4" dir="rtl">{arabic}</p>
+      <p
+        className="text-right text-xl sm:text-2xl md:text-3xl font-arabic text-[var(--text-main)] leading-[2.3] sm:leading-[2.5] mb-3 sm:mb-4"
+        dir="rtl"
+      >
+        {arabic}
+      </p>
       <div className="space-y-1.5 sm:space-y-2 border-t border-[var(--border-card)] pt-3 sm:pt-4">
-        {transliteration && <p className="text-xs sm:text-sm font-medium text-[var(--accent-blue)] m-0">"{transliteration}"</p>}
-        {translation && <p className="text-xs sm:text-sm italic text-[var(--text-secondary)] m-0">{translation}</p>}
+        {transliteration && (
+          <p className="text-xs sm:text-sm font-medium text-[var(--accent-blue)] m-0">
+            "{transliteration}"
+          </p>
+        )}
+        {translation && (
+          <p className="text-xs sm:text-sm italic text-[var(--text-secondary)] m-0">
+            {translation}
+          </p>
+        )}
       </div>
     </div>
   );
@@ -83,7 +99,7 @@ function TableBlock({ content, headers, rows }) {
       <div className="my-4 -mx-2 sm:mx-0">
         <div
           className="w-full max-w-full overflow-x-auto touch-pan-x rounded-xl border border-[var(--border-card)] text-xs sm:text-sm"
-          style={{ WebkitOverflowScrolling: 'touch' }}
+          style={{ WebkitOverflowScrolling: "touch" }}
         >
           <table className="min-w-max w-full text-left border-collapse">
             <thead>
@@ -100,9 +116,15 @@ function TableBlock({ content, headers, rows }) {
             </thead>
             <tbody className="divide-y divide-[var(--border-card)]">
               {rows.map((row, i) => (
-                <tr key={i} className="bg-[var(--bg-card)] hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                <tr
+                  key={i}
+                  className="bg-[var(--bg-card)] hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"
+                >
                   {row.map((cell, j) => (
-                    <td key={j} className="p-2.5 sm:p-3 text-[var(--text-secondary)] align-top whitespace-normal break-words">
+                    <td
+                      key={j}
+                      className="p-2.5 sm:p-3 text-[var(--text-secondary)] align-top whitespace-normal break-words"
+                    >
                       {cell}
                     </td>
                   ))}
@@ -116,10 +138,17 @@ function TableBlock({ content, headers, rows }) {
   }
 
   // Format 2: Markdown table string (e.g. "| Header | ... |\n|------|...|\n| cell |...")
-  if (typeof content === 'string' && content.includes('|')) {
-    const lines = content.trim().split('\n').filter(l => l.trim());
-    const parseRow = (line) => line.split('|').map(c => c.trim()).filter(Boolean);
-    const headerCells = parseRow(lines[0] || '');
+  if (typeof content === "string" && content.includes("|")) {
+    const lines = content
+      .trim()
+      .split("\n")
+      .filter((l) => l.trim());
+    const parseRow = (line) =>
+      line
+        .split("|")
+        .map((c) => c.trim())
+        .filter(Boolean);
+    const headerCells = parseRow(lines[0] || "");
     // Skip separator row (line with dashes)
     const dataRows = lines.slice(2).map(parseRow);
 
@@ -127,7 +156,7 @@ function TableBlock({ content, headers, rows }) {
       <div className="my-4 -mx-2 sm:mx-0">
         <div
           className="w-full max-w-full overflow-x-auto touch-pan-x rounded-xl border border-[var(--border-card)] text-xs sm:text-sm"
-          style={{ WebkitOverflowScrolling: 'touch' }}
+          style={{ WebkitOverflowScrolling: "touch" }}
         >
           <table className="min-w-max w-full text-left border-collapse">
             <thead>
@@ -144,9 +173,15 @@ function TableBlock({ content, headers, rows }) {
             </thead>
             <tbody className="divide-y divide-[var(--border-card)]">
               {dataRows.map((row, i) => (
-                <tr key={i} className="bg-[var(--bg-card)] hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                <tr
+                  key={i}
+                  className="bg-[var(--bg-card)] hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"
+                >
                   {row.map((cell, j) => (
-                    <td key={j} className="p-2.5 sm:p-3 text-[var(--text-secondary)] align-top whitespace-normal break-words">
+                    <td
+                      key={j}
+                      className="p-2.5 sm:p-3 text-[var(--text-secondary)] align-top whitespace-normal break-words"
+                    >
                       {cell}
                     </td>
                   ))}
@@ -166,7 +201,7 @@ function TableBlock({ content, headers, rows }) {
       <div className="my-4 -mx-2 sm:mx-0">
         <div
           className="w-full max-w-full overflow-x-auto touch-pan-x rounded-xl border border-[var(--border-card)] text-xs sm:text-sm"
-          style={{ WebkitOverflowScrolling: 'touch' }}
+          style={{ WebkitOverflowScrolling: "touch" }}
         >
           <table className="min-w-max w-full text-left border-collapse">
             <thead>
@@ -183,9 +218,15 @@ function TableBlock({ content, headers, rows }) {
             </thead>
             <tbody className="divide-y divide-[var(--border-card)]">
               {content.map((row, i) => (
-                <tr key={i} className="bg-[var(--bg-card)] hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                <tr
+                  key={i}
+                  className="bg-[var(--bg-card)] hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"
+                >
                   {keys.map((k, j) => (
-                    <td key={j} className="p-2.5 sm:p-3 text-[var(--text-secondary)] align-top whitespace-normal break-words">
+                    <td
+                      key={j}
+                      className="p-2.5 sm:p-3 text-[var(--text-secondary)] align-top whitespace-normal break-words"
+                    >
                       {row[k]}
                     </td>
                   ))}
@@ -202,31 +243,133 @@ function TableBlock({ content, headers, rows }) {
 }
 
 function ContentBlock({ item }) {
-  if (item.type === 'text') {
-    return <p className="text-[var(--text-main)] leading-relaxed text-sm sm:text-[15px] my-2.5 sm:my-3">{item.content || item.value}</p>;
+  const wrapMath = (str) => {
+    if (typeof str !== "string") return str;
+    // Check if it's already wrapped in standard delimiters
+    if (
+      str.includes("\\(") ||
+      str.includes("\\[") ||
+      str.includes("$") ||
+      str.includes("$$")
+    ) {
+      return str;
+    }
+    // If it contains typical LaTeX commands (starting with \), wrap it in inline math delimiters
+    if (str.includes("\\")) {
+      return `\\(${str}\\)`;
+    }
+    return str;
+  };
+
+  if (item.type === "text") {
+    return (
+      <p className="text-[var(--text-main)] leading-relaxed text-sm sm:text-[15px] my-2.5 sm:my-3">
+        <MathJax inline>{wrapMath(item.content || item.value)}</MathJax>
+      </p>
+    );
   }
-  if (item.type === 'highlight') {
-    return <HighlightBlock>{item.content || item.value}</HighlightBlock>;
+  if (item.type === "formula") {
+    const content = item.content || item.value;
+    return (
+      <div className="my-6 text-center overflow-x-auto py-3 bg-slate-50/50 dark:bg-slate-800/20 rounded-xl border border-[var(--border-card)]">
+        <MathJax>
+          {content.includes("\\[") || content.includes("$$")
+            ? content
+            : "\\[ " + content + " \\]"}
+        </MathJax>
+      </div>
+    );
   }
-  if (item.type === 'arabic') {
+  if (item.type === "example") {
+    return (
+      <div className="my-6 p-5 rounded-2xl border border-[var(--border-card)] bg-slate-50/50 dark:bg-slate-800/20 shadow-sm">
+        <div className="flex items-center gap-2 mb-4">
+          <div className="px-2.5 py-1 rounded-lg text-[10px] font-black uppercase tracking-wider bg-orange-100 text-orange-600 dark:bg-orange-500/20 dark:text-orange-400 border border-orange-200 dark:border-orange-500/30">
+            Contoh Soal
+          </div>
+        </div>
+        <div className="text-[var(--text-main)] font-bold mb-5 leading-relaxed text-sm sm:text-base">
+          <MathJax inline>{wrapMath(item.question)}</MathJax>
+        </div>
+        {item.steps && (
+          <div className="space-y-3 mb-5 border-l-2 border-slate-200 dark:border-slate-700 pl-4 py-1">
+            <p className="text-[10px] font-black text-[var(--text-muted)] uppercase tracking-widest mb-3">
+              Penyelesaian:
+            </p>
+            {item.steps.map((step, i) => (
+              <div
+                key={i}
+                className="text-sm sm:text-[15px] text-[var(--text-secondary)] font-medium"
+              >
+                <MathJax inline>{wrapMath(step)}</MathJax>
+              </div>
+            ))}
+          </div>
+        )}
+        {item.result && (
+          <div className="mt-4 pt-4 border-t border-[var(--border-card)] flex flex-wrap items-center gap-2">
+            <span className="text-xs font-black text-[var(--text-main)] uppercase tracking-tight">
+              Jawaban Akhir:
+            </span>
+            <span className="text-sm sm:text-base font-bold text-[var(--accent-blue)] bg-blue-50 dark:bg-blue-500/10 px-2 py-0.5 rounded-md">
+              <MathJax inline>{wrapMath(item.result)}</MathJax>
+            </span>
+          </div>
+        )}
+      </div>
+    );
+  }
+  if (item.type === "highlight") {
+    return (
+      <HighlightBlock>
+        <MathJax inline>{wrapMath(item.content || item.value)}</MathJax>
+      </HighlightBlock>
+    );
+  }
+  if (item.type === "arabic") {
     // Support both { arabic, transliteration } and { content } formats
     const text = item.arabic || item.content || item.value;
-    return <ArabicBlock arabic={text} transliteration={item.transliteration} translation={item.translation} />;
-  }
-  if (item.type === 'table') {
-    return <TableBlock content={item.content} headers={item.headers} rows={item.rows} />;
-  }
-  if (item.type === 'list') {
-    const Tag = item.ordered ? 'ol' : 'ul';
     return (
-      <Tag className={`my-2 space-y-1.5 pl-4 sm:pl-5 ${item.ordered ? 'list-decimal' : 'list-disc'} text-[var(--text-secondary)]`}>
+      <ArabicBlock
+        arabic={text}
+        transliteration={item.transliteration}
+        translation={item.translation}
+      />
+    );
+  }
+  if (item.type === "table") {
+    return (
+      <TableBlock
+        content={item.content}
+        headers={item.headers}
+        rows={item.rows}
+      />
+    );
+  }
+  if (item.type === "list") {
+    const Tag = item.ordered ? "ol" : "ul";
+    return (
+      <Tag
+        className={`my-2 space-y-1.5 pl-4 sm:pl-5 ${item.ordered ? "list-decimal" : "list-disc"} text-[var(--text-secondary)]`}
+      >
         {item.items.map((li, i) => {
           const parts = li.split(/\*\*(.*?)\*\*/g);
           return (
             <li key={i} className="text-xs sm:text-sm leading-relaxed">
-              {parts.map((part, j) =>
-                j % 2 === 1 ? <strong key={j} className="font-semibold text-[var(--text-main)]">{part}</strong> : part
-              )}
+              <MathJax inline>
+                {parts.map((part, j) =>
+                  j % 2 === 1 ? (
+                    <strong
+                      key={j}
+                      className="font-semibold text-[var(--text-main)]"
+                    >
+                      {part}
+                    </strong>
+                  ) : (
+                    part
+                  ),
+                )}
+              </MathJax>
             </li>
           );
         })}
@@ -245,34 +388,46 @@ export default function TopicDetail() {
     completedTopics,
     toggleTopicComplete,
     isTopicSidebarOpen,
-    setIsTopicSidebarOpen
+    setIsTopicSidebarOpen,
   } = useAppStore();
 
-  const [localNote, setLocalNote] = useState('');
+  const [localNote, setLocalNote] = useState("");
   const [isEditingNote, setIsEditingNote] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
 
-  const subject = useMemo(() => subjectsData.find((s) => s.slug === name), [name]);
-  const topicIndex = useMemo(() => subject?.topics?.findIndex((t) => t.id === topicId), [subject, topicId]);
+  const subject = useMemo(
+    () => subjectsData.find((s) => s.slug === name),
+    [name],
+  );
+  const topicIndex = useMemo(
+    () => subject?.topics?.findIndex((t) => t.id === topicId),
+    [subject, topicId],
+  );
   const topic = subject?.topics?.[topicIndex];
 
   const prevTopic = topicIndex > 0 ? subject?.topics?.[topicIndex - 1] : null;
-  const nextTopic = topicIndex < (subject?.topics?.length - 1) ? subject?.topics?.[topicIndex + 1] : null;
+  const nextTopic =
+    topicIndex < subject?.topics?.length - 1
+      ? subject?.topics?.[topicIndex + 1]
+      : null;
 
   const completedTopicIds = completedTopics[subject?.slug] || [];
   const isCompleted = completedTopicIds.includes(topicId);
 
   useEffect(() => {
-    setLocalNote(notes || "- Tulis catatan pribadimu di sini\n- Bisa menggunakan *markdown*");
+    setLocalNote(
+      notes ||
+        "- Tulis catatan pribadimu di sini\n- Bisa menggunakan *markdown*",
+    );
     window.scrollTo(0, 0);
   }, [notes, topicId]);
 
   useEffect(() => {
-    const mq = window.matchMedia('(min-width: 1024px)');
+    const mq = window.matchMedia("(min-width: 1024px)");
     const update = () => setIsDesktop(mq.matches);
     update();
-    mq.addEventListener?.('change', update);
-    return () => mq.removeEventListener?.('change', update);
+    mq.addEventListener?.("change", update);
+    return () => mq.removeEventListener?.("change", update);
   }, []);
 
   const saveNotes = () => {
@@ -281,12 +436,17 @@ export default function TopicDetail() {
   };
 
   if (!subject || !topic) {
-    return <div className="p-6 sm:p-10 font-medium text-[var(--text-secondary)]">Topik tidak ditemukan.</div>;
+    return (
+      <div className="p-6 sm:p-10 font-medium text-[var(--text-secondary)]">
+        Topik tidak ditemukan.
+      </div>
+    );
   }
 
-  const progressPercent = subject.topics?.length > 0
-    ? (completedTopicIds.length / subject.topics.length) * 100
-    : 0;
+  const progressPercent =
+    subject.topics?.length > 0
+      ? (completedTopicIds.length / subject.topics.length) * 100
+      : 0;
 
   return (
     <div className="w-full animation-fade-in pb-16 sm:pb-20 flex flex-col lg:flex-row gap-6 sm:gap-8 relative">
@@ -307,24 +467,48 @@ export default function TopicDetail() {
               initial={isTopicSidebarOpen ? { x: -300 } : false}
               animate={{ x: 0 }}
               exit={{ x: -300 }}
-              className={`fixed inset-y-0 left-0 w-[280px] sm:w-80 bg-[var(--bg-card)] border-r border-[var(--border-card)] z-50 lg:z-0 lg:sticky lg:top-24 lg:h-[calc(100vh-120px)] overflow-y-auto p-4 sm:p-6 transition-transform lg:translate-x-0 ${isTopicSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}
+              className={`fixed inset-y-0 left-0 w-[280px] sm:w-80 bg-[var(--bg-card)] border-r border-[var(--border-card)] z-50 lg:z-0 lg:sticky lg:top-24 lg:h-[calc(100vh-120px)] overflow-y-auto p-4 sm:p-6 transition-transform lg:translate-x-0 ${isTopicSidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
             >
               <div className="flex items-center justify-between mb-6 sm:mb-8 lg:hidden">
-                <h3 className="font-black text-base sm:text-lg text-[var(--text-main)] uppercase tracking-tighter">Daftar Isi</h3>
-                <button onClick={() => setIsTopicSidebarOpen(false)} className="p-2 bg-transparent border-0 cursor-pointer text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center">
+                <h3 className="font-black text-base sm:text-lg text-[var(--text-main)] uppercase tracking-tighter">
+                  Daftar Isi
+                </h3>
+                <button
+                  onClick={() => setIsTopicSidebarOpen(false)}
+                  className="p-2 bg-transparent border-0 cursor-pointer text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
+                >
                   <X size={20} />
                 </button>
               </div>
 
               <div className="mb-6 sm:mb-8">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center shadow-inner shrink-0" style={{ background: `${subject.color}25`, color: subject.color }}>
-                    <BookOpen size={20} strokeWidth={2.5} className="sm:hidden" />
-                    <BookOpen size={24} strokeWidth={2.5} className="hidden sm:block" />
+                  <div
+                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center shadow-inner shrink-0"
+                    style={{
+                      background: `${subject.color}25`,
+                      color: subject.color,
+                    }}
+                  >
+                    <BookOpen
+                      size={20}
+                      strokeWidth={2.5}
+                      className="sm:hidden"
+                    />
+                    <BookOpen
+                      size={24}
+                      strokeWidth={2.5}
+                      className="hidden sm:block"
+                    />
                   </div>
                   <div className="min-w-0">
-                    <h4 className="font-black text-xs sm:text-sm text-[var(--text-main)] m-0 leading-tight truncate uppercase tracking-tight">{subject.title}</h4>
-                    <p className="text-[9px] sm:text-[10px] font-black text-[var(--text-muted)] m-0 mt-1 uppercase tracking-widest">{completedTopicIds.length} / {subject.topics.length} SELESAI</p>
+                    <h4 className="font-black text-xs sm:text-sm text-[var(--text-main)] m-0 leading-tight truncate uppercase tracking-tight">
+                      {subject.title}
+                    </h4>
+                    <p className="text-[9px] sm:text-[10px] font-black text-[var(--text-muted)] m-0 mt-1 uppercase tracking-widest">
+                      {completedTopicIds.length} / {subject.topics.length}{" "}
+                      SELESAI
+                    </p>
                   </div>
                 </div>
                 <div className="w-full h-2 bg-[var(--bg-alternate)] rounded-full overflow-hidden shadow-inner">
@@ -345,14 +529,39 @@ export default function TopicDetail() {
                       key={t.id}
                       to={`/subject/${subject.slug}/topic/${t.id}`}
                       onClick={() => setIsTopicSidebarOpen(false)}
-                      className={`group flex items-center gap-3 p-2.5 sm:p-3 rounded-xl transition-all duration-300 no-underline min-h-[44px] ${isActive ? 'bg-[var(--accent-blue)] text-white shadow-lg shadow-blue-500/20' : 'text-[var(--text-secondary)] hover:bg-[var(--bg-alternate)] hover:text-[var(--text-main)]'}`}
+                      className={`group flex items-center gap-3 p-2.5 sm:p-3 rounded-xl transition-all duration-300 no-underline min-h-[44px] ${isActive ? "bg-[var(--accent-blue)] text-white shadow-lg shadow-blue-500/20" : "text-[var(--text-secondary)] hover:bg-[var(--bg-alternate)] hover:text-[var(--text-main)]"}`}
                     >
-                      <div className={`shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-lg flex items-center justify-center border-2 transition-colors ${isActive ? 'border-white/40' : (isDone ? 'border-[var(--accent-emerald)] bg-[var(--accent-emerald)]' : 'border-[var(--border-card)]')}`}>
-                        {isDone ? <CheckCircle size={12} className="text-white sm:hidden" /> : <div className={`w-1.5 h-1.5 rounded-full ${isActive ? 'bg-white' : 'bg-current opacity-20'}`} />}
-                        {isDone ? <CheckCircle size={14} className="text-white hidden sm:block" /> : null}
+                      <div
+                        className={`shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-lg flex items-center justify-center border-2 transition-colors ${isActive ? "border-white/40" : isDone ? "border-[var(--accent-emerald)] bg-[var(--accent-emerald)]" : "border-[var(--border-card)]"}`}
+                      >
+                        {isDone ? (
+                          <CheckCircle
+                            size={12}
+                            className="text-white sm:hidden"
+                          />
+                        ) : (
+                          <div
+                            className={`w-1.5 h-1.5 rounded-full ${isActive ? "bg-white" : "bg-current opacity-20"}`}
+                          />
+                        )}
+                        {isDone ? (
+                          <CheckCircle
+                            size={14}
+                            className="text-white hidden sm:block"
+                          />
+                        ) : null}
                       </div>
-                      <span className={`text-xs sm:text-sm font-bold truncate ${isActive ? 'text-white' : ''}`}>{t.title}</span>
-                      {isActive && <motion.div layoutId="active-indicator" className="ml-auto w-1 h-5 bg-white rounded-full" />}
+                      <span
+                        className={`text-xs sm:text-sm font-bold truncate ${isActive ? "text-white" : ""}`}
+                      >
+                        {t.title}
+                      </span>
+                      {isActive && (
+                        <motion.div
+                          layoutId="active-indicator"
+                          className="ml-auto w-1 h-5 bg-white rounded-full"
+                        />
+                      )}
                     </Link>
                   );
                 })}
@@ -386,7 +595,7 @@ export default function TopicDetail() {
 
           <button
             onClick={() => toggleTopicComplete(subject.slug, topicId)}
-            className={`flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer border min-h-[44px] shrink-0 ${isCompleted ? 'bg-green-500/10 text-green-600 border-green-500/20' : 'bg-[var(--bg-card)] text-[var(--text-secondary)] border-[var(--border-card)] hover:border-[var(--accent-blue)] hover:text-[var(--accent-blue)]'}`}
+            className={`flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer border min-h-[44px] shrink-0 ${isCompleted ? "bg-green-500/10 text-green-600 border-green-500/20" : "bg-[var(--bg-card)] text-[var(--text-secondary)] border-[var(--border-card)] hover:border-[var(--accent-blue)] hover:text-[var(--accent-blue)]"}`}
           >
             {isCompleted ? (
               <>
@@ -410,8 +619,18 @@ export default function TopicDetail() {
             className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-2xl mb-4 sm:mb-6 shadow-[var(--shadow-md)]"
             style={{ background: `${subject.color}25`, color: subject.color }}
           >
-            {topic.icon ? <span className="text-2xl sm:text-4xl">{topic.icon}</span> : <BookOpen size={24} strokeWidth={2.5} className="sm:hidden" />}
-            {topic.icon ? null : <BookOpen size={32} strokeWidth={2.5} className="hidden sm:block" />}
+            {topic.icon ? (
+              <span className="text-2xl sm:text-4xl">{topic.icon}</span>
+            ) : (
+              <BookOpen size={24} strokeWidth={2.5} className="sm:hidden" />
+            )}
+            {topic.icon ? null : (
+              <BookOpen
+                size={32}
+                strokeWidth={2.5}
+                className="hidden sm:block"
+              />
+            )}
           </motion.div>
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-extrabold tracking-tight text-[var(--text-main)] leading-tight m-0 mb-3 sm:mb-4">
             {topic.title}
@@ -431,7 +650,11 @@ export default function TopicDetail() {
         <div className="space-y-4 sm:space-y-6">
           {topic.sections && topic.sections.length > 0 ? (
             topic.sections.map((section, idx) => (
-              <SectionWrapper key={idx} title={section.subtitle} icon={BookOpen}>
+              <SectionWrapper
+                key={idx}
+                title={section.subtitle}
+                icon={BookOpen}
+              >
                 <div className="space-y-3 sm:space-y-4">
                   {section.content.map((item, i) => (
                     <ContentBlock key={i} item={item} />
@@ -444,7 +667,10 @@ export default function TopicDetail() {
               <div className="py-8 sm:py-10 text-center">
                 <div className="w-14 h-14 sm:w-16 sm:h-16 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4">
                   <BookOpen size={22} className="text-slate-400 sm:hidden" />
-                  <BookOpen size={24} className="text-slate-400 hidden sm:block" />
+                  <BookOpen
+                    size={24}
+                    className="text-slate-400 hidden sm:block"
+                  />
                 </div>
                 <p className="text-[var(--text-main)] font-medium m-0 text-base sm:text-lg">
                   Materi ini sedang disiapkan.
@@ -457,7 +683,7 @@ export default function TopicDetail() {
           )}
 
           {/* Visualization Specifics for Math Subjects */}
-          {topic.id === 'teorema-pythagoras' && (
+          {topic.id === "teorema-pythagoras" && (
             <SectionWrapper title="Visualisasi Interaktif" icon={Presentation}>
               <div className="p-3 sm:p-4 bg-slate-50 dark:bg-slate-800/30 rounded-xl overflow-hidden">
                 <PythagorasVisualizer />
@@ -465,7 +691,8 @@ export default function TopicDetail() {
             </SectionWrapper>
           )}
 
-          {(topic.id === 'bangun-ruang-kubus' || topic.id === 'bangun-ruang-balok') && (
+          {(topic.id === "bangun-ruang-kubus" ||
+            topic.id === "bangun-ruang-balok") && (
             <SectionWrapper title="Visualisasi 3D" icon={Presentation}>
               <div className="h-[280px] sm:h-[350px] md:h-[400px] w-full rounded-2xl overflow-hidden border border-[var(--border-card)] bg-slate-900 shadow-inner">
                 <Kubus3D />
@@ -476,7 +703,7 @@ export default function TopicDetail() {
             </SectionWrapper>
           )}
 
-          {topic.id === 'alat-ukur-panjang' && (
+          {topic.id === "alat-ukur-panjang" && (
             <SectionWrapper title="Visualisasi Interaktif" icon={Presentation}>
               <div className="overflow-x-auto">
                 <VernierCaliper />
@@ -537,12 +764,18 @@ export default function TopicDetail() {
                   <ChevronLeft size={18} />
                 </div>
                 <div className="min-w-0">
-                  <p className="text-[10px] sm:text-xs font-bold text-[var(--text-secondary)] uppercase tracking-widest m-0 mb-0.5 sm:mb-1">Sebelumnya</p>
-                  <h4 className="text-sm sm:text-base font-bold text-[var(--text-main)] m-0 line-clamp-1">{prevTopic.title}</h4>
+                  <p className="text-[10px] sm:text-xs font-bold text-[var(--text-secondary)] uppercase tracking-widest m-0 mb-0.5 sm:mb-1">
+                    Sebelumnya
+                  </p>
+                  <h4 className="text-sm sm:text-base font-bold text-[var(--text-main)] m-0 line-clamp-1">
+                    {prevTopic.title}
+                  </h4>
                 </div>
               </div>
             </Link>
-          ) : <div className="hidden sm:block flex-1" />}
+          ) : (
+            <div className="hidden sm:block flex-1" />
+          )}
 
           {nextTopic ? (
             <Link
@@ -551,8 +784,12 @@ export default function TopicDetail() {
             >
               <div className="flex items-center justify-between sm:justify-end gap-3 sm:gap-4">
                 <div className="min-w-0">
-                  <p className="text-[10px] sm:text-xs font-bold text-[var(--text-secondary)] uppercase tracking-widest m-0 mb-0.5 sm:mb-1">Berikutnya</p>
-                  <h4 className="text-sm sm:text-base font-bold text-[var(--text-main)] m-0 line-clamp-1">{nextTopic.title}</h4>
+                  <p className="text-[10px] sm:text-xs font-bold text-[var(--text-secondary)] uppercase tracking-widest m-0 mb-0.5 sm:mb-1">
+                    Berikutnya
+                  </p>
+                  <h4 className="text-sm sm:text-base font-bold text-[var(--text-main)] m-0 line-clamp-1">
+                    {nextTopic.title}
+                  </h4>
                 </div>
                 <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-[var(--text-secondary)] group-hover:text-[var(--accent-blue)] transition-colors shrink-0">
                   <ChevronRight size={18} />
@@ -564,8 +801,12 @@ export default function TopicDetail() {
               to={`/subject/${subject.slug}`}
               className="w-full sm:flex-1 p-4 sm:p-5 rounded-2xl border border-[var(--border-card)] bg-[var(--accent-blue)] text-white hover:opacity-90 transition-all group no-underline text-center"
             >
-              <h4 className="text-sm sm:text-base font-bold m-0">Selesai Modul</h4>
-              <p className="text-[10px] sm:text-xs font-medium opacity-80 m-0 mt-1">Kembali ke daftar topik</p>
+              <h4 className="text-sm sm:text-base font-bold m-0">
+                Selesai Modul
+              </h4>
+              <p className="text-[10px] sm:text-xs font-medium opacity-80 m-0 mt-1">
+                Kembali ke daftar topik
+              </p>
             </Link>
           )}
         </div>

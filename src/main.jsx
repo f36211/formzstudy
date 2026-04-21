@@ -21,9 +21,7 @@ const config = {
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
-      <MathJaxContext version={3} config={config}>
-        <App />
-      </MathJaxContext>
+      <App />
     </BrowserRouter>
   </React.StrictMode>,
 )

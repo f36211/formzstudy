@@ -3,6 +3,7 @@ import bindoData from "../subjects/pai/bindo";
 import ipaData from "../subjects/ipa/ipaData";
 import barabData from "../subjects/barabdata";
 import { ppdata } from "../subjects/ppdata";
+import { mtkdata } from "../subjects/mtkdata";
 
 export const subjectsData = [
   {
@@ -43,7 +44,7 @@ export const subjectsData = [
     description: "Ringkasan materi + latihan soal Matematika",
     icon: "Calculator",
     color: "#2B3990",
-    topics: [],
+    topics: mtkdata,
   },
   {
     title: "PP",

@@ -1,6 +1,6 @@
 import { bindoQuiz } from "./bindoQuiz";
 import { paiQuiz } from "./paiQuiz";
-import { matematikaQuiz } from "./matematikaQuiz";
+import { mtkquiz } from "./mtkquiz";
 import { ipaQuiz } from "./ipaquiz";
 import { barabQuiz } from "./barabquiz";
 import { ppquiz } from "./ppquiz";
@@ -9,6 +9,6 @@ export const quizDatabase = {
   pp: ppquiz,
   pai: paiQuiz,
   ipa: ipaQuiz,
-  matematika: matematikaQuiz,
+  matematika: mtkquiz,
   "bahasa-arab": barabQuiz,
 };

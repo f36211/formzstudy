@@ -1,8 +1,125 @@
 export const ppdata = [
   {
-    id: "keberagaman-indonesia",
-    title: "Keberagaman di Indonesia",
-    icon: "🌏",
+    id: "sejarah-perumusan-pancasila",
+    title: "Sejarah Perumusan Pancasila",
+    icon: "📚",
+    sections: [
+      {
+        subtitle: "Pengertian dan Tujuan",
+        content: [
+          {
+            type: "text",
+            content:
+              "Perumusan Pancasila adalah proses penyusunan dasar negara Indonesia sebelum kemerdekaan melalui sidang BPUPKI.",
+          },
+          {
+            type: "highlight",
+            content:
+              "Tujuan utama perumusan Pancasila adalah menetapkan dasar negara Republik Indonesia.",
+          },
+        ],
+      },
+      {
+        subtitle: "Tokoh Pengusul Pancasila",
+        content: [
+          {
+            type: "list",
+            ordered: true,
+            items: [
+              "Mohammad Yamin (29 Mei 1945)",
+              "Soepomo (31 Mei 1945)",
+              "Ir. Soekarno (1 Juni 1945)",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "Panitia Sembilan",
+        content: [
+          {
+            type: "text",
+            content:
+              "Panitia Sembilan menyusun Piagam Jakarta sebagai dasar awal rumusan Pancasila.",
+          },
+          {
+            type: "highlight",
+            content: "Piagam Jakarta disahkan 22 Juni 1945.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "perumusan-dan-pengesahan-uud-1945",
+    title: "Sejarah Perumusan dan Pengesahan UUD NRI 1945",
+    icon: "📚",
+    sections: [
+      {
+        subtitle: "Pengertian",
+        content: [
+          {
+            type: "text",
+            content:
+              "UUD 1945 adalah konstitusi negara Indonesia yang menjadi dasar hukum tertinggi.",
+          },
+        ],
+      },
+      {
+        subtitle: "Proses Pengesahan",
+        content: [
+          {
+            type: "list",
+            ordered: true,
+            items: [
+              "Dirumuskan oleh BPUPKI",
+              "Disempurnakan oleh PPKI",
+              "Disahkan tanggal 18 Agustus 1945",
+            ],
+          },
+          {
+            type: "highlight",
+            content: "PPKI mengesahkan UUD 1945 sehari setelah kemerdekaan.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "norma",
+    title: "Norma dalam Kehidupan Bermasyarakat",
+    icon: "📚",
+    sections: [
+      {
+        subtitle: "Pengertian Norma",
+        content: [
+          {
+            type: "text",
+            content:
+              "Norma adalah aturan atau pedoman perilaku manusia dalam kehidupan bermasyarakat.",
+          },
+        ],
+      },
+      {
+        subtitle: "Jenis Norma",
+        content: [
+          {
+            type: "list",
+            ordered: true,
+            items: [
+              "Norma agama",
+              "Norma kesusilaan",
+              "Norma kesopanan",
+              "Norma hukum",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "keberagaman-sara",
+    title: "Keberagaman Suku, Agama, Ras, dan Antargolongan (SARA)",
+    icon: "📚",
     sections: [
       {
         subtitle: "Pengertian Keberagaman",
@@ -10,195 +127,272 @@ export const ppdata = [
           {
             type: "text",
             content:
-              "Keberagaman secara bahasa berasal dari kata 'beragam' yang berarti berjenis-jenis, bermacam-macam, berwarna-warni, dan bercorak. Keberagaman adalah suatu kondisi dalam masyarakat yang terdapat banyak perbedaan dalam berbagai bidang.",
+              "Keberagaman adalah perbedaan yang ada dalam masyarakat seperti suku, agama, ras, budaya, dan bahasa.",
+          },
+        ],
+      },
+      {
+        subtitle: "Jenis Keberagaman",
+        content: [
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "Keberagaman suku",
+              "Keberagaman agama",
+              "Keberagaman ras",
+              "Keberagaman budaya",
+              "Keberagaman gender",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "faktor-penyebab-keberagaman",
+    title: "Faktor Penyebab Keberagaman di Indonesia",
+    icon: "📚",
+    sections: [
+      {
+        subtitle: "Faktor Penyebab",
+        content: [
+          {
+            type: "list",
+            ordered: true,
+            items: [
+              "Letak strategis Indonesia",
+              "Negara kepulauan",
+              "Perbedaan kondisi alam",
+              "Transportasi dan komunikasi",
+              "Penerimaan terhadap perubahan",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "budaya-benda-dan-nonbenda",
+    title: "Budaya Benda dan Nonbenda",
+    icon: "📚",
+    sections: [
+      {
+        subtitle: "Budaya Benda",
+        content: [
+          {
+            type: "list",
+            ordered: false,
+            items: ["Rumah adat", "Senjata tradisional", "Pakaian adat"],
+          },
+        ],
+      },
+      {
+        subtitle: "Budaya Nonbenda",
+        content: [
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "Bahasa daerah",
+              "Lagu daerah",
+              "Tarian daerah",
+              "Religi",
+              "Adat istiadat",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "agama-di-indonesia",
+    title: "Agama yang Diakui di Indonesia",
+    icon: "📚",
+    sections: [
+      {
+        subtitle: "Enam Agama Resmi",
+        content: [
+          {
+            type: "list",
+            ordered: true,
+            items: [
+              "Islam",
+              "Kristen",
+              "Katolik",
+              "Hindu",
+              "Buddha",
+              "Konghucu",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "Tempat Ibadah",
+        content: [
+          {
+            type: "table",
+            content: {
+              headers: ["Agama", "Tempat Ibadah"],
+              rows: [
+                ["Islam", "Masjid"],
+                ["Kristen/Katolik", "Gereja"],
+                ["Hindu", "Pura"],
+                ["Buddha", "Wihara"],
+                ["Konghucu", "Klenteng"],
+              ],
+            },
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "ras-di-indonesia",
+    title: "Ras di Indonesia",
+    icon: "📚",
+    sections: [
+      {
+        subtitle: "Jenis Ras",
+        content: [
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "Melanosoid",
+              "Asiatik Mongoloid",
+              "Malayan Mongoloid",
+              "Kaukasoid",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "Ciri Ras",
+        content: [
+          {
+            type: "text",
+            content:
+              "Ras dibedakan berdasarkan warna kulit, bentuk mata, dan jenis rambut.",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "bahasa-persatuan",
+    title: "Bahasa Indonesia sebagai Bahasa Persatuan",
+    icon: "📚",
+    sections: [
+      {
+        subtitle: "Fungsi Bahasa Indonesia",
+        content: [
+          {
+            type: "text",
+            content:
+              "Bahasa Indonesia berfungsi sebagai alat komunikasi nasional dan pemersatu bangsa.",
           },
           {
             type: "highlight",
             content:
-              "Keberagaman di Indonesia meliputi perbedaan suku, agama, ras, dan antargolongan (SARA).",
+              "Bahasa Indonesia mempersatukan masyarakat yang berbeda suku dan budaya.",
           },
         ],
       },
+    ],
+  },
+  {
+    id: "toleransi-dalam-keberagaman",
+    title: "Toleransi dalam Keberagaman",
+    icon: "📚",
+    sections: [
       {
-        subtitle: "Faktor Penyebab Keberagaman",
+        subtitle: "Pengertian Toleransi",
         content: [
           {
             type: "text",
             content:
-              "Keberagaman di Indonesia disebabkan oleh beberapa faktor:",
+              "Toleransi adalah sikap menghormati perbedaan dalam masyarakat.",
           },
+        ],
+      },
+      {
+        subtitle: "Contoh Sikap Toleransi",
+        content: [
           {
             type: "list",
             ordered: false,
             items: [
-              "Letak strategis wilayah Indonesia (antara dua benua dan dua samudra)",
-              "Kondisi negara kepulauan yang terdiri dari ribuan pulau",
-              "Perbedaan kondisi alam di setiap daerah",
-              "Keadaan transportasi dan komunikasi yang berbeda-beda",
-              "Penerimaan masyarakat terhadap perubahan",
+              "Menghormati agama lain",
+              "Tidak memaksakan agama",
+              "Menghargai budaya lain",
             ],
           },
         ],
       },
+    ],
+  },
+  {
+    id: "sejarah-nkri",
+    title: "Sejarah NKRI",
+    icon: "📚",
+    sections: [
       {
-        subtitle: "Keberagaman Suku",
+        subtitle: "Pengertian NKRI",
         content: [
           {
             type: "text",
             content:
-              "Suku adalah sekelompok manusia yang memiliki kesatuan budaya dan terikat oleh kesadaran dan identitas seperti garis keturunan atau kesamaan asal daerah. Cara mengidentifikasi suku dapat dilihat dari tempat asal, adat istiadat, bahasa daerah, dan sistem kekerabatan.",
-          },
-          {
-            type: "table",
-            headers: ["Provinsi", "Contoh Suku"],
-            rows: [
-              ["NAD (Aceh)", "Gayo, Singkil, Tamiang"],
-              ["Sulawesi Selatan", "Bugis, Toraja, Makassar"],
-              ["Jawa Tengah/Timur", "Jawa, Tengger, Samin"],
-              ["Banten", "Badui"],
-              ["Nias, Sumatra Utara", "Nias"],
-            ],
+              "NKRI adalah Negara Kesatuan Republik Indonesia yang diproklamasikan pada 17 Agustus 1945.",
           },
         ],
       },
       {
-        subtitle: "Keberagaman Budaya",
+        subtitle: "Simbol Negara",
         content: [
-          {
-            type: "text",
-            content:
-              "Budaya secara bahasa berasal dari kata 'buddayah' (bentuk jamak dari 'budhi') yang berarti akal. Budaya Indonesia lahir dari akal manusia yang dituangkan dalam suatu karya.",
-          },
-          { type: "text", content: "Budaya dibagi menjadi dua jenis:" },
           {
             type: "list",
             ordered: false,
             items: [
-              "Budaya benda: rumah adat, pakaian adat, senjata tradisional, alat musik daerah",
-              "Budaya nonbenda: religi, lagu daerah, tarian daerah, adat istiadat, upacara adat",
-            ],
-          },
-          {
-            type: "table",
-            headers: ["Tarian", "Makanan Khas", "Asal Daerah"],
-            rows: [
-              ["Tari Saman", "Mie Aceh", "NAD"],
-              ["Tari Serimpi", "Gudeg", "Yogyakarta"],
-              ["Tari Topeng", "Kerak Telor", "DKI Jakarta"],
-              ["Tari Kipas", "Coto Makassar", "Sulawesi Selatan"],
-              ["Tari Pendet", "Ayam Betutu", "Bali"],
+              "Bendera Merah Putih",
+              "Bahasa Indonesia",
+              "Garuda Pancasila",
+              "Semboyan Bhinneka Tunggal Ika",
             ],
           },
         ],
       },
+    ],
+  },
+  {
+    id: "persatuan-dalam-keberagaman",
+    title: "Persatuan dalam Keberagaman",
+    icon: "📚",
+    sections: [
       {
-        subtitle: "Keberagaman Agama",
+        subtitle: "Manfaat Persatuan",
         content: [
-          {
-            type: "text",
-            content:
-              "Indonesia adalah negara religius yang menjamin kebebasan beragama berdasarkan UUD 1945 Pasal 29 dan Sila Pertama Pancasila (Ketuhanan Yang Maha Esa).",
-          },
-          {
-            type: "table",
-            headers: ["Agama", "Tempat Ibadah", "Contoh Ritual"],
-            rows: [
-              ["Islam", "Masjid", "Shalat, Puasa"],
-              ["Kristen/Katolik", "Gereja", "Misa, Kebaktian"],
-              ["Hindu", "Pura", "Ngaben"],
-              ["Buddha", "Wihara", "Waisak"],
-              ["Konghucu", "Klenteng", "Sembahyang"],
-            ],
-          },
-          {
-            type: "highlight",
-            content:
-              "Prinsip hidup berdampingan dalam keberagaman agama adalah TOLERANSI — saling menghormati dan tidak memaksakan keyakinan kepada orang lain.",
-          },
-        ],
-      },
-      {
-        subtitle: "Keberagaman Ras",
-        content: [
-          {
-            type: "text",
-            content:
-              "Ras adalah golongan manusia yang dikelompokkan berdasarkan ciri fisik seperti warna kulit, bentuk mata, dan jenis rambut.",
-          },
-          {
-            type: "table",
-            headers: ["Jenis Ras", "Ciri Fisik", "Persebaran"],
-            rows: [
-              [
-                "Kaukasoid",
-                "Hidung mancung, bibir tipis, kulit putih, rambut pirang, tinggi 165-180 cm",
-                "Eropa, Amerika Utara",
-              ],
-              [
-                "Asiatik Mongoloid",
-                "Kulit kuning, rambut lurus, mata sipit, bibir tipis, tinggi 155-165 cm",
-                "Asia Timur (China, Jepang, Korea)",
-              ],
-              [
-                "Malayan Mongoloid",
-                "Kulit sawo matang, rambut lurus/bergelombang",
-                "Asia Tenggara (Indonesia, Malaysia)",
-              ],
-              [
-                "Melanosoid",
-                "Kulit gelap, rambut keriting, hidung lebar",
-                "Afrika, Papua",
-              ],
-              [
-                "Afrikan Negroid",
-                "Kulit hitam, rambut keriting tebal",
-                "Benua Afrika",
-              ],
-            ],
-          },
-        ],
-      },
-      {
-        subtitle: "Sikap Menghadapi Keberagaman",
-        content: [
-          {
-            type: "text",
-            content:
-              "Dalam kehidupan bermasyarakat di Indonesia yang beragam, diperlukan sikap-sikap positif untuk menjaga persatuan dan kesatuan:",
-          },
           {
             type: "list",
             ordered: false,
             items: [
-              "Toleransi: menghormati perbedaan agama, suku, dan budaya orang lain",
-              "Menghargai dan menghormati setiap budaya yang ada di Indonesia",
-              "Tidak menonjolkan satu kebudayaan daerah secara berlebihan",
-              "Menghindari konflik akibat perbedaan SARA",
-              "Mengedepankan persatuan di atas perbedaan",
+              "Menciptakan kedamaian",
+              "Memperkuat persatuan bangsa",
+              "Menghindari konflik",
             ],
-          },
-          {
-            type: "highlight",
-            content:
-              "Semboyan negara Indonesia adalah 'Bhinneka Tunggal Ika' yang berarti Berbeda-beda Tetapi Tetap Satu Jua — menjadi dasar dalam menyikapi keberagaman.",
           },
         ],
       },
       {
-        subtitle: "Bahasa Indonesia sebagai Pemersatu",
+        subtitle: "Contoh Sikap Persatuan",
         content: [
-          {
-            type: "text",
-            content:
-              "Indonesia memiliki ratusan bahasa daerah. Bahasa Indonesia berfungsi sebagai bahasa persatuan yang digunakan dalam kehidupan nasional.",
-          },
           {
             type: "list",
             ordered: false,
             items: [
-              "Terjalinnya komunikasi yang lancar antar suku bangsa",
-              "Memperkuat rasa persatuan dan kesatuan bangsa",
-              "Menjadi identitas nasional Indonesia di kancah internasional",
+              "Menghormati budaya lain",
+              "Menjaga kerukunan",
+              "Bekerja sama",
             ],
           },
         ],
