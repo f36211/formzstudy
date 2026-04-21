@@ -244,7 +244,8 @@ function TableBlock({ content, headers, rows }) {
 }
 
 function ContentBlock({ item }) {
-  // MathJax config handles \(...\) and $...$ automatically — no manual wrapping needed
+  // MathJax config handles \(...\) and $...$ automatically.
+  // wrapMath is for mixed text: only wraps if it detects a raw LaTeX command (\frac, etc.)
   const wrapMath = (str) => {
     if (typeof str !== "string") return str;
     if (str.includes("\\(") || str.includes("\\[") || str.includes("$$")) return str;
@@ -252,10 +253,17 @@ function ContentBlock({ item }) {
     return str;
   };
 
+  // forceMath is for pure math blocks: wraps the entire string if it doesn't have delimiters
+  const forceMath = (str) => {
+    if (typeof str !== "string") return str;
+    if (str.includes("\\(") || str.includes("\\[") || str.includes("$$")) return str;
+    return `\\(${str}\\)`;
+  };
+
   if (item.type === "text") {
     return (
       <p className="text-[var(--text-main)] leading-relaxed text-sm sm:text-[15px] my-2.5 sm:my-3">
-        <MathJax inline>{wrapMath(item.content || item.value)}</MathJax>
+        <MathJax dynamic inline>{wrapMath(item.content || item.value)}</MathJax>
       </p>
     );
   }
@@ -263,7 +271,7 @@ function ContentBlock({ item }) {
     const content = item.content || item.value;
     return (
       <div className="my-6 text-center overflow-x-auto py-3 bg-slate-50/50 dark:bg-slate-800/20 rounded-xl border border-[var(--border-card)]">
-        <MathJax>
+        <MathJax dynamic>
           {content.includes("\\[") || content.includes("$$")
             ? content
             : "\\[ " + content + " \\]"}
@@ -280,7 +288,7 @@ function ContentBlock({ item }) {
           </div>
         </div>
         <div className="text-[var(--text-main)] font-bold mb-5 leading-relaxed text-sm sm:text-base">
-          <MathJax inline>{wrapMath(item.question)}</MathJax>
+          <MathJax dynamic inline>{wrapMath(item.question)}</MathJax>
         </div>
         {item.steps && (
           <div className="space-y-3 mb-5 border-l-2 border-slate-200 dark:border-slate-700 pl-4 py-1">
@@ -292,18 +300,18 @@ function ContentBlock({ item }) {
                 key={i}
                 className="text-sm sm:text-[15px] text-[var(--text-secondary)] font-medium"
               >
-                <MathJax inline>{wrapMath(step)}</MathJax>
+                <MathJax key={step} dynamic inline>{forceMath(step)}</MathJax>
               </div>
             ))}
           </div>
         )}
         {item.result && (
-          <div className="mt-4 pt-4 border-t border-[var(--border-card)] flex flex-wrap items-center gap-2">
-            <span className="text-xs font-black text-[var(--text-main)] uppercase tracking-tight">
-              Jawaban Akhir:
+          <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap items-center gap-2">
+            <span className="text-[10px] font-black text-[var(--accent-blue)] uppercase tracking-widest">
+              Hasil:
             </span>
             <span className="text-sm sm:text-base font-bold text-[var(--accent-blue)] bg-blue-50 dark:bg-blue-500/10 px-2 py-0.5 rounded-md">
-              <MathJax inline>{wrapMath(item.result)}</MathJax>
+              <MathJax key={item.result} dynamic inline>{forceMath(item.result)}</MathJax>
             </span>
           </div>
         )}
@@ -313,7 +321,7 @@ function ContentBlock({ item }) {
   if (item.type === "highlight") {
     return (
       <HighlightBlock>
-        <MathJax inline>{wrapMath(item.content || item.value)}</MathJax>
+        <MathJax key={item.content || item.value} dynamic inline>{wrapMath(item.content || item.value)}</MathJax>
       </HighlightBlock>
     );
   }
@@ -347,7 +355,7 @@ function ContentBlock({ item }) {
           const parts = li.split(/\*\*(.*?)\*\*/g);
           return (
             <li key={i} className="text-xs sm:text-sm leading-relaxed">
-              <MathJax inline>
+              <MathJax key={li} inline>
                 {parts.map((part, j) =>
                   j % 2 === 1 ? (
                     <strong

@@ -29,6 +29,12 @@ export default function Quiz() {
     return str;
   };
 
+  const forceMath = (str) => {
+    if (typeof str !== "string") return str;
+    if (str.includes("\\(") || str.includes("\\[") || str.includes("$$")) return str;
+    return `\\(${str}\\)`;
+  };
+
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [isAnswerSubmitted, setIsAnswerSubmitted] = useState(false);
@@ -218,7 +224,7 @@ export default function Quiz() {
                 <div className="relative mb-8">
                   <div className="absolute -left-4 top-0 w-1 h-full bg-[var(--accent-blue)] rounded-full opacity-20" />
                   <h2 className="text-lg sm:text-xl font-medium text-[var(--text-main)] leading-relaxed m-0">
-                    <MathJax inline>{wrapMath(question.question)}</MathJax>
+                    <MathJax dynamic inline>{wrapMath(question.question)}</MathJax>
                   </h2>
                 </div>
 
@@ -264,7 +270,7 @@ export default function Quiz() {
                           {String.fromCharCode(65 + index)}
                         </div>
                         <span className={`text-[15px] font-normal leading-snug ${isAnswerSubmitted && !isCorrect && !isWrong ? 'text-[var(--text-muted)]' : 'text-[var(--text-main)]'}`}>
-                          <MathJax inline>{wrapMath(option)}</MathJax>
+                          <MathJax dynamic inline>{wrapMath(option)}</MathJax>
                         </span>
 
                         {/* Feedback icons */}
@@ -297,7 +303,7 @@ export default function Quiz() {
                           {selectedOption === question.correctAnswer ? 'Benar! 🎉' : 'Kurang tepat 😅'}
                         </p>
                         <div className="text-[var(--text-secondary)] m-0 leading-relaxed">
-                          <MathJax inline>{wrapMath(question.explanation)}</MathJax>
+                          <MathJax dynamic inline>{forceMath(question.explanation)}</MathJax>
                         </div>
                       </div>
                     </motion.div>
