@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+
 import {
   ArrowLeft,
   Edit3,
@@ -381,7 +382,6 @@ function ContentBlock({ item }) {
 
 export default function TopicDetail() {
   const { name, topicId } = useParams();
-  const navigate = useNavigate();
   const {
     notes,
     setNotes,
@@ -391,7 +391,20 @@ export default function TopicDetail() {
     setIsTopicSidebarOpen,
   } = useAppStore();
 
-  const [localNote, setLocalNote] = useState("");
+  const [localNote, setLocalNote] = useState(
+    notes || "- Tulis catatan pribadimu di sini\n- Bisa menggunakan *markdown*",
+  );
+  const [prevNotes, setPrevNotes] = useState(notes);
+  const [prevTopicId, setPrevTopicId] = useState(topicId);
+
+  if (notes !== prevNotes || topicId !== prevTopicId) {
+    setPrevNotes(notes);
+    setPrevTopicId(topicId);
+    setLocalNote(
+      notes || "- Tulis catatan pribadimu di sini\n- Bisa menggunakan *markdown*",
+    );
+  }
+
   const [isEditingNote, setIsEditingNote] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
 
@@ -415,12 +428,8 @@ export default function TopicDetail() {
   const isCompleted = completedTopicIds.includes(topicId);
 
   useEffect(() => {
-    setLocalNote(
-      notes ||
-        "- Tulis catatan pribadimu di sini\n- Bisa menggunakan *markdown*",
-    );
     window.scrollTo(0, 0);
-  }, [notes, topicId]);
+  }, [topicId]);
 
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 1024px)");

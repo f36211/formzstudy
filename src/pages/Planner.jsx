@@ -33,7 +33,7 @@ export default function Planner() {
             </div>
 
             <div className="flex flex-col gap-4 flex-1">
-              {day.exams.map((exam, i) => (
+              {day.exams.map((exam) => (
                 <div 
                   key={exam.id} 
                   className="bg-[var(--bg-main)] rounded-r-lg rounded-l-sm p-4 border border-[var(--border-card)] border-l-4 border-l-[var(--accent-blue)] hover:shadow-md transition-shadow relative overflow-hidden"

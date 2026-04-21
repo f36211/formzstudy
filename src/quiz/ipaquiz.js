@@ -44,23 +44,23 @@ export const ipaQuiz = [
     question: "Suhu tubuh seseorang adalah 40°C. Jika dikonversi ke dalam skala Fahrenheit, maka suhunya adalah...",
     options: ["72°F", "104°F", "112°F", "120°F"],
     correctAnswer: 1,
-    explanation: "°F = (9/5 × °C) + 32 = (9/5 × 40) + 32 = 72 + 32 = 104°F."
+    explanation: "\\(^\\circ F = (9/5 \\times ^\\circ C) + 32 = (9/5 \\times 40) + 32 = 72 + 32 = 104^\\circ F\\)."
   },
   {
     id: 5,
     topicId: "resultan-gaya",
-    question: "Tiga buah gaya bekerja pada sebuah benda: F1 = 40 N (ke kanan), F2 = 35 N (ke kiri), dan F3 = 25 N (ke kanan). Berapakah resultan gayanya?",
+    question: "Tiga buah gaya bekerja pada sebuah benda: \\(F_1 = 40\\) N (ke kanan), \\(F_2 = 35\\) N (ke kiri), dan \\(F_3 = 25\\) N (ke kanan). Berapakah resultan gayanya?",
     options: ["30 N ke kanan", "30 N ke kiri", "100 N ke kanan", "20 N ke kiri"],
     correctAnswer: 0,
-    explanation: "R = F1 - F2 + F3 = 40 - 35 + 25 = 30 N. Karena hasilnya positif, arahnya ke kanan."
+    explanation: "\\(R = F_1 - F_2 + F_3 = 40 - 35 + 25 = 30\\) N. Karena hasilnya positif, arahnya ke kanan."
   },
   {
     id: 6,
     topicId: "energi-potensial",
-    question: "Sebuah buah kelapa bermassa 2 kg berada pada ketinggian 5 m. Jika g = 10 m/s², berapakah energi potensialnya?",
+    question: "Sebuah buah kelapa bermassa 2 kg berada pada ketinggian 5 m. Jika \\(g = 10\\) m/s², berapakah energi potensialnya?",
     options: ["10 Joule", "25 Joule", "100 Joule", "200 Joule"],
     correctAnswer: 2,
-    explanation: "Ep = m × g × h = 2 kg × 10 m/s² × 5 m = 100 Joule."
+    explanation: "\\(E_p = m \\times g \\times h = 2 \\text{ kg} \\times 10 \\text{ m/s}^2 \\times 5 \\text{ m} = 100\\) Joule."
   },
   {
     id: 7,
@@ -68,7 +68,7 @@ export const ipaQuiz = [
     question: "Andi mendorong lemari dengan gaya 200 N sehingga lemari tersebut berpindah. Jika usaha yang dilakukan Andi adalah 1.400 Joule, berapakah perpindahan lemari tersebut?",
     options: ["7 meter", "20 meter", "28 meter", "70 meter"],
     correctAnswer: 0,
-    explanation: "W = F × s → s = W / F = 1400 / 200 = 7 meter."
+    explanation: "\\(W = F \\times s \\rightarrow s = W / F = 1400 / 200 = 7\\) meter."
   },
   {
     id: 8,
@@ -84,7 +84,7 @@ export const ipaQuiz = [
     question: "Zat aditif buatan yang sering digunakan untuk memberikan warna kuning pada minuman atau permen adalah...",
     options: ["MSG", "Sakarin", "Tartrazin", "Aspartam"],
     correctAnswer: 2,
-    explanation: "Tartrazin adalah pewarna buatan yang memberikan warna kuning pada makanan and minuman."
+    explanation: "Tartrazin adalah pewarna buatan yang memberikan warna kuning pada makanan dan minuman."
   },
   {
     id: 10,
@@ -92,7 +92,7 @@ export const ipaQuiz = [
     question: "Sebuah penggaris plastik yang digetarkan menghasilkan 200 getaran dalam waktu 50 detik. Berapakah frekuensi getarannya?",
     options: ["0,25 Hz", "4 Hz", "50 Hz", "10.000 Hz"],
     correctAnswer: 1,
-    explanation: "f = n / t = 200 / 50 = 4 Hz."
+    explanation: "\\(f = n / t = 200 / 50 = 4\\) Hz."
   },
   {
     id: 11,
@@ -100,7 +100,7 @@ export const ipaQuiz = [
     question: "Sebuah gelombang menempuh jarak 100 cm dalam waktu 5 detik. Cepat rambat gelombang tersebut adalah...",
     options: ["20 m/s", "5 m/s", "0,2 m/s", "500 m/s"],
     correctAnswer: 2,
-    explanation: "v = s / t = 100 cm / 5 s = 20 cm/s = 0,2 m/s."
+    explanation: "\\(v = s / t = 100 \\text{ cm} / 5 \\text{ s} = 20 \\text{ cm/s} = 0,2 \\text{ m/s}\\)."
   },
   {
     id: 12,
@@ -113,23 +113,23 @@ export const ipaQuiz = [
       "Maya, tegak, diperkecil"
     ],
     correctAnswer: 2,
-    explanation: "Pada cermin cekung, jika So < f, maka bayangan yang terbentuk adalah maya, tegak, and diperbesar."
+    explanation: "Pada cermin cekung, jika \\(S_o < f\\), maka bayangan yang terbentuk adalah maya, tegak, dan diperbesar."
   },
   {
     id: 13,
     topicId: "tuas-pengungkit",
-    question: "Sebuah tuas memiliki beban (W) 200 N dan lengan beban (lb) 20 cm. Jika lengan kuasanya (lk) adalah 80 cm, berapakah gaya kuasa (F) yang diperlukan untuk mengangkat beban tersebut?",
+    question: "Sebuah tuas memiliki beban (W) 200 N and lengan beban (lb) 20 cm. Jika lengan kuasanya (lk) adalah 80 cm, berapakah gaya kuasa (F) yang diperlukan untuk mengangkat beban tersebut?",
     options: ["50 N", "100 N", "400 N", "800 N"],
     correctAnswer: 0,
-    explanation: "F = (W × lb) / lk = (200 × 20) / 80 = 4000 / 80 = 50 N."
+    explanation: "\\(F = (W \\times lb) / lk = (200 \\times 20) / 80 = 4000 / 80 = 50\\) N."
   },
   {
     id: 14,
     topicId: "bidang-miring",
-    question: "Beban seberat 300 N dipindahkan menggunakan bidang miring dengan panjang (l) 3 m dan tinggi (h) 1,5 m. Berapakah gaya yang diperlukan?",
+    question: "Beban seberat 300 N dipindahkan menggunakan bidang miring dengan panjang (l) 3 m and tinggi (h) 1,5 m. Berapakah gaya yang diperlukan?",
     options: ["150 N", "200 N", "450 N", "600 N"],
     correctAnswer: 0,
-    explanation: "F = (W × h) / l = (300 × 1,5) / 3 = 450 / 3 = 150 N."
+    explanation: "\\(F = (W \\times h) / l = (300 \\times 1,5) / 3 = 450 / 3 = 150\\) N."
   },
   {
     id: 15,
@@ -183,7 +183,7 @@ export const ipaQuiz = [
     topicId: "pembuluh-darah",
     question: "Manakah pernyataan yang BENAR mengenai perbedaan antara pembuluh nadi (arteri) and pembuluh balik (vena)?",
     options: [
-      "Vena membawa darah kaya O2 ke seluruh tubuh",
+      "Vena membawa darah kaya \\(O_2\\) ke seluruh tubuh",
       "Arteri memiliki dinding yang tipis and kurang elastis",
       "Arteri membawa darah meninggalkan jantung",
       "Vena terletak lebih dalam dari permukaan kulit"
@@ -213,7 +213,7 @@ export const ipaQuiz = [
     question: "Sebuah mobil menempuh jarak 160 km dengan kecepatan rata-rata 80 km/jam. Berapa lama waktu yang diperlukan mobil tersebut?",
     options: ["1 jam", "2 jam", "3 jam", "4 jam"],
     correctAnswer: 1,
-    explanation: "t = s / v = 160 km / 80 km/jam = 2 jam."
+    explanation: "\\(t = s / v = 160 \\text{ km} / 80 \\text{ km/jam} = 2\\) jam."
   },
   {
     id: 23,
@@ -234,7 +234,7 @@ export const ipaQuiz = [
   {
     id: 25,
     topicId: "jaring-makanan-sawah",
-    question: "Dalam sebuah rantai makanan di sawah: Padi → Tikus → Ular → Elang. Jika petani membasmi seluruh ular di sawah, maka populasi yang akan meningkat pesat adalah...",
+    question: "Dalam sebuah rantai makanan di sawah: Padi \\(\\rightarrow\\) Tikus \\(\\rightarrow\\) Ular \\(\\rightarrow\\) Elang. Jika petani membasmi seluruh ular di sawah, maka populasi yang akan meningkat pesat adalah...",
     options: ["Padi", "Tikus", "Elang", "Pengurai"],
     correctAnswer: 1,
     explanation: "Jika ular (predator tikus) hilang, maka tidak ada yang memangsa tikus sehingga populasi tikus akan meningkat drastis."
@@ -245,12 +245,12 @@ export const ipaQuiz = [
     question: "Alat sonar mengirimkan bunyi ke dasar laut and menerima pantulannya setelah 10 detik. Jika cepat rambat bunyi di air 340 m/s, berapakah kedalaman laut tersebut?",
     options: ["3.400 m", "1.700 m", "680 m", "850 m"],
     correctAnswer: 1,
-    explanation: "d = (v × t) / 2 = (340 × 10) / 2 = 3400 / 2 = 1700 meter."
+    explanation: "\\(d = (v \\times t) / 2 = (340 \\times 10) / 2 = 3400 / 2 = 1700\\) meter."
   },
   {
     id: 27,
     topicId: "organ-pernapasan",
-    question: "Bagian paru-paru yang berfungsi sebagai tempat terjadinya pertukaran gas oksigen (O2) and karbon dioksida (CO2) adalah...",
+    question: "Bagian paru-paru yang berfungsi sebagai tempat terjadinya pertukaran gas oksigen (\\(O_2\\)) and karbon dioksida (\\(CO_2\\)) adalah...",
     options: ["Trakea", "Bronkus", "Alveolus", "Laring"],
     correctAnswer: 2,
     explanation: "Alveolus adalah kantung udara kecil yang dikelilingi kapiler darah, tempat utama pertukaran gas pernapasan."

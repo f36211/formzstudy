@@ -9,7 +9,7 @@ import useAppStore from '../store/useAppStore';
 const DAY_LABELS = ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'];
 
 export default function Dashboard() {
-  const { plannerTasks, completedTopics, quizScores, studyLog } = useAppStore();
+  const { completedTopics, quizScores, studyLog } = useAppStore();
 
   // Build real weekly chart data from studyLog
   const chartData = useMemo(() => {
@@ -24,14 +24,6 @@ export default function Dashboard() {
     }
     return days;
   }, [studyLog]);
-
-  // Provide mock tasks if store is empty for visual representation
-  const displayTasks = plannerTasks.length > 0 ? plannerTasks : [
-    { id: '1', text: 'Review PAI', completed: true },
-    { id: '2', text: 'Latihan Matematika', completed: false },
-    { id: '3', text: 'Baca IPS Bab 2', completed: false },
-    { id: '4', text: 'Kerjakan Kuis Bahasa Inggris', completed: false }
-  ];
 
   // Calculate Real Statistics
   const totalSubjects = subjectsData.filter(s => s.topics && s.topics.length > 0).length;
