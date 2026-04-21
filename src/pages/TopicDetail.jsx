@@ -10,6 +10,7 @@ import {
   CheckCircle2,
   Save,
   ChevronLeft,
+  ChevronRight,
   Menu,
   X,
   CheckCircle,
@@ -244,7 +245,12 @@ function TableBlock({ content, headers, rows }) {
 
 function ContentBlock({ item }) {
   // MathJax config handles \(...\) and $...$ automatically — no manual wrapping needed
-  const wrapMath = (str) => (typeof str === "string" ? str : str);
+  const wrapMath = (str) => {
+    if (typeof str !== "string") return str;
+    if (str.includes("\\(") || str.includes("\\[") || str.includes("$$")) return str;
+    if (/\\[a-zA-Z]/.test(str)) return `\\(${str}\\)`;
+    return str;
+  };
 
   if (item.type === "text") {
     return (
