@@ -24,17 +24,6 @@ export default function Quiz() {
 
   const wrapMath = (str) => {
     if (typeof str !== "string") return str;
-    if (
-      str.includes("\\(") ||
-      str.includes("\\[") ||
-      str.includes("$") ||
-      str.includes("$$")
-    ) {
-      return str;
-    }
-    if (str.includes("\\")) {
-      return `\\(${str}\\)`;
-    }
     return str;
   };
 

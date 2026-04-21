@@ -9,7 +9,6 @@ import {
   Presentation,
   CheckCircle2,
   Save,
-  ChevronRight,
   ChevronLeft,
   Menu,
   X,
@@ -80,7 +79,7 @@ function ArabicBlock({ arabic, transliteration, translation }) {
       <div className="space-y-1.5 sm:space-y-2 border-t border-[var(--border-card)] pt-3 sm:pt-4">
         {transliteration && (
           <p className="text-xs sm:text-sm font-medium text-[var(--accent-blue)] m-0">
-            "{transliteration}"
+            &ldquo;{transliteration}&rdquo;
           </p>
         )}
         {translation && (
@@ -244,23 +243,8 @@ function TableBlock({ content, headers, rows }) {
 }
 
 function ContentBlock({ item }) {
-  const wrapMath = (str) => {
-    if (typeof str !== "string") return str;
-    // Check if it's already wrapped in standard delimiters
-    if (
-      str.includes("\\(") ||
-      str.includes("\\[") ||
-      str.includes("$") ||
-      str.includes("$$")
-    ) {
-      return str;
-    }
-    // If it contains typical LaTeX commands (starting with \), wrap it in inline math delimiters
-    if (str.includes("\\")) {
-      return `\\(${str}\\)`;
-    }
-    return str;
-  };
+  // MathJax config handles \(...\) and $...$ automatically — no manual wrapping needed
+  const wrapMath = (str) => (typeof str === "string" ? str : str);
 
   if (item.type === "text") {
     return (
@@ -380,30 +364,29 @@ function ContentBlock({ item }) {
   return null;
 }
 
+const NOTE_PLACEHOLDER = "- Tulis catatan pribadimu di sini\n- Bisa menggunakan *markdown*";
+
 export default function TopicDetail() {
   const { name, topicId } = useParams();
   const {
     notes,
-    setNotes,
+    setNote,
     completedTopics,
     toggleTopicComplete,
     isTopicSidebarOpen,
     setIsTopicSidebarOpen,
   } = useAppStore();
 
-  const [localNote, setLocalNote] = useState(
-    notes || "- Tulis catatan pribadimu di sini\n- Bisa menggunakan *markdown*",
-  );
-  const [prevNotes, setPrevNotes] = useState(notes);
-  const [prevTopicId, setPrevTopicId] = useState(topicId);
+  // Get this topic's note from the per-topic dictionary
+  const currentNote = notes[topicId] || '';
 
-  if (notes !== prevNotes || topicId !== prevTopicId) {
-    setPrevNotes(notes);
-    setPrevTopicId(topicId);
-    setLocalNote(
-      notes || "- Tulis catatan pribadimu di sini\n- Bisa menggunakan *markdown*",
-    );
-  }
+  const [localNote, setLocalNote] = useState(currentNote || NOTE_PLACEHOLDER);
+
+  // Sync localNote when navigating to a different topic
+  useEffect(() => {
+    setLocalNote(notes[topicId] || NOTE_PLACEHOLDER);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [topicId]);
 
   const [isEditingNote, setIsEditingNote] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
@@ -440,7 +423,7 @@ export default function TopicDetail() {
   }, []);
 
   const saveNotes = () => {
-    setNotes(localNote);
+    setNote(topicId, localNote);
     setIsEditingNote(false);
   };
 

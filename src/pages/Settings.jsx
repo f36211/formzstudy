@@ -21,7 +21,9 @@ export default function Settings() {
     resetAllData, 
     resetProgress,
     darkModeEnabled,
-    toggleDarkMode
+    toggleDarkMode,
+    displayName,
+    setDisplayName,
   } = useAppStore();
 
   const handleResetProgress = () => {
@@ -71,8 +73,10 @@ export default function Settings() {
                 <div className="flex flex-col gap-1.5">
                   <label className="text-xs font-black text-[var(--text-muted)] uppercase tracking-widest">Nama Tampilan</label>
                   <input 
-                    type="text" 
-                    defaultValue="Student Pro"
+                    type="text"
+                    value={displayName}
+                    onChange={(e) => setDisplayName(e.target.value)}
+                    placeholder="Nama kamu..."
                     className="w-full px-4 py-3 rounded-xl border border-[var(--border-card)] bg-[var(--bg-main)] text-[var(--text-main)] font-bold outline-none focus:ring-2 focus:ring-[var(--accent-blue)]/20 focus:border-[var(--accent-blue)] transition-all"
                   />
                 </div>

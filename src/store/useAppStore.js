@@ -4,7 +4,7 @@ import { persist } from 'zustand/middleware';
 const useAppStore = create(
   persist(
     (set) => ({
-      // Topic completion: { "subjectId": ["topicId1", "topicId2"] }
+      // Topic completion: { "subjectSlug": ["topicId1", "topicId2"] }
       completedTopics: {},
 
       // Study log: array of { date: "YYYY-MM-DD", subjectId, topicId }
@@ -14,7 +14,7 @@ const useAppStore = create(
         set((state) => {
           const subjectTopics = state.completedTopics[subjectId] || [];
           const isCompleted = subjectTopics.includes(topicId);
-          const today = new Date().toISOString().split('T')[0]; // "YYYY-MM-DD"
+          const today = new Date().toISOString().split('T')[0];
 
           return {
             completedTopics: {
@@ -30,18 +30,29 @@ const useAppStore = create(
           };
         }),
 
-      // Quiz Scores: { "quizId": score }
+      // Quiz Scores: { "subjectSlug": score }
       quizScores: {},
       setQuizScore: (quizId, score) =>
         set((state) => ({
           quizScores: { ...state.quizScores, [quizId]: score },
-          // Also log quiz activity
-          studyLog: [...state.studyLog, { date: new Date().toISOString().split('T')[0], subjectId: quizId, topicId: `quiz-${quizId}` }],
+          studyLog: [
+            ...state.studyLog,
+            {
+              date: new Date().toISOString().split('T')[0],
+              subjectId: quizId,
+              topicId: `quiz-${quizId}`,
+            },
+          ],
         })),
 
-      // Notes: string (Markdown content)
-      notes: '',
-      setNotes: (content) => set({ notes: content }),
+      // Notes: per-topic dictionary { "topicId": "markdown content" }
+      notes: {},
+      setNote: (topicId, content) =>
+        set((state) => ({
+          notes: { ...state.notes, [topicId]: content },
+        })),
+      // Legacy: global notes getter for SubjectDetail modal (returns all notes joined)
+      getAllNotes: () => {},
 
       // Planner Tasks: [{ id, text, completed }]
       plannerTasks: [],
@@ -65,26 +76,33 @@ const useAppStore = create(
 
       // Settings
       darkModeEnabled: false,
-      toggleDarkMode: () => set((state) => ({ darkModeEnabled: !state.darkModeEnabled })),
-      
-      fontSize: 'base', // 'small', 'base', 'large'
+      toggleDarkMode: () =>
+        set((state) => ({ darkModeEnabled: !state.darkModeEnabled })),
+
+      fontSize: 'base', // 'small' | 'base' | 'large'
       setFontSize: (size) => set({ fontSize: size }),
 
-      // UI State (not persisted if we used partialize, but okay for now)
+      // Display name for user profile
+      displayName: 'Student Pro',
+      setDisplayName: (name) => set({ displayName: name }),
+
+      // UI State
       isTopicSidebarOpen: false,
       setIsTopicSidebarOpen: (open) => set({ isTopicSidebarOpen: open }),
 
       // Reset
-      resetProgress: () => set({ completedTopics: {}, quizScores: {}, studyLog: [] }),
+      resetProgress: () =>
+        set({ completedTopics: {}, quizScores: {}, studyLog: [] }),
       resetAllData: () =>
         set({
           completedTopics: {},
           quizScores: {},
           studyLog: [],
-          notes: '',
+          notes: {},
           plannerTasks: [],
           darkModeEnabled: false,
           fontSize: 'base',
+          displayName: 'Student Pro',
         }),
     }),
     {

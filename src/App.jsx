@@ -5,41 +5,25 @@ import TopicDetail from "./pages/TopicDetail";
 import Quiz from "./pages/Quiz";
 import Planner from "./pages/Planner";
 import Settings from "./pages/Settings";
-import { MathJaxContext } from "better-react-mathjax";
 
 import SidebarLayout from "./layout/SidebarLayout";
 
-const mathJaxConfig = {
-  tex: {
-    inlineMath: [
-      ["\\(", "\\)"],
-      ["$", "$"],
-    ],
-    displayMath: [
-      ["\\[", "\\]"],
-      ["$$", "$$"],
-    ],
-  },
-};
-
 function App() {
   return (
-    <MathJaxContext config={mathJaxConfig}>
-      <Routes>
-        <Route element={<SidebarLayout />}>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/subject/:name" element={<SubjectDetail />} />
-          <Route
-            path="/subject/:name/topic/:topicId"
-            element={<TopicDetail />}
-          />
-          <Route path="/quiz" element={<Quiz />} />
-          <Route path="/quiz/:subjectId" element={<Quiz />} />
-          <Route path="/planner" element={<Planner />} />
-          <Route path="/settings" element={<Settings />} />
-        </Route>
-      </Routes>
-    </MathJaxContext>
+    <Routes>
+      <Route element={<SidebarLayout />}>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/subject/:name" element={<SubjectDetail />} />
+        <Route
+          path="/subject/:name/topic/:topicId"
+          element={<TopicDetail />}
+        />
+        <Route path="/quiz" element={<Quiz />} />
+        <Route path="/quiz/:subjectId" element={<Quiz />} />
+        <Route path="/planner" element={<Planner />} />
+        <Route path="/settings" element={<Settings />} />
+      </Route>
+    </Routes>
   );
 }
 

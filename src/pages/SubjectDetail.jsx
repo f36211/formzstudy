@@ -37,6 +37,12 @@ export default function SubjectDetail() {
   const progressPercent =
     topics.length > 0 ? (completedTopicIds.length / topics.length) * 100 : 0;
 
+  // Collect all saved notes for this subject's topics
+  const subjectNotes = topics
+    .filter((t) => notes[t.id])
+    .map((t) => `### ${t.title}\n${notes[t.id]}`)
+    .join('\n\n---\n\n');
+
   return (
     <div className="w-full animation-fade-in pb-16 sm:pb-20">
       {/* Back Navigation */}
@@ -208,9 +214,9 @@ export default function SubjectDetail() {
                 </button>
               </div>
               <div className="p-8 overflow-y-auto flex-1 bg-slate-50/50 dark:bg-black/20">
-                {notes ? (
+                {subjectNotes ? (
                   <div className="prose prose-slate dark:prose-invert max-w-none">
-                    <ReactMarkdown>{notes}</ReactMarkdown>
+                    <ReactMarkdown>{subjectNotes}</ReactMarkdown>
                   </div>
                 ) : (
                   <div className="text-center py-20">
