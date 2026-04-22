@@ -1,21 +1,21 @@
-import { useState, useMemo } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  CheckCircle2, 
-  XCircle, 
-  ArrowRight, 
-  ArrowLeft, 
-  RotateCcw, 
-  Trophy, 
-  BrainCircuit, 
+import { useState, useMemo } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  CheckCircle2,
+  XCircle,
+  ArrowRight,
+  ArrowLeft,
+  RotateCcw,
+  Trophy,
+  BrainCircuit,
   BookOpen,
-  ChevronRight
-} from 'lucide-react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import { quizDatabase } from '../quiz/quizIndex';
-import { subjectsData } from '../data/mockData';
-import useAppStore from '../store/useAppStore';
-import { MathJax } from 'better-react-mathjax';
+  ChevronRight,
+} from "lucide-react";
+import { useParams, Link, useNavigate } from "react-router-dom";
+import { quizDatabase } from "../quiz/quizIndex";
+import { subjectsData } from "../data/mockData";
+import useAppStore from "../store/useAppStore";
+import { MathJax } from "better-react-mathjax";
 
 export default function Quiz() {
   const { subjectId } = useParams();
@@ -24,14 +24,16 @@ export default function Quiz() {
 
   const wrapMath = (str) => {
     if (typeof str !== "string") return str;
-    if (str.includes("\\(") || str.includes("\\[") || str.includes("$$")) return str;
+    if (str.includes("\\(") || str.includes("\\[") || str.includes("$$"))
+      return str;
     if (/\\[a-zA-Z]/.test(str)) return `\\(${str}\\)`;
     return str;
   };
 
   const forceMath = (str) => {
     if (typeof str !== "string") return str;
-    if (str.includes("\\(") || str.includes("\\[") || str.includes("$$")) return str;
+    if (str.includes("\\(") || str.includes("\\[") || str.includes("$$"))
+      return str;
     return `\\(${str}\\)`;
   };
 
@@ -48,7 +50,10 @@ export default function Quiz() {
   }, [subjectId]);
 
   const question = quizQuestions[currentQuestionIndex];
-  const progressPercent = quizQuestions.length > 0 ? ((currentQuestionIndex + 1) / quizQuestions.length) * 100 : 0;
+  const progressPercent =
+    quizQuestions.length > 0
+      ? ((currentQuestionIndex + 1) / quizQuestions.length) * 100
+      : 0;
 
   // If no subject is selected, show the selection screen
   if (!subjectId) {
@@ -67,16 +72,21 @@ export default function Quiz() {
           {subjectsData.map((subject) => {
             const hasQuiz = !!quizDatabase[subject.slug];
             return (
-              <Link 
-                key={subject.slug} 
-                to={hasQuiz ? `/quiz/${subject.slug}` : '#'} 
-                className={`group no-underline block h-full ${!hasQuiz ? 'opacity-60 cursor-not-allowed' : ''}`}
+              <Link
+                key={subject.slug}
+                to={hasQuiz ? `/quiz/${subject.slug}` : "#"}
+                className={`group no-underline block h-full ${!hasQuiz ? "opacity-60 cursor-not-allowed" : ""}`}
               >
-                <div className={`h-full bg-[var(--bg-card)] border border-[var(--border-card)] rounded-3xl p-8 shadow-[var(--shadow-soft)] transition-all duration-300 ${hasQuiz ? 'hover:shadow-[var(--shadow-md)] hover:border-[var(--accent-blue)] hover:-translate-y-1' : ''}`}>
+                <div
+                  className={`h-full bg-[var(--bg-card)] border border-[var(--border-card)] rounded-3xl p-8 shadow-[var(--shadow-soft)] transition-all duration-300 ${hasQuiz ? "hover:shadow-[var(--shadow-md)] hover:border-[var(--accent-blue)] hover:-translate-y-1" : ""}`}
+                >
                   <div className="flex items-center justify-between mb-6">
-                    <div 
+                    <div
                       className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-inner"
-                      style={{ background: `${subject.color}15`, color: subject.color }}
+                      style={{
+                        background: `${subject.color}15`,
+                        color: subject.color,
+                      }}
                     >
                       <BookOpen size={28} strokeWidth={2.5} />
                     </div>
@@ -85,7 +95,9 @@ export default function Quiz() {
                         <ChevronRight size={20} />
                       </div>
                     ) : (
-                      <span className="text-[10px] font-black uppercase tracking-widest text-[var(--text-muted)] bg-[var(--bg-alternate)] px-3 py-1 rounded-full">Coming Soon</span>
+                      <span className="text-[10px] font-black uppercase tracking-widest text-[var(--text-muted)] bg-[var(--bg-alternate)] px-3 py-1 rounded-full">
+                        Coming Soon
+                      </span>
                     )}
                   </div>
                   <h3 className="text-xl font-black text-[var(--text-main)] m-0 uppercase tracking-tight mb-2">
@@ -149,14 +161,21 @@ export default function Quiz() {
         </button>
         <div className="max-w-2xl mx-auto text-center py-20">
           <BrainCircuit size={48} className="mx-auto mb-4 text-slate-300" />
-          <h2 className="text-2xl font-semibold text-[var(--text-main)] mb-2">Belum Ada Soal</h2>
-          <p className="text-[var(--text-secondary)]">Kuis untuk mata pelajaran ini belum tersedia.</p>
+          <h2 className="text-2xl font-semibold text-[var(--text-main)] mb-2">
+            Belum Ada Soal
+          </h2>
+          <p className="text-[var(--text-secondary)]">
+            Kuis untuk mata pelajaran ini belum tersedia.
+          </p>
         </div>
       </div>
     );
   }
 
-  const scorePercent = quizQuestions.length > 0 ? Math.round((score / quizQuestions.length) * 100) : 0;
+  const scorePercent =
+    quizQuestions.length > 0
+      ? Math.round((score / quizQuestions.length) * 100)
+      : 0;
 
   return (
     <div className="w-full animation-fade-in pb-20">
@@ -167,14 +186,14 @@ export default function Quiz() {
             Kuis Materi
           </h1>
           <p className="text-xs md:text-sm font-medium text-[var(--text-muted)] m-0 mt-1 uppercase tracking-widest leading-relaxed">
-            {subjectId?.replace('-', ' ')}
+            {subjectId?.replace("-", " ")}
           </p>
         </div>
         <button
           onClick={() => navigate(-1)}
           className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl text-sm font-medium text-[var(--text-muted)] hover:text-[var(--text-main)] hover:bg-[var(--bg-alternate)] transition-all cursor-pointer border border-[var(--border-card)] bg-[var(--bg-card)] shadow-sm active:scale-95"
         >
-          <ArrowLeft size={16} /> 
+          <ArrowLeft size={16} />
           <span>Keluar Kuis</span>
         </button>
       </div>
@@ -224,7 +243,9 @@ export default function Quiz() {
                 <div className="relative mb-8">
                   <div className="absolute -left-4 top-0 w-1 h-full bg-[var(--accent-blue)] rounded-full opacity-20" />
                   <h2 className="text-lg sm:text-xl font-medium text-[var(--text-main)] leading-relaxed m-0">
-                    <MathJax dynamic inline>{wrapMath(question.question)}</MathJax>
+                    <MathJax dynamic inline>
+                      {wrapMath(question.question)}
+                    </MathJax>
                   </h2>
                 </div>
 
@@ -232,10 +253,15 @@ export default function Quiz() {
                 <div className="flex flex-col gap-2.5 mb-6">
                   {question.options.map((option, index) => {
                     const isSelected = selectedOption === index;
-                    const isCorrect = isAnswerSubmitted && index === question.correctAnswer;
-                    const isWrong = isAnswerSubmitted && isSelected && index !== question.correctAnswer;
+                    const isCorrect =
+                      isAnswerSubmitted && index === question.correctAnswer;
+                    const isWrong =
+                      isAnswerSubmitted &&
+                      isSelected &&
+                      index !== question.correctAnswer;
 
-                    let cardStyle = "relative flex items-center gap-3 px-4 py-3.5 rounded-xl border text-left cursor-pointer transition-all duration-150 ";
+                    let cardStyle =
+                      "relative flex items-center gap-3 px-4 py-3.5 rounded-xl border text-left cursor-pointer transition-all duration-150 ";
 
                     if (!isAnswerSubmitted) {
                       cardStyle += isSelected
@@ -247,7 +273,8 @@ export default function Quiz() {
                       } else if (isWrong) {
                         cardStyle += "border-rose-500/50 bg-rose-500/5";
                       } else {
-                        cardStyle += "border-[var(--border-card)] opacity-40 cursor-not-allowed";
+                        cardStyle +=
+                          "border-[var(--border-card)] opacity-40 cursor-not-allowed";
                       }
                     }
 
@@ -260,25 +287,37 @@ export default function Quiz() {
                         disabled={isAnswerSubmitted}
                         className={cardStyle}
                       >
-                        <div className={`flex w-9 h-9 rounded-xl items-center justify-center text-sm shrink-0 transition-all duration-300 font-medium shadow-sm
-                          ${!isAnswerSubmitted && isSelected ? 'bg-[var(--accent-blue)] text-white scale-110' : ''}
-                          ${!isAnswerSubmitted && !isSelected ? 'bg-[var(--bg-card)] border border-[var(--border-card)] text-[var(--text-muted)]' : ''}
-                          ${isAnswerSubmitted && isCorrect ? 'bg-[var(--accent-emerald)] text-white' : ''}
-                          ${isAnswerSubmitted && isWrong ? 'bg-rose-500 text-white' : ''}
-                          ${isAnswerSubmitted && !isCorrect && !isWrong ? 'bg-[var(--bg-main)] border border-[var(--border-card)] opacity-30 text-[var(--text-muted)]' : ''}
-                        `}>
+                        <div
+                          className={`flex w-9 h-9 rounded-xl items-center justify-center text-sm shrink-0 transition-all duration-300 font-medium shadow-sm
+                          ${!isAnswerSubmitted && isSelected ? "bg-[var(--accent-blue)] text-white scale-110" : ""}
+                          ${!isAnswerSubmitted && !isSelected ? "bg-[var(--bg-card)] border border-[var(--border-card)] text-[var(--text-muted)]" : ""}
+                          ${isAnswerSubmitted && isCorrect ? "bg-[var(--accent-emerald)] text-white" : ""}
+                          ${isAnswerSubmitted && isWrong ? "bg-rose-500 text-white" : ""}
+                          ${isAnswerSubmitted && !isCorrect && !isWrong ? "bg-[var(--bg-main)] border border-[var(--border-card)] opacity-30 text-[var(--text-muted)]" : ""}
+                        `}
+                        >
                           {String.fromCharCode(65 + index)}
                         </div>
-                        <span className={`text-[15px] font-normal leading-snug ${isAnswerSubmitted && !isCorrect && !isWrong ? 'text-[var(--text-muted)]' : 'text-[var(--text-main)]'}`}>
-                          <MathJax dynamic inline>{wrapMath(option)}</MathJax>
+                        <span
+                          className={`text-[15px] font-normal leading-snug ${isAnswerSubmitted && !isCorrect && !isWrong ? "text-[var(--text-muted)]" : "text-[var(--text-main)]"}`}
+                        >
+                          <MathJax dynamic inline>
+                            {wrapMath(option)}
+                          </MathJax>
                         </span>
 
                         {/* Feedback icons */}
                         {isAnswerSubmitted && isCorrect && (
-                          <CheckCircle2 className="absolute right-3.5 text-emerald-500" size={20} />
+                          <CheckCircle2
+                            className="absolute right-3.5 text-emerald-500"
+                            size={20}
+                          />
                         )}
                         {isAnswerSubmitted && isWrong && (
-                          <XCircle className="absolute right-3.5 text-rose-500" size={20} />
+                          <XCircle
+                            className="absolute right-3.5 text-rose-500"
+                            size={20}
+                          />
                         )}
                       </motion.button>
                     );
@@ -290,20 +329,28 @@ export default function Quiz() {
                   {isAnswerSubmitted && (
                     <motion.div
                       initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: 'auto' }}
+                      animate={{ opacity: 1, height: "auto" }}
                       className="mb-6 overflow-hidden"
                     >
-                      <div className={`p-4 rounded-xl border text-[14px] leading-relaxed
-                        ${selectedOption === question.correctAnswer
-                          ? 'bg-emerald-500/5 border-emerald-500/20'
-                          : 'bg-rose-500/5 border-rose-500/20'
+                      <div
+                        className={`p-4 rounded-xl border text-[14px] leading-relaxed
+                        ${
+                          selectedOption === question.correctAnswer
+                            ? "bg-emerald-500/5 border-emerald-500/20"
+                            : "bg-rose-500/5 border-rose-500/20"
                         }`}
                       >
-                        <p className={`font-bold mb-1 ${selectedOption === question.correctAnswer ? 'text-emerald-500' : 'text-rose-500'}`}>
-                          {selectedOption === question.correctAnswer ? 'Benar! 🎉' : 'Kurang tepat 😅'}
+                        <p
+                          className={`font-bold mb-1 ${selectedOption === question.correctAnswer ? "text-emerald-500" : "text-rose-500"}`}
+                        >
+                          {selectedOption === question.correctAnswer
+                            ? "Benar! 🎉"
+                            : "Kurang tepat 😅"}
                         </p>
                         <div className="text-[var(--text-secondary)] m-0 leading-relaxed">
-                          <MathJax dynamic inline>{forceMath(question.explanation)}</MathJax>
+                          <MathJax dynamic inline>
+                            {forceMath(question.explanation)}
+                          </MathJax>
                         </div>
                       </div>
                     </motion.div>
@@ -325,7 +372,9 @@ export default function Quiz() {
                       onClick={handleNext}
                       className="px-6 py-2.5 bg-[var(--text-main)] hover:opacity-90 text-[var(--bg-main)] font-medium rounded-lg transition-all duration-150 flex items-center gap-2 active:scale-[0.97] cursor-pointer border-0"
                     >
-                      {currentQuestionIndex < quizQuestions.length - 1 ? 'Soal Berikutnya' : 'Lihat Hasil'}
+                      {currentQuestionIndex < quizQuestions.length - 1
+                        ? "Soal Berikutnya"
+                        : "Lihat Hasil"}
                       <ArrowRight size={16} />
                     </button>
                   )}
@@ -342,7 +391,7 @@ export default function Quiz() {
               >
                 {/* Result Background Decoration */}
                 <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[var(--accent-blue)] via-[var(--accent-indigo)] to-[var(--accent-emerald)]" />
-                
+
                 <div className="w-24 h-24 bg-gradient-to-br from-amber-400 to-orange-500 text-white rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-lg rotate-3">
                   <Trophy size={48} strokeWidth={2.5} />
                 </div>
@@ -354,23 +403,35 @@ export default function Quiz() {
                   Hasil Evaluasi Belajar Anda
                 </p>
 
-                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
                   <div className="bg-[var(--bg-alternate)] border border-[var(--border-card)] rounded-2xl p-6 shadow-inner">
-                    <p className="text-[10px] font-medium text-[var(--text-muted)] uppercase tracking-widest mb-2">Benar</p>
-                    <p className="text-3xl font-bold text-[var(--accent-emerald)] m-0">{score}</p>
+                    <p className="text-[10px] font-medium text-[var(--text-muted)] uppercase tracking-widest mb-2">
+                      Benar
+                    </p>
+                    <p className="text-3xl font-bold text-[var(--accent-emerald)] m-0">
+                      {score}
+                    </p>
                   </div>
                   <div className="bg-[var(--bg-alternate)] border border-[var(--border-card)] rounded-2xl p-6 shadow-inner">
-                    <p className="text-[10px] font-medium text-[var(--text-muted)] uppercase tracking-widest mb-2">Salah</p>
-                    <p className="text-3xl font-bold text-[var(--accent-rose)] m-0">{quizQuestions.length - score}</p>
+                    <p className="text-[10px] font-medium text-[var(--text-muted)] uppercase tracking-widest mb-2">
+                      Salah
+                    </p>
+                    <p className="text-3xl font-bold text-[var(--accent-rose)] m-0">
+                      {quizQuestions.length - score}
+                    </p>
                   </div>
                   <div className="bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-indigo)] rounded-2xl p-6 shadow-lg shadow-blue-500/20">
-                    <p className="text-[10px] font-medium text-white/70 uppercase tracking-widest mb-2">Nilai</p>
-                    <p className="text-3xl font-bold text-white m-0">{scorePercent}</p>
+                    <p className="text-[10px] font-medium text-white/70 uppercase tracking-widest mb-2">
+                      Nilai
+                    </p>
+                    <p className="text-3xl font-bold text-white m-0">
+                      {scorePercent}
+                    </p>
                   </div>
                 </div>
 
                 <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
-                   <button
+                  <button
                     onClick={handleRestart}
                     className="px-8 py-4 bg-[var(--bg-card)] hover:bg-[var(--bg-alternate)] text-[var(--text-main)] font-medium rounded-2xl transition-all duration-200 flex items-center justify-center gap-2 active:scale-95 cursor-pointer border-2 border-[var(--border-card)] shadow-sm uppercase text-xs tracking-[0.15em]"
                   >

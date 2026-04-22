@@ -96,7 +96,18 @@ function ArabicBlock({ arabic, transliteration, translation }) {
   );
 }
 
-function TableBlock({ content, headers, rows }) {
+function TableBlock({ content, headers, rows, isMath }) {
+  const ConditionalMathJax = ({ condition, inline, children }) => {
+    if (condition) {
+      return (
+        <MathJax dynamic inline={inline}>
+          {children}
+        </MathJax>
+      );
+    }
+    return <>{children}</>;
+  };
+
   // Format 1: Old format with explicit headers[] and rows[][]
   if (headers && rows) {
     return (
@@ -113,7 +124,9 @@ function TableBlock({ content, headers, rows }) {
                     key={i}
                     className="p-2.5 sm:p-3 font-semibold text-[var(--text-main)] border-b border-[var(--border-card)] whitespace-nowrap"
                   >
-                    {h}
+                    <ConditionalMathJax condition={isMath} inline>
+                      {h}
+                    </ConditionalMathJax>
                   </th>
                 ))}
               </tr>
@@ -129,7 +142,9 @@ function TableBlock({ content, headers, rows }) {
                       key={j}
                       className="p-2.5 sm:p-3 text-[var(--text-secondary)] align-top whitespace-normal break-words"
                     >
-                      {cell}
+                      <ConditionalMathJax condition={isMath} inline>
+                        {cell}
+                      </ConditionalMathJax>
                     </td>
                   ))}
                 </tr>
@@ -170,7 +185,9 @@ function TableBlock({ content, headers, rows }) {
                     key={i}
                     className="p-2.5 sm:p-3 font-semibold text-[var(--text-main)] border-b border-[var(--border-card)] whitespace-nowrap"
                   >
-                    {h}
+                    <ConditionalMathJax condition={isMath} inline>
+                      {h}
+                    </ConditionalMathJax>
                   </th>
                 ))}
               </tr>
@@ -186,7 +203,9 @@ function TableBlock({ content, headers, rows }) {
                       key={j}
                       className="p-2.5 sm:p-3 text-[var(--text-secondary)] align-top whitespace-normal break-words"
                     >
-                      {cell}
+                      <ConditionalMathJax condition={isMath} inline>
+                        {cell}
+                      </ConditionalMathJax>
                     </td>
                   ))}
                 </tr>
@@ -215,7 +234,9 @@ function TableBlock({ content, headers, rows }) {
                     key={i}
                     className="p-2.5 sm:p-3 font-semibold text-[var(--text-main)] border-b border-[var(--border-card)] whitespace-nowrap"
                   >
-                    {k}
+                    <ConditionalMathJax condition={isMath} inline>
+                      {k}
+                    </ConditionalMathJax>
                   </th>
                 ))}
               </tr>
@@ -231,7 +252,9 @@ function TableBlock({ content, headers, rows }) {
                       key={j}
                       className="p-2.5 sm:p-3 text-[var(--text-secondary)] align-top whitespace-normal break-words"
                     >
-                      {row[k]}
+                      <ConditionalMathJax condition={isMath} inline>
+                        {row[k]}
+                      </ConditionalMathJax>
                     </td>
                   ))}
                 </tr>
@@ -246,7 +269,18 @@ function TableBlock({ content, headers, rows }) {
   return null;
 }
 
-function ContentBlock({ item }) {
+const ConditionalMathJax = ({ condition, inline, children }) => {
+  if (condition) {
+    return (
+      <MathJax dynamic inline={inline}>
+        {children}
+      </MathJax>
+    );
+  }
+  return <>{children}</>;
+};
+
+function ContentBlock({ item, isMath }) {
   // MathJax config handles \(...\) and $...$ automatically.
   // wrapMath is for mixed text: only wraps if it detects a raw LaTeX command (\frac, etc.)
   const wrapMath = (str) => {
@@ -265,7 +299,11 @@ function ContentBlock({ item }) {
 
   const renderImage = (src, alt) => (
     <div className="my-4 sm:my-5 flex justify-center">
-      <img src={src} alt={alt || "Ilustrasi"} className="max-w-full h-auto rounded-xl object-contain shadow-sm border border-[var(--border-card)]" />
+      <img
+        src={src}
+        alt={alt || "Ilustrasi"}
+        className="max-w-full h-auto rounded-xl object-contain shadow-sm border border-[var(--border-card)]"
+      />
     </div>
   );
 
@@ -289,16 +327,16 @@ function ContentBlock({ item }) {
       
       {item.type === "text" && (
         <p className="text-[var(--text-main)] leading-relaxed text-sm sm:text-[15px] my-2.5 sm:my-3">
-          <MathJax dynamic inline>{wrapMath(item.content || item.value)}</MathJax>
+          <ConditionalMathJax condition={isMath} inline>{wrapMath(item.content || item.value)}</ConditionalMathJax>
         </p>
       )}
       {item.type === "formula" && (
         <div className="my-6 text-center overflow-x-auto py-3 bg-slate-50/50 dark:bg-slate-800/20 rounded-xl border border-[var(--border-card)]">
-          <MathJax dynamic>
+          <ConditionalMathJax condition={isMath}>
             { (item.content || item.value).includes("\\[") || (item.content || item.value).includes("$$")
               ? (item.content || item.value)
               : "\\[ " + (item.content || item.value) + " \\]"}
-          </MathJax>
+          </ConditionalMathJax>
         </div>
       )}
       {item.type === "example" && (
@@ -309,7 +347,7 @@ function ContentBlock({ item }) {
             </div>
           </div>
           <div className="text-[var(--text-main)] font-bold mb-5 leading-relaxed text-sm sm:text-base">
-            <MathJax dynamic inline>{wrapMath(item.question)}</MathJax>
+            <ConditionalMathJax condition={isMath} inline>{wrapMath(item.question)}</ConditionalMathJax>
           </div>
           {item.steps && (
             <div className="space-y-3 mb-5 border-l-2 border-slate-200 dark:border-slate-700 pl-4 py-1">
@@ -321,7 +359,7 @@ function ContentBlock({ item }) {
                   key={i}
                   className="text-sm sm:text-[15px] text-[var(--text-secondary)] font-medium"
                 >
-                  <MathJax key={step} dynamic inline>{forceMath(step)}</MathJax>
+                  <ConditionalMathJax condition={isMath} inline>{forceMath(step)}</ConditionalMathJax>
                 </div>
               ))}
             </div>
@@ -332,7 +370,7 @@ function ContentBlock({ item }) {
                 Hasil:
               </span>
               <span className="text-sm sm:text-base font-bold text-[var(--accent-blue)] bg-blue-50 dark:bg-blue-500/10 px-2 py-0.5 rounded-md">
-                <MathJax key={item.result} dynamic inline>{forceMath(item.result)}</MathJax>
+                <ConditionalMathJax condition={isMath} inline>{forceMath(item.result)}</ConditionalMathJax>
               </span>
             </div>
           )}
@@ -340,7 +378,7 @@ function ContentBlock({ item }) {
       )}
       {item.type === "highlight" && (
         <HighlightBlock>
-          <MathJax key={item.content || item.value} dynamic inline>{wrapMath(item.content || item.value)}</MathJax>
+          <ConditionalMathJax condition={isMath} inline>{wrapMath(item.content || item.value)}</ConditionalMathJax>
         </HighlightBlock>
       )}
       {item.type === "arabic" && (
@@ -355,6 +393,7 @@ function ContentBlock({ item }) {
           content={item.content}
           headers={item.headers}
           rows={item.rows}
+          isMath={isMath}
         />
       )}
       {item.type === "list" && (
@@ -362,13 +401,13 @@ function ContentBlock({ item }) {
           {item.ordered ? (
             <ol className="list-decimal pl-4 sm:pl-5 space-y-1.5 text-[var(--text-secondary)]">
               {item.items.map((li, i) => (
-                <ListItem key={i} li={li} />
+                <ListItem key={i} li={li} isMath={isMath} />
               ))}
             </ol>
           ) : (
             <ul className="list-disc pl-4 sm:pl-5 space-y-1.5 text-[var(--text-secondary)]">
               {item.items.map((li, i) => (
-                <ListItem key={i} li={li} />
+                <ListItem key={i} li={li} isMath={isMath} />
               ))}
             </ul>
           )}
@@ -378,24 +417,31 @@ function ContentBlock({ item }) {
   );
 }
 
-function ListItem({ li }) {
+function ListItem({ li, isMath }) {
   const parts = li.split(/\*\*(.*?)\*\*/g);
+  
+  const content = parts.map((part, j) =>
+    j % 2 === 1 ? (
+      <strong
+        key={j}
+        className="font-semibold text-[var(--text-main)]"
+      >
+        {part}
+      </strong>
+    ) : (
+      part
+    ),
+  );
+
   return (
     <li className="text-xs sm:text-sm leading-relaxed">
-      <MathJax key={li} inline>
-        {parts.map((part, j) =>
-          j % 2 === 1 ? (
-            <strong
-              key={j}
-              className="font-semibold text-[var(--text-main)]"
-            >
-              {part}
-            </strong>
-          ) : (
-            part
-          ),
-        )}
-      </MathJax>
+      {isMath ? (
+        <MathJax key={li} inline>
+          {content}
+        </MathJax>
+      ) : (
+        <>{content}</>
+      )}
     </li>
   );
 }
@@ -419,10 +465,11 @@ export default function TopicDetail() {
   const [localNote, setLocalNote] = useState(currentNote || NOTE_PLACEHOLDER);
 
   // Sync localNote when navigating to a different topic
-  useEffect(() => {
+  const [prevTopicId, setPrevTopicId] = useState(topicId);
+  if (topicId !== prevTopicId) {
+    setPrevTopicId(topicId);
     setLocalNote(notes[topicId] || NOTE_PLACEHOLDER);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [topicId]);
+  }
 
   const [isEditingNote, setIsEditingNote] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
@@ -436,6 +483,7 @@ export default function TopicDetail() {
     [subject, topicId],
   );
   const topic = subject?.topics?.[topicIndex];
+  const isMath = subject?.slug === "matematika" || subject?.slug === "ipa";
 
   const prevTopic = topicIndex > 0 ? subject?.topics?.[topicIndex - 1] : null;
   const nextTopic =
@@ -703,7 +751,7 @@ export default function TopicDetail() {
                 )}
                 <div className="space-y-3 sm:space-y-4">
                   {section.content.map((item, i) => (
-                    <ContentBlock key={i} item={item} />
+                    <ContentBlock key={i} item={item} isMath={isMath} />
                   ))}
                 </div>
               </SectionWrapper>

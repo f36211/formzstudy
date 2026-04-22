@@ -19,6 +19,11 @@ export const ipsdata = [
             alt: "Peta Letak Indonesia",
           },
           {
+            type: "image",
+            src: "/ilustrasi.png",
+            alt: "Ilustrasi Indonesia",
+          },
+          {
             type: "table",
             headers: ["Jenis Letak", "Keterangan", "Pengaruh"],
             rows: [
@@ -109,6 +114,7 @@ export const ipsdata = [
     id: "asean-kerjasama",
     title: "ASEAN dan Kerja Sama Antarnegara",
     icon: "🌏",
+    image: "/school.png",
     sections: [
       {
         subtitle: "Faktor Pendorong Kerja Sama ASEAN",
@@ -472,6 +478,16 @@ export const ipsdata = [
               ["Buddha", "Candi Borobudur, Candi Mendut"],
               ["Hindu", "Candi Prambanan, Candi Dieng"],
             ],
+          },
+          {
+            type: "image",
+            src: "/kerajaansriwijata.png",
+            alt: "Kerajaan Sriwijaya",
+          },
+          {
+            type: "image",
+            src: "/kerajaanmajapahit.png",
+            alt: "Kerajaan Majapahit",
           },
           { type: "text", content: "Pengaruh Islam di Indonesia:" },
           {
@@ -1017,6 +1033,16 @@ export const ipsdata = [
               "Pemanfaatan SDA untuk kepentingan perang",
             ],
           },
+          {
+            type: "image",
+            src: "/pasukanpeta.png",
+            alt: "Pasukan PETA",
+          },
+          {
+            type: "image",
+            src: "/prajuritheiho.png",
+            alt: "Prajurit Heiho",
+          },
         ],
       },
     ],
@@ -1039,6 +1065,11 @@ export const ipsdata = [
               "Pangeran Diponegoro → Perang Jawa",
               "Cut Nyak Dien → Perlawanan Aceh",
             ],
+          },
+          {
+            type: "image",
+            src: "/kesultanan.png",
+            alt: "Kesultanan di Indonesia",
           },
         ],
       },
@@ -1878,6 +1909,21 @@ export const ipsdata = [
               "Majapahit: Raja terkenal Hayam Wuruk, peninggalan Kitab Negarakertagama dan Candi Penataran.",
             ],
           },
+          {
+            type: "image",
+            src: "/kesultanantarumanagara.png",
+            alt: "Kerajaan Tarumanagara",
+          },
+          {
+            type: "image",
+            src: "/kerajaansriwijata.png",
+            alt: "Kerajaan Sriwijaya",
+          },
+          {
+            type: "image",
+            src: "/kerajaanmajapahit.png",
+            alt: "Kerajaan Majapahit",
+          },
         ],
       },
       {
@@ -1945,6 +1991,31 @@ export const ipsdata = [
               "Ternate dan Tidore: Sultan Baabullah.",
             ],
           },
+          {
+            type: "image",
+            src: "/kesultananaceh.png",
+            alt: "Kesultanan Aceh",
+          },
+          {
+            type: "image",
+            src: "/kesultanandemak.png",
+            alt: "Kesultanan Demak",
+          },
+          {
+            type: "image",
+            src: "/kesultananbanten.png",
+            alt: "Kesultanan Banten",
+          },
+          {
+            type: "image",
+            src: "/kesultananmataram.png",
+            alt: "Kesultanan Mataram",
+          },
+          {
+            type: "image",
+            src: "/kesultanangowa.png",
+            alt: "Kesultanan Gowa-Tallo",
+          },
         ],
       },
       {
@@ -1967,6 +2038,198 @@ export const ipsdata = [
           {
             type: "highlight",
             content: "Iskandar Muda = Aceh, Ageng Tirtayasa = Banten.",
+          },
+        ],
+      },
+      {
+        subtitle: "🎯 Motivasi Kedatangan Bangsa Barat (3G)",
+        content: [
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "Gold: Mencari kekayaan terutama rempah-rempah seperti lada, cengkih, dan pala.",
+              "Glory: Mencari kejayaan dan memperluas wilayah kekuasaan.",
+              "Gospel: Menyebarkan agama Nasrani.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "🚢 Bangsa Eropa yang Datang ke Indonesia",
+        content: [
+          {
+            type: "list",
+            ordered: true,
+            items: [
+              "Portugis (1511): Dipimpin Alfonso de Albuquerque menaklukkan Malaka.",
+              "Spanyol (1521): Dipimpin Sebastian del Cano sampai di Maluku.",
+              "Belanda (1596): Dipimpin Cornelis de Houtman mendarat di Banten.",
+              "Inggris (1811–1816): Dipimpin Thomas Stamford Raffles.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "🏢 Masa Kejayaan dan Keruntuhan VOC (1602–1799)",
+        content: [
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "VOC dibentuk untuk menghindari persaingan sesama pedagang Belanda.",
+              "Hak Octroi: VOC boleh memiliki tentara sendiri, mencetak uang, dan menyatakan perang.",
+              "Kebijakan Ekstirpasi: Penebangan pohon rempah agar harga tetap tinggi di Eropa.",
+              "VOC bubar karena korupsi, utang besar, dan biaya perang yang tinggi.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "📜 Kebijakan Pemerintah Kolonial Belanda dan Inggris",
+        content: [
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "Herman Willem Daendels membangun Jalan Raya Pos (Anyer–Panarukan).",
+              "Johannes van den Bosch menerapkan Tanam Paksa (Cultuurstelsel).",
+              "Thomas Stamford Raffles menerapkan sistem Land Rent (Sewa Tanah) dan menulis buku History of Java.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "⚔️ Perlawanan Rakyat di Daerah",
+        content: [
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "Perang Diponegoro di Jawa Tengah.",
+              "Perang Padri di Sumatera Barat dipimpin Tuanku Imam Bonjol.",
+              "Perang Pattimura di Maluku melawan monopoli Belanda.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "💡 Catatan Penting Masa Kolonial",
+        content: [
+          {
+            type: "highlight",
+            content:
+              "VOC bubar karena korupsi dan utang besar, lalu kekuasaan diambil alih langsung oleh Pemerintah Belanda.",
+          },
+        ],
+      },
+      {
+        subtitle: "✊ Masa Pergerakan Nasional",
+        content: [
+          {
+            type: "text",
+            content:
+              "Pergerakan Nasional adalah masa perjuangan rakyat Indonesia yang sudah terorganisir secara modern dan bertujuan mencapai kemerdekaan nasional.",
+          },
+        ],
+      },
+      {
+        subtitle: "🌟 Faktor Pendorong Pergerakan Nasional",
+        content: [
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "Kemenangan Jepang atas Rusia tahun 1905 yang membangkitkan semangat bangsa Asia.",
+              "Munculnya golongan terpelajar hasil pendidikan formal.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "🎓 Organisasi Pergerakan Nasional",
+        content: [
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "Budi Utomo (20 Mei 1908): Organisasi modern pertama, diperingati sebagai Hari Kebangkitan Nasional.",
+              "Sarekat Islam: Organisasi massa terbesar yang awalnya bergerak di bidang perdagangan.",
+              "Indische Partij: Organisasi politik pertama yang menuntut kemerdekaan (Tiga Serangkai).",
+              "Sumpah Pemuda (28 Oktober 1928): Ikrar persatuan Satu Nusa, Satu Bangsa, Satu Bahasa.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "🎎 Masa Pendudukan Jepang (1942–1945)",
+        content: [
+          {
+            type: "text",
+            content:
+              "Jepang datang menggantikan Belanda dengan propaganda sebagai Saudara Tua melalui semboyan 3A: Jepang Pemimpin Asia, Pelindung Asia, dan Cahaya Asia.",
+          },
+        ],
+      },
+      {
+        subtitle: "🛠️ Kebijakan dan Kekejaman Jepang",
+        content: [
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "Romusha: Kerja paksa untuk membangun sarana perang.",
+              "Jugun Ianfu: Wanita yang dipaksa melayani tentara Jepang.",
+              "Setoran wajib padi dan ternak untuk kebutuhan perang.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "⚖️ Dampak Negatif Pendudukan Jepang",
+        content: [
+          {
+            type: "list",
+            ordered: true,
+            items: [
+              "Krisis sandang: Rakyat memakai pakaian dari karung goni atau karet.",
+              "Kelaparan karena hasil panen dirampas.",
+              "Penyiksaan oleh Kempeitai.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "🟢 Dampak Positif Pendudukan Jepang",
+        content: [
+          {
+            type: "list",
+            ordered: true,
+            items: [
+              "Pelatihan militer melalui PETA dan Heiho.",
+              "Bahasa Indonesia berkembang karena Bahasa Belanda dilarang.",
+              "Meningkatkan keberanian rakyat melawan penjajah.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "💣 Akhir Kekuasaan Jepang",
+        content: [
+          {
+            type: "text",
+            content:
+              "Jepang menyerah kepada Sekutu setelah Hiroshima (6 Agustus 1945) dan Nagasaki (9 Agustus 1945) dijatuhi bom atom.",
+          },
+        ],
+      },
+      {
+        subtitle: "💡 Catatan Penting Masa Pendudukan Jepang",
+        content: [
+          {
+            type: "highlight",
+            content:
+              "Pendudukan Jepang memang penuh penderitaan, tetapi juga memberi pengalaman militer dan semangat yang membantu persiapan kemerdekaan Indonesia.",
           },
         ],
       },
