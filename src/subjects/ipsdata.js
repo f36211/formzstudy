@@ -444,6 +444,13 @@ export const ipsdata = [
           { type: "text", content: "Peninggalan megalitikum masa praaksara:" },
           {
             type: "table",
+            images: [
+              "/sarkofagus.png",
+              "/dolmen.png",
+              "/waruga.png",
+              "/menhir.png",
+              "/punden.png",
+            ],
             headers: ["Nama", "Fungsi"],
             rows: [
               ["Menhir", "Tugu batu sebagai tempat pemujaan"],
@@ -1735,6 +1742,231 @@ export const ipsdata = [
             type: "highlight",
             content:
               "RTK = masyarakat (pembeli & penyedia tenaga kerja), RTP = perusahaan (produsen), RTN = pemerintah (pengatur), RTLN = pihak luar negeri (ekspor-impor & investasi).",
+          },
+        ],
+      },
+      {
+        subtitle: "🏹 Paleolitikum (Zaman Batu Tua) — Masa Berburu Awal",
+        content: [
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "Gaya hidup nomaden (berpindah mengikuti hewan buruan).",
+              "Menggunakan alat batu yang masih kasar.",
+              "Contoh alat: Kapak Perimbas.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "🐚 Mesolitikum (Zaman Batu Madya) — Masa Berburu Lanjut",
+        content: [
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "Kjokkenmoddinger: Tumpukan sampah dapur berupa kulit kerang yang telah membatu.",
+              "Abris Sous Roche: Gua alami sebagai tempat tinggal sementara.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "🌾 Neolitikum (Zaman Batu Muda) — Masa Bercocok Tanam",
+        content: [
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "Gaya hidup sedenter (menetap di desa).",
+              "Mulai bertani, beternak, dan melakukan barter.",
+              "Alat batu sudah diasah halus.",
+              "Contoh alat: Beliung Persegi dan Kapak Lonjong.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "🔨 Zaman Logam — Masa Perundagian",
+        content: [
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "Masyarakat mulai memiliki keahlian khusus (undagi).",
+              "Pembagian kerja sudah jelas.",
+              "Contoh peninggalan: Nekara, Moko, Mata Sabit, Mata Bajak, Kapak Corong.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "🪨 Tradisi Megalitikum (Batu Besar)",
+        images: [
+          "/sarkofagus.png",
+          "/dolmen.png",
+          "/waruga.png",
+          "/menhir.png",
+          "/punden.png",
+        ],
+        content: [
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "Menhir: Tugu batu untuk pemujaan.",
+              "Dolmen: Meja batu tempat sesaji.",
+              "Punden Berundak: Bangunan bertingkat tempat pemujaan.",
+              "Sarkofagus: Peti mati batu berbentuk lesung.",
+              "Waruga: Peti mati batu berbentuk kubus khas Minahasa.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "💡 Catatan Penting Masa Praaksara",
+        content: [
+          {
+            type: "highlight",
+            content:
+              "Zaman Batu/Logam menunjukkan bahan alat, sedangkan masa berburu, bercocok tanam, dan perundagian menunjukkan cara hidup manusia.",
+          },
+        ],
+      },
+      {
+        subtitle: "🚢 Teori Masuknya Hindu-Buddha",
+        content: [
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "Teori Brahmana: Dibawa pendeta atas undangan penguasa lokal.",
+              "Teori Ksatria: Dibawa bangsawan atau prajurit dari India.",
+              "Teori Waisya: Dibawa pedagang India yang berdagang di Nusantara.",
+              "Teori Arus Balik: Orang Nusantara belajar ke India lalu kembali menyebarkan.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "👤 Sistem Kasta (Struktur Sosial Hindu)",
+        content: [
+          {
+            type: "list",
+            ordered: true,
+            items: [
+              "Brahmana: Pendeta dan pemimpin agama.",
+              "Ksatria: Raja, bangsawan, dan prajurit.",
+              "Waisya: Pedagang dan petani.",
+              "Sudra: Pekerja kasar dan pelayan.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "🏰 Kerajaan-Kerajaan Besar Masa Hindu-Buddha",
+        content: [
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "Kutai: Raja terkenal Mulawarman, peninggalan Yupa.",
+              "Tarumanegara: Raja terkenal Purnawarman, peninggalan Prasasti Ciaruteun.",
+              "Sriwijaya: Raja terkenal Balaputradewa, peninggalan Prasasti Kedukan Bukit dan Candi Muara Takus.",
+              "Mataram Kuno: Peninggalan Candi Borobudur dan Prambanan.",
+              "Majapahit: Raja terkenal Hayam Wuruk, peninggalan Kitab Negarakertagama dan Candi Penataran.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "📜 Warisan Budaya Masa Hindu-Buddha",
+        content: [
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "Candi: Tempat ibadah atau makam bangsawan.",
+              "Prasasti: Tulisan pada batu menggunakan huruf Pallawa dan bahasa Sanskerta.",
+              "Relief: Seni pahat pada dinding candi yang menceritakan kisah tertentu.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "💡 Catatan Penting Masa Hindu-Buddha",
+        content: [
+          {
+            type: "highlight",
+            content:
+              "Contoh cepat mengingat: Mulawarman = Kutai, Gajah Mada = Majapahit.",
+          },
+        ],
+      },
+      {
+        subtitle: "🚢 Jalur Masuknya Islam ke Indonesia",
+        content: [
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "Perdagangan oleh pedagang Gujarat, Arab, dan Persia.",
+              "Perkawinan antara pedagang Muslim dan masyarakat lokal.",
+              "Pendidikan melalui pesantren.",
+              "Kesenian seperti wayang kulit dan gamelan.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "👳 Wali Songo",
+        content: [
+          {
+            type: "text",
+            content:
+              "Wali Songo adalah sembilan tokoh penyebar Islam di Pulau Jawa yang menggunakan pendekatan budaya lokal agar mudah diterima masyarakat.",
+          },
+        ],
+      },
+      {
+        subtitle: "🏰 Kesultanan-Kesultanan Besar di Indonesia",
+        content: [
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "Samudera Pasai: Sultan Malik As-Saleh.",
+              "Aceh Darussalam: Sultan Iskandar Muda.",
+              "Demak: Raden Patah dan Sultan Trenggono.",
+              "Banten: Sultan Ageng Tirtayasa.",
+              "Mataram Islam: Sultan Agung.",
+              "Gowa-Tallo: Sultan Hasanuddin.",
+              "Ternate dan Tidore: Sultan Baabullah.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "📜 Warisan Akulturasi Budaya Islam",
+        content: [
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "Seni bangunan masjid beratap tumpang.",
+              "Tradisi Sekaten dan Grebeg Maulud.",
+              "Sastra seperti Hikayat, Babad, dan Suluk.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "💡 Catatan Penting Masa Islam",
+        content: [
+          {
+            type: "highlight",
+            content: "Iskandar Muda = Aceh, Ageng Tirtayasa = Banten.",
           },
         ],
       },

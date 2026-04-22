@@ -269,11 +269,21 @@ function ContentBlock({ item }) {
     </div>
   );
 
-  // Support both 'image' and 'src' as optional properties on any block
+  // Support both 'image', 'src', or an array 'images' as optional properties on any block
   const extraImage = item.image || (item.type !== "image" && item.src);
+  const imagesArray = Array.isArray(item.images) ? item.images : [];
 
   return (
     <>
+      {imagesArray.length > 0 && (
+        <div className="flex flex-wrap justify-center gap-4 my-4">
+          {imagesArray.map((img, i) => (
+            <div key={i} className="max-w-[200px] flex-1 min-w-[150px]">
+               {renderImage(img, `Gambar ${i+1}`)}
+            </div>
+          ))}
+        </div>
+      )}
       {extraImage && renderImage(extraImage, item.title || item.subtitle || item.alt || "Ilustrasi")}
       {item.type === "image" && renderImage(item.src, item.alt)}
       
