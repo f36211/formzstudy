@@ -24,6 +24,9 @@ import { MathJax } from "better-react-mathjax";
 import PythagorasVisualizer from "../math/PythagorasVisualizer";
 import Kubus3D from "../math/Kubus3D";
 import VernierCaliper from "../subjects/ipa/visuals/VernierCaliper";
+import SupplyDemandChart from "../subjects/ips/visuals/SupplyDemandChart";
+import SejarahTimeline from "../subjects/ips/visuals/SejarahTimeline";
+import SocialMobilityVisualizer from "../subjects/ips/visuals/SocialMobilityVisualizer";
 
 const SectionWrapper = ({ title, icon: Icon, children }) => (
   <motion.div
@@ -260,122 +263,131 @@ function ContentBlock({ item }) {
     return `\\(${str}\\)`;
   };
 
-  if (item.type === "text") {
-    return (
-      <p className="text-[var(--text-main)] leading-relaxed text-sm sm:text-[15px] my-2.5 sm:my-3">
-        <MathJax dynamic inline>{wrapMath(item.content || item.value)}</MathJax>
-      </p>
-    );
-  }
-  if (item.type === "formula") {
-    const content = item.content || item.value;
-    return (
-      <div className="my-6 text-center overflow-x-auto py-3 bg-slate-50/50 dark:bg-slate-800/20 rounded-xl border border-[var(--border-card)]">
-        <MathJax dynamic>
-          {content.includes("\\[") || content.includes("$$")
-            ? content
-            : "\\[ " + content + " \\]"}
-        </MathJax>
-      </div>
-    );
-  }
-  if (item.type === "example") {
-    return (
-      <div className="my-6 p-5 rounded-2xl border border-[var(--border-card)] bg-slate-50/50 dark:bg-slate-800/20 shadow-sm">
-        <div className="flex items-center gap-2 mb-4">
-          <div className="px-2.5 py-1 rounded-lg text-[10px] font-black uppercase tracking-wider bg-orange-100 text-orange-600 dark:bg-orange-500/20 dark:text-orange-400 border border-orange-200 dark:border-orange-500/30">
-            Contoh Soal
-          </div>
+  const renderImage = (src, alt) => (
+    <div className="my-4 sm:my-5 flex justify-center">
+      <img src={src} alt={alt || "Ilustrasi"} className="max-w-full h-auto rounded-xl object-contain shadow-sm border border-[var(--border-card)]" />
+    </div>
+  );
+
+  // Support both 'image' and 'src' as optional properties on any block
+  const extraImage = item.image || (item.type !== "image" && item.src);
+
+  return (
+    <>
+      {extraImage && renderImage(extraImage, item.title || item.subtitle || item.alt || "Ilustrasi")}
+      {item.type === "image" && renderImage(item.src, item.alt)}
+      
+      {item.type === "text" && (
+        <p className="text-[var(--text-main)] leading-relaxed text-sm sm:text-[15px] my-2.5 sm:my-3">
+          <MathJax dynamic inline>{wrapMath(item.content || item.value)}</MathJax>
+        </p>
+      )}
+      {item.type === "formula" && (
+        <div className="my-6 text-center overflow-x-auto py-3 bg-slate-50/50 dark:bg-slate-800/20 rounded-xl border border-[var(--border-card)]">
+          <MathJax dynamic>
+            { (item.content || item.value).includes("\\[") || (item.content || item.value).includes("$$")
+              ? (item.content || item.value)
+              : "\\[ " + (item.content || item.value) + " \\]"}
+          </MathJax>
         </div>
-        <div className="text-[var(--text-main)] font-bold mb-5 leading-relaxed text-sm sm:text-base">
-          <MathJax dynamic inline>{wrapMath(item.question)}</MathJax>
+      )}
+      {item.type === "example" && (
+        <div className="my-6 p-5 rounded-2xl border border-[var(--border-card)] bg-slate-50/50 dark:bg-slate-800/20 shadow-sm">
+          <div className="flex items-center gap-2 mb-4">
+            <div className="px-2.5 py-1 rounded-lg text-[10px] font-black uppercase tracking-wider bg-orange-100 text-orange-600 dark:bg-orange-500/20 dark:text-orange-400 border border-orange-200 dark:border-orange-500/30">
+              Contoh Soal
+            </div>
+          </div>
+          <div className="text-[var(--text-main)] font-bold mb-5 leading-relaxed text-sm sm:text-base">
+            <MathJax dynamic inline>{wrapMath(item.question)}</MathJax>
+          </div>
+          {item.steps && (
+            <div className="space-y-3 mb-5 border-l-2 border-slate-200 dark:border-slate-700 pl-4 py-1">
+              <p className="text-[10px] font-black text-[var(--text-muted)] uppercase tracking-widest mb-3">
+                Penyelesaian:
+              </p>
+              {item.steps.map((step, i) => (
+                <div
+                  key={i}
+                  className="text-sm sm:text-[15px] text-[var(--text-secondary)] font-medium"
+                >
+                  <MathJax key={step} dynamic inline>{forceMath(step)}</MathJax>
+                </div>
+              ))}
+            </div>
+          )}
+          {item.result && (
+            <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap items-center gap-2">
+              <span className="text-[10px] font-black text-[var(--accent-blue)] uppercase tracking-widest">
+                Hasil:
+              </span>
+              <span className="text-sm sm:text-base font-bold text-[var(--accent-blue)] bg-blue-50 dark:bg-blue-500/10 px-2 py-0.5 rounded-md">
+                <MathJax key={item.result} dynamic inline>{forceMath(item.result)}</MathJax>
+              </span>
+            </div>
+          )}
         </div>
-        {item.steps && (
-          <div className="space-y-3 mb-5 border-l-2 border-slate-200 dark:border-slate-700 pl-4 py-1">
-            <p className="text-[10px] font-black text-[var(--text-muted)] uppercase tracking-widest mb-3">
-              Penyelesaian:
-            </p>
-            {item.steps.map((step, i) => (
-              <div
-                key={i}
-                className="text-sm sm:text-[15px] text-[var(--text-secondary)] font-medium"
-              >
-                <MathJax key={step} dynamic inline>{forceMath(step)}</MathJax>
-              </div>
-            ))}
-          </div>
+      )}
+      {item.type === "highlight" && (
+        <HighlightBlock>
+          <MathJax key={item.content || item.value} dynamic inline>{wrapMath(item.content || item.value)}</MathJax>
+        </HighlightBlock>
+      )}
+      {item.type === "arabic" && (
+        <ArabicBlock
+          arabic={item.arabic || item.content || item.value}
+          transliteration={item.transliteration}
+          translation={item.translation}
+        />
+      )}
+      {item.type === "table" && (
+        <TableBlock
+          content={item.content}
+          headers={item.headers}
+          rows={item.rows}
+        />
+      )}
+      {item.type === "list" && (
+        <div className="my-2 space-y-1.5">
+          {item.ordered ? (
+            <ol className="list-decimal pl-4 sm:pl-5 space-y-1.5 text-[var(--text-secondary)]">
+              {item.items.map((li, i) => (
+                <ListItem key={i} li={li} />
+              ))}
+            </ol>
+          ) : (
+            <ul className="list-disc pl-4 sm:pl-5 space-y-1.5 text-[var(--text-secondary)]">
+              {item.items.map((li, i) => (
+                <ListItem key={i} li={li} />
+              ))}
+            </ul>
+          )}
+        </div>
+      )}
+    </>
+  );
+}
+
+function ListItem({ li }) {
+  const parts = li.split(/\*\*(.*?)\*\*/g);
+  return (
+    <li className="text-xs sm:text-sm leading-relaxed">
+      <MathJax key={li} inline>
+        {parts.map((part, j) =>
+          j % 2 === 1 ? (
+            <strong
+              key={j}
+              className="font-semibold text-[var(--text-main)]"
+            >
+              {part}
+            </strong>
+          ) : (
+            part
+          ),
         )}
-        {item.result && (
-          <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap items-center gap-2">
-            <span className="text-[10px] font-black text-[var(--accent-blue)] uppercase tracking-widest">
-              Hasil:
-            </span>
-            <span className="text-sm sm:text-base font-bold text-[var(--accent-blue)] bg-blue-50 dark:bg-blue-500/10 px-2 py-0.5 rounded-md">
-              <MathJax key={item.result} dynamic inline>{forceMath(item.result)}</MathJax>
-            </span>
-          </div>
-        )}
-      </div>
-    );
-  }
-  if (item.type === "highlight") {
-    return (
-      <HighlightBlock>
-        <MathJax key={item.content || item.value} dynamic inline>{wrapMath(item.content || item.value)}</MathJax>
-      </HighlightBlock>
-    );
-  }
-  if (item.type === "arabic") {
-    // Support both { arabic, transliteration } and { content } formats
-    const text = item.arabic || item.content || item.value;
-    return (
-      <ArabicBlock
-        arabic={text}
-        transliteration={item.transliteration}
-        translation={item.translation}
-      />
-    );
-  }
-  if (item.type === "table") {
-    return (
-      <TableBlock
-        content={item.content}
-        headers={item.headers}
-        rows={item.rows}
-      />
-    );
-  }
-  if (item.type === "list") {
-    const Tag = item.ordered ? "ol" : "ul";
-    return (
-      <Tag
-        className={`my-2 space-y-1.5 pl-4 sm:pl-5 ${item.ordered ? "list-decimal" : "list-disc"} text-[var(--text-secondary)]`}
-      >
-        {item.items.map((li, i) => {
-          const parts = li.split(/\*\*(.*?)\*\*/g);
-          return (
-            <li key={i} className="text-xs sm:text-sm leading-relaxed">
-              <MathJax key={li} inline>
-                {parts.map((part, j) =>
-                  j % 2 === 1 ? (
-                    <strong
-                      key={j}
-                      className="font-semibold text-[var(--text-main)]"
-                    >
-                      {part}
-                    </strong>
-                  ) : (
-                    part
-                  ),
-                )}
-              </MathJax>
-            </li>
-          );
-        })}
-      </Tag>
-    );
-  }
-  return null;
+      </MathJax>
+    </li>
+  );
 }
 
 const NOTE_PLACEHOLDER = "- Tulis catatan pribadimu di sini\n- Bisa menggunakan *markdown*";
@@ -641,6 +653,19 @@ export default function TopicDetail() {
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-extrabold tracking-tight text-[var(--text-main)] leading-tight m-0 mb-3 sm:mb-4">
             {topic.title}
           </h1>
+          {topic.image && (
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mb-8 rounded-2xl overflow-hidden border border-[var(--border-card)] shadow-sm bg-[var(--bg-card)]"
+            >
+              <img 
+                src={topic.image} 
+                alt={topic.title} 
+                className="w-full h-auto max-h-[400px] object-cover"
+              />
+            </motion.div>
+          )}
           <div className="flex flex-wrap items-center gap-2 sm:gap-3">
             <span className="px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-wider bg-[var(--bg-alternate)] text-[var(--text-main)] border border-[var(--border-card)]">
               Materi Wajib
@@ -661,6 +686,11 @@ export default function TopicDetail() {
                 title={section.subtitle}
                 icon={BookOpen}
               >
+                {(section.image || section.src) && (
+                  <div className="mb-6 rounded-2xl overflow-hidden border border-[var(--border-card)] shadow-sm">
+                    <img src={section.image || section.src} alt={section.subtitle} className="w-full h-auto object-cover" />
+                  </div>
+                )}
                 <div className="space-y-3 sm:space-y-4">
                   {section.content.map((item, i) => (
                     <ContentBlock key={i} item={item} />
@@ -714,6 +744,25 @@ export default function TopicDetail() {
               <div className="overflow-x-auto">
                 <VernierCaliper />
               </div>
+            </SectionWrapper>
+          )}
+
+          {/* Visualization Specifics for IPS */}
+          {topic.id === "perekonomian" && (
+            <SectionWrapper title="Visualisasi Interaktif: Kurva Permintaan & Penawaran" icon={Presentation}>
+              <SupplyDemandChart />
+            </SectionWrapper>
+          )}
+
+          {topic.id === "sejarah-indonesia" && (
+            <SectionWrapper title="Timeline Sejarah" icon={Presentation}>
+              <SejarahTimeline />
+            </SectionWrapper>
+          )}
+
+          {topic.id === "mobilitas-sosial-konflik" && (
+            <SectionWrapper title="Simulasi Mobilitas Sosial" icon={Presentation}>
+              <SocialMobilityVisualizer />
             </SectionWrapper>
           )}
 

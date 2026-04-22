@@ -3,6 +3,7 @@ export const ipsdata = [
     id: "letak-indonesia",
     title: "Letak dan Kondisi Indonesia",
     icon: "🗺️",
+    image: "/image.png",
     sections: [
       {
         subtitle: "Jenis Letak Indonesia",
@@ -11,6 +12,11 @@ export const ipsdata = [
             type: "text",
             content:
               "Indonesia memiliki tiga jenis letak yang memengaruhi kondisi wilayah dan kehidupan masyarakatnya.",
+          },
+          {
+            type: "image",
+            src: "/image.png",
+            alt: "Peta Letak Indonesia",
           },
           {
             type: "table",
@@ -1321,6 +1327,414 @@ export const ipsdata = [
               "Mengatur sistem pembayaran",
               "Menjaga stabilitas nilai rupiah",
             ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "materi-dari-dosen-wana-rangkuti",
+    title: "Rangkuman dari dosen Wana Rangkuti S.Pd",
+    icon: "🎓",
+    sections: [
+      {
+        subtitle: "📍 Letak Indonesia & Dampaknya",
+        content: [
+          {
+            type: "text",
+            content:
+              "Indonesia memiliki tiga jenis letak yang masing-masing membawa dampak berbeda bagi kehidupan bangsa.",
+          },
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "🌍 Astronomis (6°LU–11°LS, 95°–141°BT): Menghasilkan iklim tropis (panas & hujan) dan 3 zona waktu (WIB, WITA, WIT).",
+              "🤝 Geografis (Antara 2 Benua & 2 Samudra): Indonesia menjadi 'titik silang' dunia dan jalur perdagangan internasional.",
+              "🌋 Geologis (Pertemuan 3 Lempeng): Banyak gunung api membuat tanah subur, namun rawan gempa.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "💰 Pengaruh Letak Geografis",
+        content: [
+          {
+            type: "highlight",
+            content:
+              "Letak geografis Indonesia memberikan keuntungan besar di bidang ekonomi dan budaya.",
+          },
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "🚢 Ekonomi: Jadi jalur transit kapal dunia (devisa meningkat), kaya hasil laut, dan mudah berdagang dengan negara luar.",
+              "🕌 Budaya: Terjadi akulturasi (campuran budaya) karena pedagang asing sering singgah, sehingga Indonesia kaya suku, bahasa, dan agama.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "🗺️ Lokasi Absolut vs Lokasi Relatif",
+        content: [
+          {
+            type: "table",
+            headers: ["Jenis Lokasi", "Sifat", "Contoh"],
+            rows: [
+              [
+                "📌 Absolut",
+                "Tetap, tidak bisa berubah",
+                "Koordinat GPS / garis astronomis",
+              ],
+              [
+                "🏃 Relatif",
+                "Berubah sesuai lingkungan sekitar",
+                '"Rumah gue deket warung"',
+              ],
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "🎨 10 Komponen Wajib Peta",
+        content: [
+          {
+            type: "text",
+            image: "/image.png",
+            content:
+              "Setiap peta yang baik harus memiliki 10 komponen berikut agar dapat dibaca dan dipahami dengan benar.",
+          },
+          {
+            type: "list",
+            ordered: true,
+            items: [
+              "📛 Judul — Identitas wilayah yang digambar.",
+              "📏 Skala — Angka perbandingan jarak peta vs aslinya.",
+              "🧭 Orientasi — Arah mata angin / petunjuk Utara.",
+              "🖍️ Simbol — Tanda objek: Titik, Garis, Area, Warna.",
+              "📖 Legenda — 'Kamus' penjelas arti setiap simbol.",
+              "🌐 Garis Astronomis — Garis khayal Lintang & Bujur.",
+              "🖼️ Inset — Peta kecil untuk menunjukkan posisi wilayah di peta lebih luas.",
+              "📅 Sumber & Tahun — Agar tahu data masih baru atau sudah usang.",
+              "🔠 Lettering — Cara penulisan huruf/angka agar rapi & jelas.",
+              "🖼️ Garis Tepi — Bingkai agar peta terlihat profesional.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "🌍 Interaksi Antarwilayah: 3 Faktor Utama",
+        content: [
+          {
+            type: "highlight",
+            content:
+              "Interaksi antarwilayah terjadi karena setiap daerah memiliki kekayaan alam yang berbeda-beda.",
+          },
+          {
+            type: "list",
+            ordered: true,
+            items: [
+              "🍎 Complementarity (Saling Melengkapi): Perbedaan sumber daya mendorong tukar-menukar. Contoh: daerah pegunungan punya sayur, daerah pesisir punya ikan — keduanya saling berdagang.",
+              "🚀 Transferability (Kemudahan Transfer): Interaksi bergantung pada kemudahan pengiriman barang. Infrastruktur jalan yang bagus dan biaya angkut murah sangat menentukan.",
+              "🛑 Intervening Opportunity (Kesempatan Antara): Jika ada lokasi alternatif yang lebih dekat/murah, wilayah asal bisa berpindah mitra dagang.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "⚠️ Penghambat Interaksi Antarwilayah",
+        content: [
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "💸 Biaya transportasi terlalu mahal.",
+              "🚧 Akses jalan terputus atau rusak parah.",
+              "🏔️ Kondisi geografis sulit (terhalang gunung tinggi atau laut ganas).",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "🗣️ Interaksi Sosial",
+        content: [
+          {
+            type: "text",
+            content:
+              "Interaksi sosial membutuhkan dua syarat utama: Kontak Sosial (bertemu langsung atau lewat HP) dan Komunikasi (pesan berhasil tersampaikan).",
+          },
+          {
+            type: "highlight",
+            content:
+              "Interaksi sosial dibagi dua arah: Asosiatif (menyatukan) dan Disosiatif (merenggang).",
+          },
+        ],
+      },
+      {
+        subtitle: "🤝 Interaksi Asosiatif (Menyatukan)",
+        content: [
+          {
+            type: "text",
+            content:
+              "Bentuk interaksi yang mengarah pada persatuan, kerja sama, dan keharmonisan antar individu atau kelompok.",
+          },
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "🤝 Kerjasama: Bekerja bersama demi tujuan yang sama. Contoh: gotong royong.",
+              "⚖️ Akomodasi: Cara menyelesaikan masalah secara damai. Contoh: kompromi, mediasi.",
+              "🍛 Akulturasi: Budaya bercampur tetapi ciri asli masih ada. Contoh: masjid bermenara ala pura.",
+              "🎭 Asimilasi: Budaya bercampur hingga membentuk budaya baru dan ciri asli hilang. Contoh: musik dangdut.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "⚔️ Interaksi Disosiatif (Merenggang)",
+        content: [
+          {
+            type: "text",
+            content:
+              "Bentuk interaksi yang mengarah pada perpecahan dan menjauhnya hubungan antar individu atau kelompok.",
+          },
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "⚔️ Persaingan (Kompetisi): Rebutan sesuatu dengan cara sehat tanpa kekerasan. Contoh: lomba lari, peringkat kelas.",
+              "😒 Kontravensi: Perasaan tidak suka yang disembunyikan. Contoh: menyebar gosip, bersikap sinis, atau menghasut.",
+              "🔥 Pertentangan (Konflik): Sudah menggunakan ancaman atau kekerasan fisik untuk menjatuhkan lawan.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "📢 Agen Sosialisasi",
+        content: [
+          {
+            type: "text",
+            content:
+              "Agen sosialisasi adalah pihak-pihak yang membentuk kepribadian dan nilai seseorang sejak dini.",
+          },
+          {
+            type: "table",
+            headers: ["Agen", "Peran Utama"],
+            rows: [
+              [
+                "🏠 Keluarga",
+                "Tempat belajar pertama tentang sopan santun dan kasih sayang",
+              ],
+              [
+                "🏫 Sekolah",
+                "Tempat belajar ilmu formal, aturan, dan disiplin",
+              ],
+              [
+                "🎮 Teman Sebaya",
+                "Belajar solidaritas dan cara bergaul di luar rumah",
+              ],
+              [
+                "📱 Media Massa",
+                "Memberi informasi luas yang memengaruhi tren dan gaya hidup",
+              ],
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "🏛️ Lembaga Sosial",
+        content: [
+          {
+            type: "list",
+            ordered: true,
+            items: [
+              "👨‍👩‍👧‍👦 Lembaga Keluarga: Mengurus keturunan (reproduksi) dan memberikan perlindungan (proteksi).",
+              "🕌 Lembaga Agama: Pedoman hidup, sumber moral, dan aturan ibadah.",
+              "💰 Lembaga Ekonomi: Mengatur cara mendapatkan barang (Produksi, Distribusi, Konsumsi).",
+              "📜 Lembaga Pendidikan: Membentuk skill, menambah pengetahuan, dan mengubah pola pikir.",
+              "⚖️ Lembaga Politik: Mengatur kekuasaan, membuat hukum, dan menjaga keamanan warga.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "⚠️ Kelangkaan (Scarcity) & Jenis Benda",
+        content: [
+          {
+            type: "highlight",
+            content:
+              "Kelangkaan terjadi karena keinginan manusia tidak terbatas, sedangkan alat pemuas (barang/jasa) sangat terbatas.",
+          },
+          {
+            type: "table",
+            headers: ["Jenis Benda", "Keterangan", "Contoh"],
+            rows: [
+              [
+                "🆓 Benda Bebas",
+                "Gratis dari alam, tidak perlu uang",
+                "Sinar matahari, udara",
+              ],
+              [
+                "💸 Benda Ekonomi",
+                "Butuh modal/uang untuk mendapatkannya",
+                "Buku, makanan",
+              ],
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "🚚 Saluran Distribusi",
+        content: [
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "Langsung: Produsen → Konsumen (contoh: jual masakan sendiri).",
+              "Semi Langsung: Lewat toko resmi milik sendiri (contoh: outlet brand tertentu).",
+              "Tidak Langsung: Lewat agen → grosir → pengecer/warung → konsumen.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "📉 Kurva Permintaan & Penawaran",
+        content: [
+          {
+            type: "table",
+            headers: [
+              "Kurva",
+              "Pelaku",
+              "Hubungan Harga & Jumlah",
+              "Arah Garis",
+            ],
+            rows: [
+              [
+                "🛒 Permintaan",
+                "Pembeli",
+                "Harga naik → jumlah diminta turun",
+                "Turun (kiri atas → kanan bawah)",
+              ],
+              [
+                "📦 Penawaran",
+                "Penjual",
+                "Harga naik → jumlah ditawarkan naik",
+                "Naik (kiri bawah → kanan atas)",
+              ],
+            ],
+          },
+          {
+            type: "highlight",
+            content:
+              "⚖️ Titik Equilibrium (E): Titik temu harga yang disepakati oleh penjual dan pembeli.",
+          },
+        ],
+      },
+      {
+        subtitle: "🌏 Perdagangan Internasional",
+        content: [
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "🚢 Ekspor: Menjual barang ke luar negeri → uang masuk 💰",
+              "🛬 Impor: Membeli barang dari luar negeri → uang keluar 💸",
+              "Faktor pendorong: Perbedaan Sumber Daya Alam (SDA), perbedaan teknologi, dan mencari keuntungan lebih besar.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "🏛️ Peran Pemerintah dalam Ekonomi",
+        content: [
+          {
+            type: "list",
+            ordered: true,
+            items: [
+              "⚖️ Regulator: Membuat aturan ekonomi dan menetapkan Harga Eceran Tertinggi (HET) agar rakyat tidak kesulitan.",
+              "🏗️ Produsen (BUMN): Mengelola sektor vital lewat PLN, Pertamina, PT KAI.",
+              "🛒 Konsumen: Berbelanja kebutuhan operasional negara.",
+              "💰 Pajak & Subsidi: Menarik pajak dari yang mampu untuk memberikan subsidi (BBM, Bansos) kepada yang membutuhkan.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "👥 Rangkuman: Pelaku Ekonomi & Perannya (Circular Flow)",
+        image: "/image2.png",
+        content: [
+          {
+            type: "text",
+            content:
+              "Dalam kegiatan ekonomi terdapat empat pelaku utama yang saling berinteraksi dalam sistem circular flow untuk memenuhi kebutuhan masyarakat dan menjaga kestabilan ekonomi.",
+          },
+        ],
+      },
+      {
+        subtitle: "🏠 RTK (Rumah Tangga Konsumen)",
+        content: [
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "Sebagai konsumen barang dan jasa.",
+              "Sebagai penyedia faktor produksi (tenaga kerja, lahan, modal).",
+              "Mendapat pendapatan berupa upah/gaji, sewa, bunga, atau laba dari RTP.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "🏭 RTP (Rumah Tangga Produsen / Perusahaan)",
+        content: [
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "Sebagai penghasil barang dan jasa.",
+              "Menggunakan faktor produksi dari RTK.",
+              "Bertujuan memperoleh keuntungan maksimal.",
+              "Membantu masyarakat memenuhi kebutuhan.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "🏛️ RTN (Rumah Tangga Negara / Pemerintah)",
+        content: [
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "Sebagai regulator (pembuat kebijakan ekonomi).",
+              "Sebagai konsumen dalam kegiatan pemerintahan.",
+              "Sebagai produsen melalui BUMN.",
+              "Sumber pendapatan utama berasal dari pajak RTK dan RTP.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "🌏 RTLN (Rumah Tangga Luar Negeri)",
+        content: [
+          {
+            type: "list",
+            ordered: false,
+            items: [
+              "Melakukan kegiatan ekspor dan impor.",
+              "Melakukan investasi antarnegara.",
+              "Terlibat dalam pertukaran tenaga kerja internasional.",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "💡 Catatan Penting",
+        content: [
+          {
+            type: "highlight",
+            content:
+              "RTK = masyarakat (pembeli & penyedia tenaga kerja), RTP = perusahaan (produsen), RTN = pemerintah (pengatur), RTLN = pihak luar negeri (ekspor-impor & investasi).",
           },
         ],
       },

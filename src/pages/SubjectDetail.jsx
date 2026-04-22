@@ -307,6 +307,11 @@ function TopicEnhancedCard({
             className="overflow-hidden"
           >
             <div className="px-5 pb-5 pt-2 md:ml-[68px] border-t border-slate-50 dark:border-slate-800/50 mt-1">
+              {(topic.image || topic.src) && (
+                <div className="mb-4 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800 max-h-48">
+                   <img src={topic.image || topic.src} alt={topic.title} className="w-full h-full object-cover" />
+                </div>
+              )}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-4">
                 <div>
                   <h4 className="text-[10px] font-bold text-[var(--text-muted)] uppercase tracking-widest mb-3">Ringkasan Materi</h4>
