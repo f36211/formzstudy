@@ -891,4 +891,439 @@ export const ipsdata = [
       },
     ],
   },
+  {
+    id: "komponen-peta",
+    title: "Komponen Peta",
+    icon: "🗺️",
+    sections: [
+      {
+        subtitle: "Komponen-Komponen Peta",
+        content: [
+          {
+            type: "text",
+            content:
+              "Komponen peta adalah bagian-bagian yang menyusun peta agar mudah dibaca dan dipahami.",
+          },
+          {
+            type: "list",
+            items: [
+              "Judul peta → menunjukkan isi peta",
+              "Skala → menunjukkan perbandingan jarak di peta dengan jarak sebenarnya",
+              "Legenda → menjelaskan simbol pada peta",
+              "Orientasi (arah mata angin) → menunjukkan arah",
+              "Garis astronomis → menunjukkan koordinat lintang dan bujur",
+              "Sumber peta → menunjukkan asal data peta",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "Jenis Lokasi",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Lokasi absolut → berdasarkan lintang dan bujur",
+              "Lokasi relatif → berdasarkan posisi terhadap wilayah lain",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: "agen-sosialisasi",
+    title: "Agen Sosialisasi",
+    icon: "👨‍👩‍👧",
+    sections: [
+      {
+        subtitle: "Pengertian",
+        content: [
+          {
+            type: "text",
+            content:
+              "Agen sosialisasi adalah pihak yang membantu individu mempelajari nilai dan norma dalam masyarakat.",
+          },
+        ],
+      },
+      {
+        subtitle: "Jenis Agen Sosialisasi",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Keluarga → agen sosialisasi pertama dan utama",
+              "Sekolah → membentuk kedisiplinan dan pengetahuan",
+              "Teman sebaya → membentuk kepribadian sosial",
+              "Media massa → memberikan informasi luas",
+              "Lingkungan masyarakat → membentuk sikap sosial",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: "kedatangan-barat",
+    title: "Kedatangan Bangsa Barat ke Indonesia",
+    icon: "🚢",
+    sections: [
+      {
+        subtitle: "Faktor Kedatangan Bangsa Barat",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Mencari rempah-rempah",
+              "Motivasi 3G (Gold, Glory, Gospel)",
+              "Revolusi Industri",
+              "Jatuhnya Konstantinopel tahun 1453",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: "pendudukan-jepang",
+    title: "Pendudukan Jepang di Indonesia",
+    icon: "⚔️",
+    sections: [
+      {
+        subtitle: "Eksploitasi Jepang",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Kerja paksa Romusha",
+              "Penyerahan hasil pertanian secara wajib",
+              "Pengawasan ketat kegiatan masyarakat",
+              "Pemanfaatan SDA untuk kepentingan perang",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: "tokoh-perlawanan-daerah",
+    title: "Tokoh Perlawanan Daerah",
+    icon: "🛡️",
+    sections: [
+      {
+        subtitle: "Tokoh-Tokoh Penting",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Sultan Hasanuddin → Ayam Jantan dari Timur",
+              "Tuanku Imam Bonjol → Perang Padri",
+              "Pattimura → Perlawanan Maluku",
+              "Pangeran Diponegoro → Perang Jawa",
+              "Cut Nyak Dien → Perlawanan Aceh",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: "keruntuhan-voc",
+    title: "Keruntuhan VOC",
+    icon: "🏴‍☠️",
+    sections: [
+      {
+        subtitle: "Penyebab Keruntuhan VOC",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Korupsi pegawai VOC",
+              "Biaya perang yang besar",
+              "Persaingan dengan kongsi dagang lain",
+              "Pengawasan pusat yang lemah",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: "sumber-daya-alam",
+    title: "Sumber Daya Alam dan Pelestarian",
+    icon: "🌳",
+    sections: [
+      {
+        subtitle: "Jenis Sumber Daya Alam",
+        content: [
+          {
+            type: "list",
+            items: [
+              "SDA dapat diperbarui → air, hutan, tanah",
+              "SDA tidak dapat diperbarui → minyak bumi, batu bara",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "Pemanfaatan Berkelanjutan",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Menggunakan SDA secara hemat",
+              "Reboisasi hutan",
+              "Mengurangi pencemaran lingkungan",
+              "Menggunakan teknologi ramah lingkungan",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: "pemanfaatan-sungai",
+    title: "Pemanfaatan Sungai",
+    icon: "🌊",
+    sections: [
+      {
+        subtitle: "Fungsi Sungai",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Transportasi",
+              "Irigasi pertanian",
+              "Pembangkit listrik tenaga air (PLTA)",
+              "Perikanan",
+              "Sumber air kebutuhan sehari-hari",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "tenaga-pembentuk-muka-bumi",
+    title: "Tenaga Pembentuk Muka Bumi",
+    icon: "🌋",
+    sections: [
+      {
+        subtitle: "Tenaga Endogen",
+        content: [
+          {
+            type: "text",
+            content:
+              "Tenaga endogen adalah tenaga yang berasal dari dalam bumi yang membentuk permukaan bumi.",
+          },
+          {
+            type: "table",
+            headers: ["Jenis", "Pengertian", "Contoh Dampak"],
+            rows: [
+              ["Tektonisme", "Pergerakan lempeng bumi", "Lipatan dan patahan"],
+              ["Vulkanisme", "Aktivitas magma dari dalam bumi", "Gunung api"],
+              [
+                "Seisme",
+                "Getaran atau gempa bumi",
+                "Gempa tektonik dan vulkanik",
+              ],
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "Tenaga Eksogen",
+        content: [
+          {
+            type: "table",
+            headers: ["Jenis", "Contoh"],
+            rows: [
+              ["Pelapukan", "Penghancuran batuan oleh cuaca"],
+              ["Erosi", "Pengikisan tanah oleh air/angin"],
+              ["Abrasi", "Pengikisan pantai oleh gelombang laut"],
+              ["Sedimentasi", "Pengendapan material hasil erosi"],
+            ],
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: "interaksi-desa-kota",
+    title: "Interaksi Desa dan Kota",
+    icon: "🏙️",
+    sections: [
+      {
+        subtitle: "Pengaruh Interaksi Desa ke Kota",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Urbanisasi meningkat",
+              "Pasokan bahan pangan dari desa",
+              "Tenaga kerja berasal dari desa",
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "Pengaruh Interaksi Kota ke Desa",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Masuknya teknologi modern",
+              "Perubahan pola pikir masyarakat desa",
+              "Meningkatnya pendidikan masyarakat desa",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: "status-peran-sosial",
+    title: "Status dan Peran Sosial",
+    icon: "👤",
+    sections: [
+      {
+        subtitle: "Jenis Status Sosial",
+        content: [
+          {
+            type: "table",
+            headers: ["Jenis", "Pengertian", "Contoh"],
+            rows: [
+              ["Ascribed Status", "Status sejak lahir", "Anak bangsawan"],
+              ["Achieved Status", "Status karena usaha", "Dokter"],
+              [
+                "Assigned Status",
+                "Status karena penghargaan",
+                "Pahlawan nasional",
+              ],
+            ],
+          },
+        ],
+      },
+      {
+        subtitle: "Peran Sosial",
+        content: [
+          {
+            type: "text",
+            content:
+              "Peran sosial adalah perilaku yang diharapkan sesuai dengan status yang dimiliki seseorang.",
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: "integrasi-sosial",
+    title: "Integrasi Sosial",
+    icon: "🤝",
+    sections: [
+      {
+        subtitle: "Bentuk Integrasi Sosial",
+        content: [
+          {
+            type: "table",
+            headers: ["Jenis", "Pengertian"],
+            rows: [
+              ["Integrasi Normatif", "Berdasarkan norma yang berlaku"],
+              ["Integrasi Fungsional", "Karena saling membutuhkan"],
+              ["Integrasi Koersif", "Karena adanya kekuasaan"],
+            ],
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: "jenis-konflik-sosial",
+    title: "Jenis Konflik Sosial",
+    icon: "⚠️",
+    sections: [
+      {
+        subtitle: "Konflik Berdasarkan Penyebab",
+        content: [
+          {
+            type: "table",
+            headers: ["Jenis Konflik", "Contoh"],
+            rows: [
+              ["Konflik Pribadi", "Pertengkaran antarindividu"],
+              ["Konflik Rasial", "Perbedaan ras"],
+              ["Konflik Politik", "Perselisihan partai politik"],
+              ["Konflik Ekonomi", "Persaingan usaha"],
+            ],
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: "jenis-pasar",
+    title: "Jenis-Jenis Pasar",
+    icon: "🛒",
+    sections: [
+      {
+        subtitle: "Berdasarkan Waktu",
+        content: [
+          {
+            type: "list",
+            items: ["Pasar harian", "Pasar mingguan", "Pasar tahunan"],
+          },
+        ],
+      },
+      {
+        subtitle: "Berdasarkan Wujud",
+        content: [
+          {
+            type: "list",
+            items: ["Pasar konkret (tradisional)", "Pasar abstrak (online)"],
+          },
+        ],
+      },
+      {
+        subtitle: "Berdasarkan Wilayah",
+        content: [
+          {
+            type: "list",
+            items: ["Pasar lokal", "Pasar nasional", "Pasar internasional"],
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    id: "fungsi-bank-sentral",
+    title: "Fungsi Bank Sentral",
+    icon: "🏛️",
+    sections: [
+      {
+        subtitle: "Peran Bank Indonesia",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Menetapkan kebijakan moneter",
+              "Mengatur sistem pembayaran",
+              "Menjaga stabilitas nilai rupiah",
+            ],
+          },
+        ],
+      },
+    ],
+  },
 ];
