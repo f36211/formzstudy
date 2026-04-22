@@ -4,6 +4,7 @@ import { mtkquiz } from "./mtkquiz";
 import { ipaQuiz } from "./ipaquiz";
 import { barabQuiz } from "./barabquiz";
 import { ppquiz } from "./ppquiz";
+import { ipsquiz } from "./ipsquiz";
 export const quizDatabase = {
   "bahasa-indonesia": bindoQuiz,
   pp: ppquiz,
@@ -11,4 +12,5 @@ export const quizDatabase = {
   ipa: ipaQuiz,
   matematika: mtkquiz,
   "bahasa-arab": barabQuiz,
+  ips: ipsquiz,
 };

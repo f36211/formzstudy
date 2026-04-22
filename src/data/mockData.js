@@ -4,6 +4,7 @@ import ipaData from "../subjects/ipa/ipaData";
 import barabData from "../subjects/barabdata";
 import { ppdata } from "../subjects/ppdata";
 import { mtkdata } from "../subjects/mtkdata";
+import { ipsdata } from "../subjects/ipsdata";
 
 export const subjectsData = [
   {
@@ -68,7 +69,7 @@ export const subjectsData = [
     description: "Ringkasan materi + latihan soal Ilmu Pengetahuan Sosial",
     icon: "Globe2",
     color: "#8B5CF6",
-    topics: [],
+    topics: ipsdata,
   },
 ];
 
